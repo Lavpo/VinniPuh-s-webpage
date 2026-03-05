@@ -1,5 +1,5 @@
 {
-  "name": "none",
+  "name": "deploy-to-neocities",
   "version": "1.0.0",
   "description": "",
   "homepage": "https://github.com/Lavpo/VinniPuh-s-webpage#readme",
@@ -11,7 +11,7 @@
     "url": "git+https://github.com/Lavpo/VinniPuh-s-webpage.git"
   },
   "license": "ISC",
-  "author": "",
+  "author": "Pavlo //vpuh01140@gmail.com//",
   "type": "commonjs",
   "main": "index.js",
   "scripts": {
