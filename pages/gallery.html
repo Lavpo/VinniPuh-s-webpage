@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>
+    <link href="/style.css" rel="stylesheet" type="text/css" media="all">
+    
+    <link rel="icon" type="image/x-icon" href="/images/favicon/gallery-pencil.ico">
+  </head>
+  <body>
+    <main class="gallery-wrapper">
+      <div class="gallery-container">
+        <div class="leftside">        
+          <div class="title"> 
+            <h1> GALLERY </h1>
+          </div>
+          
+          <div class="content">
+            <div class="years">
+              <div class="year-box"> Year </div>
+              <a id="2026" href="/pages/gallery-pages/2026.html">
+                <span class="edge"></span>
+                <span class="front">2026</span>
+              </a>
+              <a id="2025" href="/pages/gallery-pages/2025.html">
+                <span class="edge"></span>
+                <span class="front">2025</span>
+              </a>
+            </div>
+            
+            <div class="home"> 
+              <a href="/index.html">
+                <span class="edge"></span>
+                <span class="front">Home</span>
+              </a>
+            </div>
+          </div>
+          </div>
+        <div class="centerpage">
+          <header>
+          <h1> 2025 </h1>
+          </header>
+          
+          <div class="gallery" id="gallery">
+          </div>
+          <script src="/js/createImagesDescending.js"></script>
+          <script> CreateDescendingImages("#gallery", 51, 0, "img", "/images/gallery-images/2025/", "webp"); </script>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
