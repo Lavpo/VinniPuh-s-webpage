@@ -10,7 +10,7 @@
     "type": "git",
     "url": "git+https://github.com/Lavpo/VinniPuh-s-webpage.git"
   },
-  "license": "ISC",
+  "license": "MIT",
   "author": "Pavlo //vpuh01140@gmail.com//",
   "type": "commonjs",
   "main": "index.js",
