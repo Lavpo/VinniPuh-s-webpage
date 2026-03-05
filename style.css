@@ -1,0 +1,1187 @@
+
+/*all the code that is listed here can be used for making your own websites, projects, etc no matter if it's for 
+  personal nor commercial purposes
+  
+  all fonts that have been used here for making this website are free and open source 
+*/
+
+
+/* 1) Main page ----------------------------------*/
+
+body {
+  margin: 0;
+  color: black;
+}
+
+.main-wrapper{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  font-family: "Kosugi Maru";
+  
+  background-image: url("bg-images/pinkbear.png");
+  background-size: 40px 40px;
+  background-repeat: repeat; 
+  
+  min-height: 100vh;
+}
+
+/* General settings for all pages*/
+h2{
+  font-size: 15px;
+}
+
+/* Font Styles */
+
+@font-face{
+  font-family: 'mononoki';
+  src: url(fonts/mononoki-Regular.ttf) format('truetype');
+}
+
+@font-face{
+  font-family: 'OwlsNInk';
+  src: url(fonts/OwlsNInk.ttf) format('truetype');
+}
+
+@font-face{
+  font-family: 'ZenMaruGothic-Medium';
+  src: url(fonts/ZenMaruGothic-Medium.woff2) format('woff2');
+}
+
+
+/*Google fonts*/
+/*.sn-pro {*/
+/*  font-family: "SN Pro", sans-serif;*/
+/*  font-weight: 100;*/
+/*  font-style: normal;*/
+/*}*/
+
+/* will later convert all those fonts*/
+.kosugi-maru-regular {
+  font-family: "Kosugi Maru", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.hachi-maru-pop-regular {
+  font-family: "Hachi Maru Pop", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+/*.teko {*/
+/*  font-family: "Teko", sans-serif;*/
+/*  font-weight: 400;*/
+/*  font-style: normal;*/
+/*}*/
+
+/*.oooh-baby-regular {*/
+/*  font-family: "Oooh Baby", cursive;*/
+/*  font-weight: 400;*/
+/*  font-style: normal;*/
+/*}*/
+
+/* Container */
+.container-main {
+  display: grid;
+  min-height: calc(100vh - 85px);
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  
+  
+  /*Pc gridding*/
+  grid-template-areas:
+  "box-1 box-2 box-4"
+  "box-3 box-2 box-4";
+  
+  gap: 1em;  
+  
+  margin-inline: auto;
+  max-width: 1240px; 
+  height: auto;
+  
+  
+  /*justify is used for columns, align is used for rows*/
+  justify-content: center;
+}
+
+
+/*------------------------*/
+/*--------- Menu ---------*/
+/*------------------------*/
+
+.menuButtons {
+  width: 50%;
+  max-height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-self: center;
+  align-self: flex-end;
+  padding-inline: 5px;
+  padding-bottom: 55px;
+  font-size: 15px;
+  text-align: center;
+  
+  border-radius: 15px;
+  
+  outline-style: solid;
+  outline-color: #FDB7C5;
+  outline-width: 3px;
+  
+  /*background: linear-gradient(#fff5f1 80%, #FCAEB9);*/
+  
+  background-color: #fff5f199;
+  box-shadow: 0 8px 4px rgba(209, 136, 136, 0.741), 0 -10px 4px rgba(255, 250, 250, 0.9);
+}
+
+
+.menuTitle {
+  margin: 5px;
+  padding-bottom: 4px;
+  font-weight: 900;
+  border-bottom: 6px dotted white;
+}
+
+.menuTitle::before, .menuTitle::after {
+  content: "☀️";
+}
+
+.btn {
+  margin: 3px;
+  /*outline-color: #FDCFD8;*/
+  /*outline-width: 1px;*/
+  text-decoration: none;
+  font-weight: 700;
+  position: relative;
+  background: transparent;
+  outline: none;
+  padding: 0;
+  border: none;
+  display: inline-block;
+  
+  vertical-align: top;
+  line-height: 1;
+}
+
+.btn .edge{
+  border-radius: 10px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #B3877D;
+}
+
+.btn .front{
+  border-radius: 10px;
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  padding: 0.6rem 0.75rem;
+  height: 0.4rem;
+  transform: translateY(-0.25rem);
+  transition: 0.5s;
+  outline-style: solid;
+  outline-color: white;
+  outline-width: 2px;
+}
+
+.btn:hover .front{
+  transform: translateY(-0.375rem);
+  transition: 0.3s;
+}
+
+.btn1 .front{
+  background-color: hsl(0, 95%, 80%);
+}
+
+.btn1:link .front, .btn1:visited .front{
+  color: hsl(0, 80%, 45%);
+}
+.btn1:hover .front{
+  background-color: hsl(0, 80%, 65%);
+  color: hsl(0, 80%, 25%);
+}
+
+.btn2 .front{
+  background-color: hsl(60, 90%, 85%);
+}
+.btn2:link .front, .btn2:visited .front{
+  color: hsl(60, 80%, 40%);
+}
+.btn2:hover .front{
+  background-color: hsl(60, 91%, 66%);
+  color: hsl(60, 40%, 30%);
+}
+
+.btn3 .front{
+  background-color: hsl(120, 88%, 85%);
+}
+.btn3:link .front, .btn3:visited .front{
+  color: hsl(120, 70%, 40%);
+}
+.btn3:hover .front{
+  background-color: hsl(120, 86%, 72%); 
+  color: hsl(120, 25%, 25%);
+}
+
+
+.btn4 .front{
+  background-color: hsl(240, 88%, 85%);
+}
+.btn4:link .front, .btn4:visited .front{
+  color: hsl(240, 70%, 55%);
+}
+.btn4:hover .front{
+  background-color: hsl(240, 87%, 71%); 
+  color: hsl(240, 25%, 25%);
+}
+
+
+/*.btn5 .front{*/
+/*  background-color: hsl(275, 88%, 85%);*/
+/*}*/
+/*.btn5:link .front, .btn5:visited .front{*/
+/*  color: hsl(275, 70%, 55%);*/
+/*}*/
+/*.btn5:hover .front{*/
+/*  background-color: hsl(275, 70%, 60%); */
+/*  color: hsl(275, 25%, 25%);*/
+/*}*/
+
+.btn:active .front{
+  transform: translateY(-0.15rem);
+  transition: transform 34ms;
+}
+
+.menuButtons img{
+  height: 50px;
+  width: 50px;
+  object-fit: contain;
+  align-self: flex-start;
+}
+
+
+/*------------------------*/
+/*------ Centerpage ------*/
+/*------------------------*/
+
+/*Had some problems to figure out how do justify/align-items/content work
+
+apparently, justify-self cannot be applied to elements in flexbox cuz it considers all those individual elements 
+as one big element that gets changed.
+basically trying to align an item within itself 
+and based on that justify-items cannot be applied too
+
+justify-content on the other hand manages a free space of the whole container
+
+
+*/
+.container-main .centerpage {
+  /*#fff5f1*/
+  display: flex;
+  flex-direction: column;
+  
+  align-self: center;
+  align-items: center;
+  
+  text-align: center;
+  
+  max-width: 600px;
+  min-width: 400px;
+  
+  height: 600px;
+  width: 100%;
+  
+  border-color: #FDB7C5;
+  border-style: solid;
+  border-radius: 10px;
+  
+  outline-offset: 5px;
+  outline-color: #FDB7C5;
+  outline-style: double;
+
+  /*background: linear-gradient(rgba(255, 243, 243, 0.25) 90%, rgba(231, 158, 158, 0.25)); */
+  /* transparency of background could only be achieved in this way sadly */
+  
+  background-color: #fff3f340; 
+  box-shadow: 0px 5px 4px rgba(209, 136, 136, 0.741) , 0px -10px 4px rgba(255, 250, 250, 0.9);
+}
+
+.centerpage .logo{
+  position: relative;
+  display: grid;
+  
+  grid-template-columns: repeat(3, auto);
+  justify-content: center;
+  align-items: center;
+  
+  gap: 15px;
+  
+  background-color: #fff5f1;
+  border-color: #FDB7C5;
+  border-style: solid;
+  padding-top: 15px;
+  padding-bottom: 10px;
+  width: 100%;
+}
+
+.logo img{
+  width: 100%;
+}
+
+.logo .flower{
+  max-width: 50px;
+  min-width: 80px;
+  
+  align-self: flex-end;
+  margin-bottom: 40px;
+  
+}
+
+.container-main .logo .fl2{
+  transform: scaleX(-1);
+}
+
+.container-main .logo .Melia_container{
+  width: 100%;
+  
+  width: 350px;
+  
+  border-radius: 10px;
+  
+  outline-offset: 5px;
+  outline-style: solid;
+  border-radius: 10px;
+  outline-color: #FDB7C5;
+  
+  margin-bottom: 5px;
+  object-fit: contain;
+}
+
+.Melia_container img{
+  border-radius: 10px;
+  object-fit: contain;
+  anchor-name: --anchor;
+}
+
+.Melia {
+  position: relative;
+}
+
+.Melia-ov1 {
+  width: 80px; 
+  height: 80px;
+  
+  right: 44.5%;
+  top: 15%;
+  
+  border-radius: 50%;
+  
+  position: absolute;
+}
+
+.Melia-ov2 {
+  width: 20px; 
+  height: 20px;
+  
+  right: 50.4%;
+  top: 46.5%;
+  
+  border-radius: 50%;
+  
+  position: absolute;
+}
+.ov:hover{
+  cursor: pointer;
+}
+
+
+/* configuring items with absolute position */
+.attach_flowers1{
+  position: absolute;
+  bottom: 0;
+  /*right: calc(18%);*/
+  right: calc(anchor(--anchor right) - 3%);
+}
+.attach_flowers2{
+  position: absolute;
+  top: 0;
+  left: calc(anchor(--anchor left) - 5%);
+  top: calc(anchor(--anchor top) - 5%);
+}
+.attach_flowers2 img {
+  width: 100px;
+}
+.attach_flowers1 .smfl1{
+  height: 50px;
+  width: 50px;
+}
+
+
+.pageTitle {
+  background-color: #fff5f1;  
+  border-radius: 40px;
+  
+  padding-inline: 10px;
+  
+  padding: 5px 10px 5px 10px;
+  
+  margin-top: 5px;
+  margin-bottom: 5px;
+  
+  -webkit-text-stroke: white;
+  
+  border-style: dotted;
+  border-color: #FDB7C5;
+  underline-style: dotted;
+  underline-color: white;
+  
+  font-family: "Hachi Maru Pop", cursive;
+  font-weight: 900;
+  font-size: 12px;
+}
+
+.phrase p{
+  max-width: 400px;
+  font-size: 12px;
+  
+  margin-top: 15px;
+  margin-bottom: 30px;
+}
+
+.pageTitle h1{
+  margin: 0;
+  padding: 0;
+}
+
+/*------------------------*/
+/*------- Leftside -------*/
+/*------------------------*/
+.leftside {
+  align-self: flex-start;
+  justify-self: center;
+  padding: 10px;
+  margin: 30px 0px 30px 0px;
+  text-align: center;
+}
+.content{
+  display: flex;
+  flex-wrap: nowrap;
+  margin: 5px;
+}
+
+/* Character internal files */
+.Arrow {
+  width: 125px;
+  height: 50px;
+}
+
+.Duck{
+  width: 125px;
+  height: 75px;
+}
+
+.character img{
+  width: 125px;
+  height: 125px;
+}
+
+.fanbox {
+  /*for text and general sizing*/
+}
+
+
+
+/*------------------------*/
+/*------ Rightside -------*/
+/*------------------------*/
+
+.rightside{
+  justify-items: center;
+  align-self: center;
+  text-align: center;
+  max-width: 300px;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px;
+}
+
+.artoftheday img{
+  max-width: 100%;
+  max-height: 100%;
+  min-width: 150px;
+  min-height: 150px;
+  width: 250px;
+  height: 250px;  
+  object-fit: contain;
+}
+
+.gifbulb {
+  display: flex;
+  flex-wrap: nowrap;
+  margin-top: 20px;
+}
+
+.gifbulb img{
+  min-width: 50px;
+  min-height: 50px;
+  width: 100px;
+  height: 100px;  
+}
+
+/*------------------------------
+            Calendar
+  ------------------------------*/
+
+.calendar{
+  font-family: "Hachi Maru Pop";
+  
+  display: flex;
+  flex-direction: column;
+  
+  container-type: inline-size;
+  overflow: hidden;
+  min-width: 50px;
+  max-width: 225px;
+  
+  
+  border: 2px solid #DE6D85;
+  
+  width: 100%;
+  height: 100%;
+  
+  border-radius: 10px;
+  margin-top: 20px;
+  padding: 5px;
+  box-sizing: border-box;
+  background-color: hsl(10, 85%, 90%);
+  box-shadow: 0px 5px 4px rgba(209, 136, 136, 0.741) , 0px -10px 4px rgba(255, 250, 250, 0.9);
+}
+
+.calendar_header{
+  font-weight: 700;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 5px;
+  margin-bottom: 7px;
+}
+.calendar_navigation {
+  flex-wrap: nowrap;
+  gap: 5px;
+  font-size: 5cqi;
+}
+
+.calendar_header p{
+  margin: 0;
+  margin: 5px;
+  padding: 0;
+  font-size: 7cqi;
+  
+  /*test*/
+  color: #DE6D85;
+}
+.calendar_body {
+  justify-content: center;
+  align-items: center;
+  font-family: "Google Sans Code", monospace;
+  background-color: #FFEDE3;
+  padding: 2px;
+  border-radius: 5px;
+}
+
+.calendar_body ul{
+  margin: 0;
+  padding: 0;
+  
+  list-style: none;
+}
+/**/
+.calendar_body li{
+  padding: 5px;
+  border-radius: 10px;
+  text-align: center;
+  min-width: 0;
+  width: calc((100% / 7) - 8px - 10px); 
+  /* 8px is for margin added from both sides of calendar body, and 20px is from padding from same calendar body */
+  
+  
+  margin: 4px;
+  font-size: 4cqi;
+}
+
+.calendar .calendar_dates, .calendar_weekdays{
+  /*display: grid;*/
+  /*grid-template-columns: repeat(7, 1fr);*/
+  /*grid-template-rows: repeat(6, 1fr);*/
+  
+  display: flex;
+  flex-wrap: wrap;
+  
+}
+
+.calendar img{
+  max-height: 100%;
+  min-width: 100px;
+  min-height: 100px;
+  width: 200px;
+  height: 200px;  
+  object-fit: fill;
+}
+
+header .calendar_navigation span{
+  background: #ffede3;
+  border-radius: 5px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.calendar_weekdays li{
+  background: white;
+  outline-style: solid;
+  outline-color: #E65C81;
+  outline-width: 2px;
+}
+
+.calendar_dates li{
+  background-color: pink;
+  outline-style: solid;
+  outline-color: #F783A2;
+  outline-width: 2px;
+  cursor: pointer;
+}
+
+  
+.calendar_dates .highlight{
+  background-color: white;
+  box-shadow: inset 0 0 0 1px hsl(0, 95%, 70%);
+}
+
+.calendar_dates .inactive{
+  background-color: #FFE3E9;
+  outline-style: solid;
+  outline-color: #F0ADBE;
+  outline-width: 2px;
+}
+.calendar_dates li:not(active):not(highlight):hover {
+    background-color: white;
+}
+
+.calendar_dates .active{
+  background-color: orange;
+  outline-style: solid;
+  outline-color: #ff531f;
+  outline-width: 2px;
+}
+
+
+/* 2) Link page ----------------------------------*/
+
+.link-wrapper{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  min-height: 100vh;
+  
+  background-image: url("/images/backgrounds/wallhaven.jpg");
+}
+
+.container-link{
+  font-size: 20px;
+  
+  width: 100%;
+    
+  min-width: 200px;
+  max-width: 400px;
+  height: 400px;
+  
+  background-color: #cdf2bd;
+  border-radius: 30%;
+  
+  border-color: white;
+  border-style: solid;
+  border-width: 10px;
+  box-shadow: 0 0 30px #fffdee;
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  
+  font-family: "Kosugi Maru";
+}
+
+.container-link ul{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.container-link li{
+  margin: 5px;
+}
+
+
+/* 3) About page ----------------------------------*/
+
+.about-wrapper{
+  width: 100%;
+  min-height: 100vh;
+  
+  display: flex;
+  flex-direction: column;
+  
+  justify-content: center;
+  align-items: center;
+  
+  background-image: url("bg-images/pastel-pink-stripe.jpg");
+  background-repeat: repeat; 
+  background-size: 40px;
+  animation: move 3s linear infinite;
+}
+
+@keyframes move{
+  from {
+    background-position: 0px 0px;
+  }
+  to {
+    background-position: 40px 40px;
+  }
+}
+
+
+.container-about {
+  color: #DA6F6F;
+  width: 100%;
+  
+  /*min widht/height will be added later*/
+  max-width: 800px;
+  max-height: 720px;
+  
+  border-radius: 10px 10px 0px 0px;
+  box-shadow: 
+    0px 2px 10px 0px #DA6F6F,
+    inset 7px 7px 10px white,
+    inset -3px -3px 10px #DA6F6F;
+  
+  
+  background-color: #FFE4E4;
+}
+
+.container-about .center{
+   font-family: 'ZenMaruGothic-Medium';
+   box-sizing: border-box;
+   max-height: 372px;
+   overflow: auto;
+   margin: 0 15px 15px 15px;
+   padding: 30px 30px 0px 30px;
+    /*min widht/height will be added later*/
+   font-size: 20px;
+   background-color: white;
+   
+   box-shadow:
+      inset 3px 3px 5px #b26c6c99,
+      inset -3px -3px 10px white;
+}
+
+.center .firstP{
+  position: relative;
+}
+
+.center .chibi{
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  left: 70%;
+  top: 40%;
+}
+
+.center .chibi p{
+  color: #DA6F6F;
+}
+
+
+.about-wrapper img{
+  width: 200px;
+  object-fit: contain;
+  
+}
+
+.about-wrapper .top{
+  display: flex;
+  margin: 15px 20px 5px 15px;
+  justify-content: space-between;
+  align-items: flex-end;
+  font-size: 12px;
+}
+
+.about-wrapper .Title::before {
+  content: "";
+  position: absolute;
+  background: url("images/icons/about-window.png") no-repeat center / contain;
+  height: 40px;
+  width: 40px;
+  left: 0;
+  top: 50%;
+  transform: translateY(-60%);
+}
+
+.about-wrapper .Title{
+  font-family: 'OwlsNInk';
+  padding: 0;
+  position: relative;
+  /*font-family: "Hachi Maru Pop";*/
+  padding-left: 45px;
+  margin: 0;
+  color: #DA6F6F;
+  font-weight: 400;
+}
+
+.center p, .center li, .center h3, .center h2, .center h1{
+  margin: 0;
+}
+
+.center p {
+  line-height: 60px;
+  color: #5E5E5E;
+}
+
+.center li {
+  line-height: 40px;
+  color: #5E5E5E;
+}
+
+.center h1 {
+  line-height: 40px;
+  color: #5E5E5E;
+}
+.captions {
+  font-family: 'ZenMaruGothic-Medium';
+  display: flex;
+  gap: 10px;
+}
+
+/* Link and button configurations */
+.captions .minimise {
+  background-color: white;
+  width: 30px;
+  height: 30px;
+  color: #DA6F6F;
+  box-shadow: 
+    inset -3px -3px 3px #b26c6c99,
+    inset 3px 3px 4px white;
+  border-radius: 5px;
+  border: none;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.captions .minimise:hover {
+  background-color: #FFC1C1;
+  transition: 0.3s;
+}
+
+.captions .minimise:active {
+  /*interesting idea of changing inner shadows, but it may be not really how old window ui were designed*/
+  
+  box-shadow: 
+    inset 3px 3px 3px #b26c6c99,
+    inset -3px -3px 3px white;
+  transition: 0.1s;
+  background-color: white;
+}
+
+.captions .minimise span{
+  display: inline-block;
+  transition: 0.1s;
+}
+
+.captions .minimise:active span{
+  transform: translate(10%, 10%);
+}
+
+.captions .close{
+  display: flex;
+  background-color: #DA6F6F;
+  border-radius: 5px;
+  height: 30px;
+  width: 30px;
+  text-decoration: none;
+  color: white;
+  font-size: 20px;
+  
+  box-shadow: 
+  inset -3px -3px 3px #5c242499,
+  inset 2px 2px 3px white;
+  justify-content: center;
+  align-items: center;
+}
+
+.captions .close:hover{
+  background-color: #FFB4B4;
+  transition: 0.1s;
+}
+.captions .close:active{
+  background-color: #DA6F6F;
+  box-shadow: inset 3px 3px 3px #5c242499;
+}
+.captions .close:active span{
+  transform: translate(5%, 5%);
+  transition: 0.1s;
+}
+
+
+
+
+/* 4) Gallery page ----------------------------------*/
+
+.gallery-wrapper{
+  margin: 0;
+  font-family: 'mononoki';
+}
+
+.gallery-container{
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+}
+
+.gallery-wrapper .years{
+  display: flex;
+  flex-direction: column;
+}
+
+.gallery-container .leftside{
+  height: 100vh;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background-image: url("/bg-images/gallery-bg/darkgreen.png");
+  /*background-size: 500px 500px;*/
+  
+  border-right: 5px solid white;
+  
+  outline-offset: 5px;
+  outline: 2px solid white; 
+}
+
+.gallery-container .centerpage{
+  box-sizing: border-box;
+  height: 100vh;
+  padding: 0 40px 40px 40px;
+  background-image: url("/bg-images/gallery-bg/green.png");
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: auto;
+}
+
+.gallery-container .gallery{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 5px;
+}
+
+.gallery-container .gallery img{
+  width: 300px;
+  object-fit: contain;
+}
+
+.gallery-container .title h1{
+  margin-top: 5px;
+  margin-bottom: 70px;
+  
+  color: white;
+  -webkit-text-stroke: 5px solid #2E7F2E;
+  
+  text-shadow: 5px 5px #00000033;
+  
+  font-size: 64px;
+}
+
+.gallery-container .years {
+  display: flex;
+  align-items: center;
+  
+  gap: 1rem;
+}
+
+.gallery-container .years .year-box{
+  color: #2E7F2E;
+  background-color: #F1FFB8;
+  outline: 2px solid #2E7F2E;
+  margin-bottom: 10px;
+  
+  border-radius: 10px;
+  
+  width: 100px;
+  min-width: 4rem;
+  max-width: 8rem;
+  height: 2rem;
+  
+  display: flex;
+  align-items: center;      
+  justify-content: center;
+}
+
+.gallery-container .years .year-box::before, .gallery-container .years .year-box::after {
+  content: "☆";
+  margin: 0.5rem;
+}
+
+
+.gallery-container .content {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;   
+  height: calc(100vh - 170px); /* weird way to calculate it tho */
+}
+
+.gallery-container a{
+  position: relative;
+  text-decoration: none;
+  display: block; 
+}
+
+.gallery-container .years .front, .content .home .front{
+  position: relative;
+  display: flex;
+  align-items: center;      
+  justify-content: center;
+  transform: translateY(-0.25rem);
+}
+.gallery-container .years .front{
+  border-radius: 10px;
+  
+  width: 100%;
+  background-color: white;
+  min-width: 10rem;
+  max-width: 20rem;
+  height: 2.5rem;
+  
+  color: #2E7F2E;
+}
+
+.gallery-container .home .front{
+  color: #2E7F2E;
+  background-color: #F1FFB8;
+  
+  border-radius: 10px;
+  
+  width: 100%;
+  min-width: 4rem;
+  max-width: 8rem;
+  height: 2rem;
+}
+
+
+.gallery-container .edge{
+  position: absolute;
+  background-color: #00000033;
+  right: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  
+  border-radius: 10px;
+}
+
+.gallery-container .centerpage h1{
+  text-align: center;
+  color: #2E7F2E;
+}
+
+.gallery-container .content .years a:hover .front{
+  background-color: #F1FFB8;
+  transition: 0.1s ease;
+}
+
+.gallery-container .content .home a:hover .front{
+  background-color: white;
+  transition: 0.1s ease;
+}
+
+.gallery-container .content a:active .front{
+  transform: translateY(0rem);
+}
+
+
+/* 5) Warning/Disclaime  page ----------------------------------*/
+.warning-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 24px;
+
+  background-color: white;
+  
+  font-family: "Kosugi Maru";
+}
+
+.warning-overlay[hidden] {
+  display: none !important;
+}
+
+/* Dialog card */
+.warning-card {
+  width: min(300px, 100%);
+  background: white;
+  color: #111;
+  border-radius: 5px;
+  padding: 18px 18px 16px;
+  border: 3px solid #DA6F6F;
+}
+
+.warning-card h2 {
+  font-size: 1.25rem;
+  text-align: center;
+}
+
+.warning-card p {
+  line-height: 1.4;
+}
+
+.warning-actions {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+}
+
+.warning-btn {
+  appearance: none;
+  background: #DA6F6F;
+  color: #111;
+  padding: 10px 14px;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  font: inherit;
+  border: none;
+  outline: none;
+}
+
+.warning-btn.primary {
+  background: #DA6F6F;
+  color: #fff;
+  border-color: #111;
+}
+
+.warning-btn.primary:hover{
+  color: pink;
+}

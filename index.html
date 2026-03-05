@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VinniPuh's Page || MyWebPage</title>
+    
+    <!--Fonts-->
+    <link href="style.css" rel="stylesheet" type="text/css" media="all">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hachi+Maru+Pop&amp;family=Kosugi+Maru&amp;family=Oooh+Baby&amp;family=Kirang+Haerang&amp;family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&amp;family=Teko:wght@300..700&amp;family=SN+Pro:ital,wght@0,200..900;1,200..900&amp;display=swap" rel="stylesheet">
+    
+    <!--Google Icons-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+    <!--Favicon-->
+    <link rel="icon" type="image/x-icon" href="/images/favicon/main-chibi.ico">
+    
+    <!--<script defer src="/js/overlayListener.js"></script>-->
+    
+</head>
+  
+  <!--will turn of this spoiler overlay for now, it doesn't really work well as I expected-->
+  <body>
+  
+  <!---->
+  <!--  <div id="warningOverlay" class="warning-overlay" hidden>-->
+  <!--    <div class="warning-card" role="dialog" aria-modal="true" aria-labelledby="warningTitle" aria-describedby="warningText">-->
+  <!--      <h2 id="warningTitle">Content warning</h2>-->
+  <!--      <p id="warningText">-->
+  <!--        All drawings that are on this website are fanmade by me.-->
+  <!--        This website contains some audio visuals.-->
+  <!--        <br>Also, this website is optimised for 1980 x 1080 resolution and does not contain properly implemented mobile support.-->
+  <!--      </p>-->
+    
+  <!--      <div class="warning-actions">-->
+  <!--        <button id="warningEnter" class="warning-btn primary" type="button">Enter</button>-->
+  <!--      </div>-->
+  <!--    </div>-->
+  <!--  </div>-->
+  
+    <div class="main-wrapper" id="main">
+      <div class="container-main">
+        
+        <div class="leftside1">
+        
+        </div>
+        <nav class="item menuButtons" style="grid-area: box-1">
+          <h2 class="menuTitle">Menu</h2>
+          <a href="pages/about.html" class="btn btn1">
+            <span class="edge"></span>
+            <span class="front">about</span>
+          </a>
+          <a href="pages/gallery.html" class="btn btn2">
+            <span class="edge"></span>
+            <span class="front">gallery</span>
+          </a>
+          <a href="pages/links.html" class="btn btn3">
+            <span class="edge"></span>
+            <span class="front">links</span>
+          </a>
+          <a href="pages/thoughts.html" class="btn btn4">
+            <span class="edge"></span>
+            <span class="front">thoughts</span>
+          </a>
+          <img src="images/other/pinkflower.png">
+        </nav>
+        
+        <main class="item centerpage" style="grid-area: box-2">
+            <div class="pageTitle">
+                <h1>VinniPuh's page</h1>
+            </div>
+            <div class="logo">
+              <img class="flower fl2" src="images/flowers/pink-flower-long.png" alt="flower">
+              <div class="Melia_container">
+                <img class="Melia" src="images/Melia/Melia1.webp" id="idMelia" alt="Melia" usemap="#circleArea">
+                
+                <div class="Melia-ov1 ov" id="overlay1"></div>
+                <div class="Melia-ov2 ov" id="overlay2"></div>
+                <script src="/js/Melia-face-changer.js"></script>
+                
+                </div>
+              <div class="attach_flowers1">
+                  <!--smfl stands for small flower and "1 2 3" just stands for numeration-->
+                  <img class="smfl1" src="images/flowers/yellow_and_pink_flowers.png" alt="small flower">
+                </div>
+              <div class="attach_flowers2">
+                <img class="smfl3" src="images/flowers/white_and_red_flowers.png" alt="small flower">
+              </div>
+              <img class="flower fl1" src="images/flowers/pink-flower-long.png" alt="flower">
+            </div>
+            <div class="phrase">
+              <p>Sometimes, it's good to stop and think about life and future, but it's always good to remind yourself that time never takes a break.</p>
+            </div> 
+          </main>
+        
+        <div class="item leftside" style="grid-area: box-3">
+            <h2 class="fanboxTitle">Guestbook link</h2>
+            <div class="content fanbox">
+              <img class="Arrow" src="gifs/arrow.gif">
+              <a href="https://vinnipuh.atabook.org"> <img class="Duck" src="images/other/duck.jpg"></a>
+            </div>
+            
+            <div class="content character">
+              <button id="increase"> <img src="images/other/guy.jpg" usemap="#guysnose"></button>
+              <map name="guysnose">
+                <area shape="rect" alt="guynose">
+              </map>
+              <h4>Amount of clicks</h4>
+              <span id="numeration"> 0 </span>
+            </div>
+            <script src="js/counter.js"></script>
+        </div> 
+        
+        <div class="item rightside" style="grid-area: box-4">
+            <div class="col artoftheday">
+                <h3>Art of the day</h3>        
+                <img src="images/other/inprogress.png" alt="cat">
+            </div>
+            <div class="col gifbulb">
+              <img src="gifs/boxie1.gif" alt="money">
+              <img src="images/other/bulb.jpg" alt="bulb"> 
+            </div>
+            
+            <!--Calendar-->
+            <div class="col calendar">  
+              <header class="calendar_header">
+                <p class="current_date"></p>
+                <div class="calendar_navigation">
+                  <span id="calendar_next" class="material-symbols-rounded"> chevron_left</span>
+                  <span id="calendar_previous" class="material-symbols-rounded"> chevron_right</span>
+                </div>
+              </header>
+              <div class="calendar_body">
+                <ul class="calendar_weekdays">
+                  <li>Sun</li>
+                  <li>Mon</li>
+                  <li>Tue</li>
+                  <li>Wed</li>
+                  <li>Thu</li>
+                  <li>Fri</li>
+                  <li>Sat</li>
+                </ul>
+                <ul class="calendar_dates"></ul>
+              </div>
+            </div>
+            <script src="calendar.js"></script>          
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
