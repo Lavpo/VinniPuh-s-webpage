@@ -38,40 +38,69 @@
   <!--      </div>-->
   <!--    </div>-->
   <!--  </div>-->
-  
+
     <div class="main-wrapper" id="main">
+      <div class="navbar">
+        <button id="hambtn"><img src="images/icons/hamburger.png"></button>
+      </div>
       <div class="container-main">
-        
-        <div class="leftside1">
-        
+        <div class="Menu active" style="grid-area: box-1">
+          <!-- menu buttons -->
+          <nav class="item menuButtons">
+            <h2 class="menuTitle">MENU</h2>
+            <a href="pages/about.html" class="btn btn1">
+              <span class="edge"></span>
+              <span class="front">about</span>
+            </a>
+            <a href="pages/gallery.html" class="btn btn2">
+              <span class="edge"></span>
+              <span class="front">gallery</span>
+            </a>
+            <a href="pages/links.html" class="btn btn3">
+              <span class="edge"></span>
+              <span class="front">links</span>
+            </a>
+            <a href="pages/thoughts.html" class="btn btn4">
+              <span class="edge"></span>
+              <span class="front">thoughts</span>
+            </a>
+          </nav>
         </div>
-        <nav class="item menuButtons" style="grid-area: box-1">
-          <h2 class="menuTitle">Menu</h2>
-          <a href="pages/about.html" class="btn btn1">
-            <span class="edge"></span>
-            <span class="front">about</span>
-          </a>
-          <a href="pages/gallery.html" class="btn btn2">
-            <span class="edge"></span>
-            <span class="front">gallery</span>
-          </a>
-          <a href="pages/links.html" class="btn btn3">
-            <span class="edge"></span>
-            <span class="front">links</span>
-          </a>
-          <a href="pages/thoughts.html" class="btn btn4">
-            <span class="edge"></span>
-            <span class="front">thoughts</span>
-          </a>
-          <img src="images/other/pinkflower.png">
-        </nav>
-        
+
+        <!-- guest book -->
+        <div class="container-guestbook" style="grid-area: box-4">
+          <div class="guestbook link">
+            <a href="https://vinnipuh.atabook.org">Guestbook link</a>
+          </div>
+          <div class="guestbook iframe">
+            <iframe src="https://vinnipuh.atabook.org">Guestbook link</iframe>
+          </div>
+        </div>
+
+        <!-- update log -->
+        <div class="container-log" style="grid-area: box-5">
+          <div class="updatelog" id="updatelog">
+            <div class="log-top" id="log-top">
+              <button class="log-btn" onclick="LogOpener()">click me</button>
+              <div class="log-message" id="log-message">
+                <h3>v101</h3>
+                <p>some text</p>
+                <h3>v100</h3>
+                <p>some text</p>
+              </div>
+            </div>
+            <img class="Chloe" src="images/Chloe/Chloe-chibi.webp">
+            <script src="js/update-log-opener.js"></script>
+          </div>
+        </div>
+
+        <!-- centerpage -->
         <main class="item centerpage" style="grid-area: box-2">
             <div class="pageTitle">
                 <h1>VinniPuh's page</h1>
             </div>
             <div class="logo">
-              <img class="flower fl2" src="images/flowers/pink-flower-long.png" alt="flower">
+              <!-- <img class="flower fl2" src="images/flowers/pink-flower-long.png" alt="flower"> -->
               <div class="Melia_container">
                 <img class="Melia" src="images/Melia/Melia1.webp" id="idMelia" alt="Melia" usemap="#circleArea">
                 
@@ -87,39 +116,25 @@
               <div class="attach_flowers2">
                 <img class="smfl3" src="images/flowers/white_and_red_flowers.png" alt="small flower">
               </div>
-              <img class="flower fl1" src="images/flowers/pink-flower-long.png" alt="flower">
+              <!-- <img class="flower fl1" src="images/flowers/pink-flower-long.png" alt="flower"> -->
             </div>
             <div class="phrase">
               <p>Sometimes, it's good to stop and think about life and future, but it's always good to remind yourself that time never takes a break.</p>
             </div> 
-          </main>
+        </main>
         
-        <div class="item leftside" style="grid-area: box-3">
-            <h2 class="fanboxTitle">Guestbook link</h2>
-            <div class="content fanbox">
-              <img class="Arrow" src="gifs/arrow.gif">
-              <a href="https://vinnipuh.atabook.org"> <img class="Duck" src="images/other/duck.jpg"></a>
-            </div>
-            
-            <div class="content character">
-              <button id="increase"> <img src="images/other/guy.jpg" usemap="#guysnose"></button>
-              <map name="guysnose">
-                <area shape="rect" alt="guynose">
-              </map>
-              <h4>Amount of clicks</h4>
-              <span id="numeration"> 0 </span>
-            </div>
-            <script src="js/counter.js"></script>
-        </div> 
         
-        <div class="item rightside" style="grid-area: box-4">
+        <div class="item rightside" style="grid-area: box-3">
             <div class="col artoftheday">
                 <h3>Art of the day</h3>        
-                <img src="images/other/inprogress.png" alt="cat">
+                <img src="images/other/inprogress.png">
             </div>
             <div class="col gifbulb">
-              <img src="gifs/boxie1.gif" alt="money">
-              <img src="images/other/bulb.jpg" alt="bulb"> 
+              <img src="images/other/bulb.png" alt="bulb">
+              <div class = "gifs">
+                <img src="gifs/standie.gif" alt="gif1">
+                <img src="gifs/boxie2.gif" alt="gif2">
+              </div>
             </div>
             
             <!--Calendar-->
@@ -147,6 +162,7 @@
             <script src="calendar.js"></script>          
         </div>
       </div>
+      <script src="js/HamburgerClicker.js"></script>
     </div>
   </body>
 </html>
