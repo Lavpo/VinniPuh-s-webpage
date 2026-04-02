@@ -6,13 +6,16 @@ function LogOpener (){
     let lb = document.getElementById("log-message");
 
     if (lb && lt){
-        if (getComputedStyle(lb).display === "block" && getComputedStyle(lt).borderRadius === "20%"){
+        if (getComputedStyle(lb).display === "block"){
             lb.style.display = "none";
-            lt.style.borderRadius = "0px";
+            lt.style.borderRadius = "10px";
         }
-        else if(getComputedStyle(lb).display === "none" && getComputedStyle(lt).borderRadius === "0px"){
+        else if(getComputedStyle(lb).display === "none"){
             lb.style.display = "block";
-            lt.style.borderRadius = "20%"
+            lt.style.borderBottomLeftRadius = "0px";
+            lt.style.borderBottomRightRadius = "0px";
+            lt.style.borderTopLeftRadius = "10px";
+            lt.style.borderTopRightRadius = "10px";
         }
     }
 }

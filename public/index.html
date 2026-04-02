@@ -69,9 +69,10 @@
 
         <!-- guest book -->
         <div class="container-guestbook" style="grid-area: box-4">
-          <div class="guestbook link">
-            <a href="https://vinnipuh.atabook.org">Guestbook link</a>
-          </div>
+          <a class="gbtn" href="https://vinnipuh.atabook.org">
+            <span class="front">Guestbook</span>
+          </a>
+          <img src="gifs/lay.gif">
           <div class="guestbook iframe">
             <iframe src="https://vinnipuh.atabook.org">Guestbook link</iframe>
           </div>
@@ -81,7 +82,10 @@
         <div class="container-log" style="grid-area: box-5">
           <div class="updatelog" id="updatelog">
             <div class="log-top" id="log-top">
-              <button class="log-btn" onclick="LogOpener()">click me</button>
+              <div class="log">
+                <p>Update Log</p>
+                <button class="log-btn" onclick="LogOpener()"></button>
+              </div>
               <div class="log-message" id="log-message">
                 <h3>v101</h3>
                 <p>some text</p>

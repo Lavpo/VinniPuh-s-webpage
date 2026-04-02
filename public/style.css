@@ -13,6 +13,10 @@ body {
   color: black;
 }
 
+a {
+  text-decoration: none;
+}
+
 .main-wrapper{
   font-family: "Kosugi Maru";
   
@@ -42,6 +46,8 @@ h2{
   src: url(fonts/OwlsNInk.ttf) format('truetype');
 }
 
+
+/* ZenMaru */
 @font-face{
   font-family: 'ZenMaruGothic-Medium';
   src: url(fonts/ZenMaruGothic/ZenMaruGothic-Medium.woff2) format('woff2');
@@ -55,6 +61,12 @@ h2{
 @font-face{
   font-family: 'ZenMaruGothic-Regular';
   src: url(fonts/ZenMaruGothic/ZenMaruGothic-Regular-subset.woff2) format('woff2');
+}
+
+/* Comfortaa */
+@font-face{
+  font-family: 'Comfortaa';
+  src: url(fonts/Comfortaa/Comfortaa-VariableFont_wght-subset.woff2) format('woff2');
 }
 
 
@@ -139,7 +151,7 @@ h2{
   /*background: linear-gradient(#fff5f1 80%, #FCAEB9);*/
   background: linear-gradient(white, #FFFAF7);
   background-image: url("images/flowers/pinkflower2.png");
-  box-shadow: 0 5px 7px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 5px 7px #741a2e4d;
 }
 .navbar{
   display: none;
@@ -157,7 +169,7 @@ h2{
 
 .menuTitle {
   font-family: 'ZenMaruGothic-Regular';
-  margin: 0.313rem 0.313rem 0.938rem 0.313rem;
+  margin: 0.313rem 0.313rem 0.626rem 0.313rem;
   font-size: 1.125rem;
   padding-bottom: 0.313rem;
   border-bottom: 5px dotted #CB5E77;
@@ -171,11 +183,8 @@ h2{
 .btn {
   display: flex;
   justify-content: center;
-  border-radius: 6px;
+  border-radius: 10px;
   margin: 0.313rem;
-  /*outline-color: #FDCFD8;*/
-  /*outline-width: 1px;*/
-  text-decoration: none;
   position: relative;
   background: transparent;
   outline: none;
@@ -191,6 +200,8 @@ h2{
   height: 100%;
   background-color: #B3877D;
   transition: 0.5s;
+
+  background-color: var(--edge-bg);
 }
 
 .btn .front{
@@ -199,90 +210,71 @@ h2{
   justify-content: center;
   align-items: center;
   border-radius: 6px;
-  display: flex;
   width: 9rem;
   height: 2rem;
   transform: translateY(-0.25rem);
   transition: 0.5s;
   font-size: 1rem;
+
+  background-color: var(--front-bg);
 }
 
 /* general button settings */
 .btn:hover .front{
+
+  background-color: var(--front-hover-bg);
+  color: var(--text-hover-color);
+
   transform: translateY(-0.5rem);
   width: 7rem;
 }
+
 .btn:hover .edge{
   width: 100%;
   width: 7rem;
+  background-color: var(--edge-hover-bg);
+}
+
+.btn:link .front, .btn:visited .front{
+  color: #1A0409;
 }
 
 
+.btn1 {
+  --front-bg: #FF8F8F;
+  --edge-bg: #C85F5F;
+  --front-hover-bg: #FF6363;
+  --edge-hover-bg: #D44C4C;
 
-.btn1 .front{
-  background-color: #FF9898;
+  --text-hover-color: green;
 }
-.btn1:link .front, .btn1:visited .front{
-  color: #080203;
+.btn2 {
+  --front-bg: #FFD876;
+  --edge-bg: #EDBC39;
+  --front-hover-bg: #FFC94F;
+  --edge-hover-bg: #F0B522;
 }
-.btn1 .edge{
-  background-color: #C85F5F;
+.btn3 {
+  --front-bg: #b7fab7;
+  --edge-bg: #67C767;
+  --front-hover-bg: #7af57a;
+  --edge-hover-bg: #38B538;
 }
-
-.btn1:hover .front{
-  background-color: hsl(0, 80%, 65%);
-  color: black;
-}
-
-.btn2 .front{
-  background-color: #FFD876;
-}
-.btn2:link .front, .btn2:visited .front{
-  color: #412F01;
-}
-.btn2:hover .front{
-  background-color: hsl(60, 91%, 66%);
-  color: hsl(60, 40%, 30%);
-}
-
-.btn3 .front{
-  background-color: hsl(120, 88%, 85%);
-}
-.btn3:link .front, .btn3:visited .front{
-  color: hsl(120, 70%, 40%);
-}
-.btn3:hover .front{
-  background-color: hsl(120, 86%, 72%); 
-  color: hsl(120, 25%, 25%);
+.btn4 {
+  --front-bg: #b7b7fa;
+  --edge-bg: #7575f5;
+  --front-hover-bg: #9797F7;
+  --edge-hover-bg: #4B4BEB;
 }
 
-
-.btn4 .front{
-  background-color: hsl(240, 88%, 85%);
-}
-.btn4:link .front, .btn4:visited .front{
-  color: hsl(240, 70%, 55%);
-}
-.btn4:hover .front{
-  background-color: hsl(240, 87%, 71%); 
-  color: hsl(240, 25%, 25%);
-}
-
-
-/*.btn5 .front{*/
-/*  background-color: hsl(275, 88%, 85%);*/
-/*}*/
-/*.btn5:link .front, .btn5:visited .front{*/
-/*  color: hsl(275, 70%, 55%);*/
-/*}*/
-/*.btn5:hover .front{*/
-/*  background-color: hsl(275, 70%, 60%); */
-/*  color: hsl(275, 25%, 25%);*/
-/*}*/
 
 .btn:active .front{
   transform: translateY(-0.15rem);
-  transition: transform 34ms;
+  transition: transform 10ms;
+}
+
+.btn:active .edge{
+  transition: transform 10ms;
 }
 
 .menuButtons img{
@@ -299,46 +291,67 @@ h2{
 .container-log{
   justify-content: flex-start;
   margin-inline: auto;
-  padding: 0.5rem;
-  background: #ffe4e4;
-  border-radius: 10px;
+  background: yellow; 
+  /* #ffe4e4 */
+  box-sizing: border-box;
 }
 .updatelog{
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 250px;
+  height: 15.625rem;
 
   justify-content: flex-start;
 }
 
-.updatelog .log-btn{
+.log {
+  font-family: 'Comfortaa';
+  letter-spacing: 10%;
+  font-size: 0.875rem;
+  font-weight: 600;
+
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  max-width: 220px;
-  min-width: 120px;
-  border-radius: 20%;
-  background-color: orange;
+  justify-content: space-between;
+  align-items: center; 
+  padding: 0.438rem 0.636rem 0.438rem 0.939rem;
+}
+
+.log p{
+  margin: 0;
+}
+
+.updatelog .log-btn{
+  width: 20px;
+  height: auto;
+  background-color: #FFF5EE;
   text-align: center;
+
+  border-radius: 20%;
+  border: none;
+  box-shadow: 0 1px 1px rgb(0, 0, 0, 0.25);
 }
 
 .log-top{
-  border-radius: 20%;
+  box-sizing: border-box;
+  background-color: #FBD7D0;
+  flex-direction: column;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  width: 12rem;
 }
 
 .updatelog .log-message{
+  box-sizing: border-box;
   position: absolute;
-  width: 100%;
-  max-width: 220px;
-  min-width: 120px;
+  width: 12rem;
   background-color: white;
-  border-radius: 8px;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
   border: 1px solid #f5d5d5;
   z-index: 1;
-  height: 200px;
+  height: 12.5rem;
+  left: 0;
   /* transform: translateY(40%); */
 }
 
@@ -355,21 +368,63 @@ h2{
 /*------------------------*/
 
 .container-guestbook{
+  display: flex;
   box-sizing: border-box;
-}
-.guestbook{
-  display: grid;
+  justify-content: center;
   align-items: center;
-  text-align: center;
-}
-.guestbook.link a{
-  background-color: orange;
-  padding: 1rem;
+  flex-direction: column;
+
+  gap: 1rem;
+  height: 100%;
 }
 
-.guestbook.link{
-  display: block;
+.container-guestbook .front{
+  display: flex; 
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  left: 0;
+  top: 0;
+  background-image: url("images/bg/guestbook-pink.jpg");
+  background-size: 200%;
+
+  width: 10rem;
+  height: 2.5rem;
+  border-radius: 10px;
+  border: solid, 0.2px, #741A2E;
+  box-shadow: 0 5px 7px #741a2e4d;
+  transition: 0.1s;
+
+  font-family: 'Comfortaa';
+  font-weight: 900;
+  color: #741A2E;
 }
+
+.container-guestbook .front:hover{
+  width: 11rem;
+  height: 3rem;
+  color: #DE6D85;
+  background-image: url("images/bg/guestbook-lightpink.jpg");
+  transition: 0.3s;
+}
+
+.container-guestbook .front:active{
+  width: 10rem;
+  height: 2.5rem;
+  color: #DE6D85;
+  background-image: url("images/bg/guestbook-lightpink.jpg");
+  transition: 0.3s;
+}
+
+/* will return here later */
+.container-guestbook img{
+  height: 4.8rem;
+  width: 6.25rem;
+
+  border-radius: 10px;
+  border: solid, 0.2px, #741A2E;
+}
+
 .guestbook.iframe{
   display: none;
 }
@@ -1122,7 +1177,6 @@ header .calendar_navigation span{
 
 .gallery-container a{
   position: relative;
-  text-decoration: none;
   display: block; 
 }
 
@@ -1217,7 +1271,6 @@ header .calendar_navigation span{
     background-color: white;
   }
   .navbar #hambtn{
-    text-decoration: none;
     border: none;
     margin: 0;
     background-color: rgb(185, 114, 114);
@@ -1240,10 +1293,6 @@ header .calendar_navigation span{
   .Menu.active {
     display:  none;
   }
-  .menuButtons{
-    /* max-width: 100rem; */
-  }
-
 
   .guestbook{
     box-sizing: border-box;
@@ -1326,7 +1375,6 @@ header .calendar_navigation span{
   padding: 10px 14px;
   border-radius: 5px;
   cursor: pointer;
-  text-decoration: none;
   font: inherit;
   border: none;
   outline: none;
