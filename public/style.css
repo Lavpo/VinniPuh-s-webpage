@@ -291,7 +291,6 @@ h2{
 .container-log{
   justify-content: flex-start;
   margin-inline: auto;
-  background: yellow; 
   /* #ffe4e4 */
   box-sizing: border-box;
 }
@@ -300,9 +299,12 @@ h2{
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 15.625rem;
+  height: 14.625rem;
 
   justify-content: flex-start;
+
+  border-radius: 11px;
+  border: solid 1px #741A2E;
 }
 
 .log {
@@ -317,19 +319,31 @@ h2{
   padding: 0.438rem 0.636rem 0.438rem 0.939rem;
 }
 
+.log #imgChloe{
+  width: 1.25rem;
+  height: 1.25rem; 
+}
+
+
 .log p{
   margin: 0;
 }
 
 .updatelog .log-btn{
-  width: 20px;
-  height: auto;
+  width: 1.25rem;
+  height: 1.25rem;
   background-color: #FFF5EE;
   text-align: center;
+
+  padding: 0;
 
   border-radius: 20%;
   border: none;
   box-shadow: 0 1px 1px rgb(0, 0, 0, 0.25);
+}
+
+.updatelog .log-btn:hover{
+  background-color: #FFF5EE;
 }
 
 .log-top{
@@ -345,20 +359,46 @@ h2{
   box-sizing: border-box;
   position: absolute;
   width: 12rem;
-  background-color: white;
+  background-color: #FFFAF7;
   border-bottom-right-radius: 10px;
   border-bottom-left-radius: 10px;
   border: 1px solid #f5d5d5;
   z-index: 1;
   height: 12.5rem;
   left: 0;
+
+  border-top: solid 1px #741A2E;
+  padding: 0.626rem 0.939rem 0 0.626rem;
   /* transform: translateY(40%); */
 }
 
+
+.updatelog .upd::before{
+  content: "";
+  display: inline-block;
+  width: 0.938rem;
+  height: 0.938rem;
+  margin-right: 0.3rem;
+  vertical-align: middle;
+  background: url("images/icons/chenrons/chevron-down-svgrepo-com.svg") center / contain no-repeat;
+  
+}
+
+.updatelog .log-message h3{
+  font-size: 1rem;
+  margin: 0.313rem 0 0.313rem 0;
+}
+.updatelog .log-message p{
+  font-size: 0.875rem;
+  margin: 0.313rem 0 0.313rem 0;
+}
+
+
 .Chloe{
-  width: 75px;
+  width: 7.813rem;
   height: auto;
-  border: 10px solid orange;
+  border-radius: 15px;
+  border: solid 1px #741A2E;
   margin-top: 0.25rem;
 }
 
