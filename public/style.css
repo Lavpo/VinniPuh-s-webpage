@@ -13,6 +13,10 @@ body {
   color: black;
 }
 
+::selection{
+  background-color: #e7849f;
+}
+
 a {
   text-decoration: none;
 }
@@ -82,7 +86,10 @@ h2{
   src: url(fonts/mononoki/mononoki-Bold.woff2) format('woff2');
 }
 
-
+@font-face{
+  font-family: 'Lobster';
+  src: url(fonts/Lobster/Lobster-Regular-subset.woff2) format('woff2');
+}
 
 
 
@@ -122,7 +129,7 @@ h2{
 .container-main {
   display: grid;
   height: 100vh;
-  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-columns: 1fr 1.25fr 1fr;
   grid-template-rows: 4fr 10rem 5fr;
 
   justify-content: center;
@@ -314,7 +321,7 @@ h2{
 
   justify-content: flex-start;
 
-  border-radius: 11px;
+  border-radius: 11px 11px 0 0;
   border: solid 1px #741A2E;
 }
 
@@ -330,9 +337,14 @@ h2{
   padding: 0.438rem 0.636rem 0.438rem 0.939rem;
 }
 
-.log #imgChloe{
-  width: 1.25rem;
-  height: 1.25rem; 
+.log #chevron-up-down{
+  stroke: #000000;
+}
+.log #chevron-up-down:hover{
+  stroke: #DE6D85;
+}
+.log #chevron-up-down:active{
+  stroke: white;
 }
 
 
@@ -354,8 +366,12 @@ h2{
 }
 
 .updatelog .log-btn:hover{
-  background-color: #FFF5EE;
+  outline: 1px solid #DE6D85;
 }
+.updatelog .log-btn:active{
+  background-color: #DE6D85;
+}
+
 
 .log-top{
   box-sizing: border-box;
@@ -364,6 +380,8 @@ h2{
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
   width: 13rem;
+  
+  box-shadow: 0 5px 7px #741a2e4d;
 }
 
 .updatelog .log-message{
@@ -371,13 +389,12 @@ h2{
   position: absolute;
   width: 13rem;
   background-color: #FFFAF7;
-  border-bottom-right-radius: 10px;
-  border-bottom-left-radius: 10px;
-  border: 1px solid #f5d5d5;
   z-index: 1;
   height: 14rem;
   left: 0;
   overflow: auto;
+
+  transition: 450ms ease-out;
 
   border-top: solid 1px #741A2E;
   padding: 1.25rem 0.939rem 0 0.626rem;
@@ -386,6 +403,8 @@ h2{
   /* scroll bar adjustments */
   scrollbar-width: thin; 
   scrollbar-color: #DE6D85 #f1f1f1;  
+
+  box-shadow: 0 5px 7px #741a2e4d;
 }
 .updatelog .upd{
   margin: 0 0 0.626rem 0;
@@ -409,7 +428,7 @@ li::marker{
   height: 0.938rem;
   margin-right: 0.3rem;
   vertical-align: middle;
-  background: url("images/icons/chenrons/chevron-down-svgrepo-com.svg") center / contain no-repeat;
+  background: url("images/icons/chevrons/chevron-down-svgrepo-com.svg") center / contain no-repeat;
   
 }
 
@@ -537,88 +556,57 @@ justify-content on the other hand manages a free space of the whole container
 
 */
 .container-main .centerpage {
-  /*#fff5f1*/
   display: flex;
   flex-direction: column;
   
   align-self: center;
   align-items: center;
   
-  text-align: center;
-  
-  height: 37.5rem;
   width: 100%;
   
-  border-color: #FDB7C5;
-  border-style: solid;
-  border-radius: 10px;
-  
-  outline-offset: 5px;
-  outline-color: #FDB7C5;
-  outline-style: double;
-
   /*background: linear-gradient(rgba(255, 243, 243, 0.25) 90%, rgba(231, 158, 158, 0.25)); */
   /* transparency of background could only be achieved in this way sadly */
   
-  background-color: #fff3f340; 
-  box-shadow: 0px 5px 4px rgba(209, 136, 136, 0.741) , 0px -10px 4px rgba(255, 250, 250, 0.9);
 }
 
-.centerpage .logo{
-  position: relative;
-  display: grid;
-  
-  grid-template-columns: repeat(3, auto);
-  justify-content: center;
-  align-items: center;
-  
-  background-color: #fff5f1;
-  border-color: #FDB7C5;
-  border-style: solid;
-  padding-top: 15px;
-  padding-bottom: 10px;
+.container-main .Melia_container{
   width: 100%;
-}
-
-/* .logo .flower{
-  max-width: 50px;
-  min-width: 80px;
-  
-  align-self: flex-end;
-  margin-bottom: 40px;
-  
-} */
-
-/* .container-main .logo .fl2{
-  transform: scaleX(-1);
-} */
-
-.container-main .logo .Melia_container{
-  width: 100%;
-  
-  max-width: 350px;
-  
+  max-width: 21.875rem;
   border-radius: 10px;
-  
-  outline-offset: 5px;
-  outline-style: solid;
   border-radius: 10px;
-  outline-color: #FDB7C5;
-  
-  margin-bottom: 5px;
+  outline: solid 1px #741A2E;
+  margin-bottom: 0.939rem;
   object-fit: contain;
+  padding: 0.5rem;
+  background-color: #FBD7D0;
 }
 
-.Melia_container img{
-  border-radius: 10px;
-  object-fit: contain;
-  width: 100%;
+.pageTitle {
+  font-family: 'Lobster';
+  background: linear-gradient(#FFFAF7, #FBD7D0);  
+  border-radius: 40px;
+  padding: 0.25rem 1.5rem 0.25rem 1.5rem;
+  
+  -webkit-text-stroke: white;
+  
+  border-style: dotted;
+  border-color: #C85F5F;
 
-  anchor-name: --anchor;
+  margin-bottom: 0.938rem;
+ 
+  font-size: 0.75rem;
+  letter-spacing: 15%;
+  color: #741A2E;
 }
 
 .Melia {
   position: relative;
+  border-radius: 10px;
+  object-fit: contain;
+  width: 100%;
+  height: auto;
+
+  anchor-name: --anchor;
 }
 
 .Melia-ov1 {
@@ -654,13 +642,14 @@ justify-content on the other hand manages a free space of the whole container
   position: absolute;
   bottom: 0;
   /*right: calc(18%);*/
-  right: calc(anchor(--anchor right) - 3%);
+  right: calc(anchor(--anchor right) - 1%);
+  top: calc(anchor(--anchor bottom) - 5%);
 }
 .attach_flowers2{
   position: absolute;
   top: 0;
-  left: calc(anchor(--anchor left) - 5%);
-  top: calc(anchor(--anchor top) - 5%);
+  left: calc(anchor(--anchor left) - 2%);
+  top: calc(anchor(--anchor top) - 4%);
 }
 .attach_flowers2 img {
   width: 100px;
@@ -670,32 +659,8 @@ justify-content on the other hand manages a free space of the whole container
   width: 50px;
 }
 
-
-.pageTitle {
-  background-color: #fff5f1;  
-  border-radius: 40px;
-  
-  margin-top: 5px;
-  margin-bottom: 5px;
-  
-  -webkit-text-stroke: white;
-  
-  border-style: dotted;
-  border-color: #FDB7C5;
-  underline-style: dotted;
-  underline-color: white;
-  
-  font-family: "Hachi Maru Pop", cursive;
-  font-weight: 900;
-  font-size: 12px;
-}
-
-.phrase p{
-  max-width: 400px;
-  font-size: 12px;
-  
-  margin-top: 15px;
-  margin-bottom: 30px;
+.phrase{
+  width: 34.375rem;
 }
 
 .pageTitle h1{
