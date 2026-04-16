@@ -33,18 +33,13 @@ a {
   overflow-x: hidden;
 }
 
-/* General settings for all pages*/
-h2{
-  font-size: 15px;
-}
-
 /* -----------------------------------------*/
 /* Font Styles */
 /* -----------------------------------------*/
 
 @font-face{
   font-family: 'OwlsNInk';
-  src: url(fonts/OwlsNInk.ttf) format('truetype');
+  src: url(fonts/OwlsNInk-subset.woff2) format('woff2');
 }
 
 
@@ -129,8 +124,8 @@ h2{
 .container-main {
   display: grid;
   height: 100vh;
-  grid-template-columns: 1fr 1.25fr 1fr;
   grid-template-rows: 4fr 10rem 5fr;
+  column-gap: 1.25rem;
 
   justify-content: center;
   justify-items: center;
@@ -143,6 +138,7 @@ h2{
   
   margin-inline: auto;
   max-width: 77.5rem; 
+
   
   
   /*justify is used for columns, align is used for rows*/
@@ -317,9 +313,9 @@ h2{
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: flex-start;
   height: 16.125rem;
 
-  justify-content: flex-start;
 
   border-radius: 11px 11px 0 0;
   border: solid 1px #741A2E;
@@ -374,11 +370,8 @@ h2{
 
 
 .log-top{
-  box-sizing: border-box;
   background-color: #FBD7D0;
-  flex-direction: column;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
+  border-radius: 10px 10px 0 0;
   width: 13rem;
   
   box-shadow: 0 5px 7px #741a2e4d;
@@ -392,15 +385,14 @@ h2{
   z-index: 1;
   height: 14rem;
   left: 0;
-  overflow: auto;
+  overflow-y: scroll;
+  overflow-x: hidden;
 
   transition: 450ms ease-out;
 
   border-top: solid 1px #741A2E;
   padding: 1.25rem 0.939rem 0 0.626rem;
-  /* transform: translateY(40%); */
 
-  /* scroll bar adjustments */
   scrollbar-width: thin; 
   scrollbar-color: #DE6D85 #f1f1f1;  
 
@@ -478,9 +470,11 @@ li::marker{
 .container-guestbook{
   display: flex;
   box-sizing: border-box;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   flex-direction: column;
+
+  gap: 0.625rem;
 
   padding: 1rem 0 0.626rem 0;
   height: 100%;
@@ -530,7 +524,7 @@ li::marker{
   width: 6.25rem;
 
   border-radius: 10px;
-  border: solid, 0.2px, #741A2E;
+  border: solid 0.2px #741A2E;
 }
 
 .guestbook.iframe{
@@ -570,6 +564,8 @@ justify-content on the other hand manages a free space of the whole container
 }
 
 .container-main .Melia_container{
+  position: relative;
+  
   width: 100%;
   max-width: 21.875rem;
   border-radius: 10px;
@@ -600,13 +596,11 @@ justify-content on the other hand manages a free space of the whole container
 }
 
 .Melia {
-  position: relative;
+  /* position: relative; */
   border-radius: 10px;
   object-fit: contain;
   width: 100%;
   height: auto;
-
-  anchor-name: --anchor;
 }
 
 .Melia-ov1 {
@@ -638,25 +632,39 @@ justify-content on the other hand manages a free space of the whole container
 
 
 /* configuring items with absolute position */
-.attach_flowers1{
+.attach{
   position: absolute;
-  bottom: 0;
-  /*right: calc(18%);*/
-  right: calc(anchor(--anchor right) - 1%);
-  top: calc(anchor(--anchor bottom) - 5%);
 }
-.attach_flowers2{
-  position: absolute;
-  top: 0;
-  left: calc(anchor(--anchor left) - 2%);
-  top: calc(anchor(--anchor top) - 4%);
+
+/* flowers */
+.fl1{
+  width: 6.25rem;
+  height: auto;
+  left: 79%;
+  bottom: -2%;
+  z-index: 2;
 }
-.attach_flowers2 img {
-  width: 100px;
+.fl2{
+  width: 9.375rem;
+  height: auto;
+  right: 67%;
+  top: -5%; 
 }
-.attach_flowers1 .smfl1{
-  height: 50px;
-  width: 50px;
+.fl3{
+  width: 6.25rem;
+  height: auto;
+  left: 86%;
+  bottom: 0%;
+  rotate: 90%;
+  transform: scaleX(-1);
+  transform: rotate(15deg);
+}
+.fl4{
+  width: 6.25rem;
+  height: auto;
+  right: 86%;
+  bottom: 0%;
+  transform: rotate(-15deg);
 }
 
 .phrase{
@@ -676,120 +684,234 @@ justify-content on the other hand manages a free space of the whole container
 /*------------------------*/
 
 .rightside{
-  justify-items: center;
-  justify-self: center;
   align-self: center;
-  text-align: center;
-  max-width: 300px;
-  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   box-sizing: border-box;
-  padding: 10px;
-  
-}
-.artoftheday img{
-  width: 150px;
-  height: 150px;
-  object-fit: contain;
-  background-color: pink;
+  text-align: center;
 }
 
-.gifbulb {
+.artoftheday {
+  margin-bottom: 1.25rem;
+}
+
+.artoftheday .label{
+  padding: 0;
+  font-family: 'OwlsNInk';
+  font-size: 1rem;
+  color: #741A2E;
+  background-color: #FFF5EE;
+
+  border: solid 2px #741A2E;
+  margin-bottom: 0.626rem;
+}
+
+.daytoday {
+  display: flex;
+  flex-direction: column;
+  background-color: #FBD7D0;
+  border: solid 1px #741A2E;
+  padding: 0.313rem;
+  box-shadow: 0 0.313rem 0.438rem #741a2e4d;
+}
+
+.artoftheday .label h3{
+  margin: 0;
+}
+
+.artoftheday .doodle{
+  width: 7.813rem;
+  height: 10rem;
+  object-fit: contain;
+  background-image: url("images/gallery-images/2026/shiho.webp");
+  padding: 0.188rem 0.188rem 0 0.188rem;
+
+  box-shadow: 2px 2px 2px inset #00000040;
+  z-index: 2;
+}
+
+#doodle-link{
+  cursor: pointer;
+}
+
+
+
+.bulb-container{
+  border-radius: 10px;
+  border: solid 1px #741A2E;  
+  padding: 0;
+  margin: 0;
+  box-shadow: 0 0.313rem 0.438rem #741a2e4d;
+}
+
+.bulb-top{
+  display: flex;
+  justify-content: center;
+  background-color: #FBD7D0;
+  border-radius: 10px 10px 0 0;
+  border-bottom: solid 1px #741A2E;
+}
+.bulb-top h3{
+  margin: 0.188rem 0 0.188rem 0;
+  font-family: 'Comfortaa';
+  font-size: 0.875rem;
+  letter-spacing: 10%;
+  font-weight: 600;
+}
+
+
+
+
+
+.bulbAndGifs {
   display: flex;
   flex-wrap: nowrap;
-  margin-top: 20px;
   align-items: center;
+  gap: 1.25rem;
+  margin-bottom: 0.938rem;
 }
 
-.gifs{
+.gifs-group{
   display: flex; 
   flex-direction: column;
+  justify-content: space-between;
 }
 
-.gifbulb img{
-  min-width: 50px;
-  min-height: 50px;
-  width: 100px;
-  height: 100px;  
+.bulbAndGifs .item{
+  height: 11.25rem;
 }
+
+.gifs-group img{
+  border-radius: 10px;
+  border: solid 0.2px #741A2E;
+}
+
+.gifs-group .gif1{
+  width: 5.313rem;
+}
+.gifs-group .gif2{
+  width: 3.75rem;
+  transform: translate(2rem);
+}
+
+.bulbAndGifs .bulb{
+  width: 7.25rem;
+  height: auto;
+  border-radius: 0 0 10px 10px;
+  object-fit: contain;
+  background-color: white;
+  border-radius: 0 0 10px 10px;
+}
+
 
 /*------------------------------
             Calendar
   ------------------------------*/
 
 .calendar{
-  font-family: "Hachi Maru Pop";
-  
   display: flex;
   flex-direction: column;
   
+  box-sizing: border-box;
+
   container-type: inline-size;
   overflow: hidden;
-  min-width: 50px;
-  max-width: 225px;
+  min-width: 3.125rem;
+  max-width: 14.063rem;
   
+  width: 12.5rem;
+  height: auto;
   
-  border: 2px solid #DE6D85;
-  
-  width: 100%;
-  height: 100%;
-  
-  border-radius: 10px;
-  margin-top: 20px;
-  padding: 5px;
-  box-sizing: border-box;
-  background-color: hsl(10, 85%, 90%);
-  box-shadow: 0px 5px 4px rgba(209, 136, 136, 0.741) , 0px -10px 4px rgba(255, 250, 250, 0.9);
+  border-radius: 0.626rem;
+  border: solid 1px #741A2E;
+  box-shadow: 0 5px 7px #741a2e4d;
 }
 
 .calendar_header{
-  font-weight: 700;
+  font-family: 'Comfortaa';
+  letter-spacing: 10%;
   display: flex;
   justify-content: space-between;
-  margin-top: 5px;
-  margin-bottom: 7px;
+  padding: 0.438rem 0.636rem 0.438rem 0.939rem;
+  background-color: #FBD7D0;
+  border-bottom: solid 1px #741A2E;
 }
 .calendar_navigation {
   flex-wrap: nowrap;
-  gap: 5px;
-  font-size: 5cqi;
+  gap: 0.313rem;
 }
+
+
+#chevron-right{
+  stroke: black;
+  background-color: #FFF5EE;
+  border-radius: 0.313rem;
+  cursor: pointer;
+  user-select: none;
+  box-shadow: 0 1px 1px rgb(0, 0, 0, 0.25);
+}
+#chevron-left{
+  stroke: black;
+  background-color: #FFF5EE;
+  border-radius: 0.313rem;
+  cursor: pointer;
+  user-select: none;
+  box-shadow: 0 1px 1px rgb(0, 0, 0, 0.25);
+  transform: scaleX(-1);
+}
+#chevron-right:hover, #chevron-left:hover{
+  stroke: #DE6D85;
+  outline: solid 1px #DE6D85;
+}
+
+.updatelog .log-btn:hover{
+  outline: 1px solid #DE6D85;
+}
+.updatelog .log-btn:active{
+  background-color: #DE6D85;
+}
+
 
 .calendar_header p{
   margin: 0;
-  margin: 5px;
-  padding: 0;
-  font-size: 7cqi;
-  
-  /*test*/
-  color: #DE6D85;
+  font-size: 0.875rem;
+  align-self: center;
+  color: black;
 }
 .calendar_body {
-  justify-content: center;
+  font-family: 'ZenMaruGothic-Regular';
+  
+  display: flex;
+  flex-direction: column;
+
+  justify-content: space-around;
   align-items: center;
-  font-family: "Google Sans Code", monospace;
-  background-color: #FFEDE3;
-  padding: 2px;
-  border-radius: 5px;
+  background-color: #FFFAF7;
+  padding: 0.438rem;
 }
 
 .calendar_body ul{
   margin: 0;
   padding: 0;
   
+  width: 100%;
+
   list-style: none;
+  margin-bottom: 0.313rem;
 }
 /**/
 .calendar_body li{
-  padding: 5px;
-  border-radius: 10px;
-  text-align: center;
-  min-width: 0;
-  width: calc((100% / 7) - 8px - 10px); 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: calc((100% / 7) - 2px); 
+  aspect-ratio: 1 / 1;
+  margin: 1px;
   /* 8px is for margin added from both sides of calendar body, and 20px is from padding from same calendar body */
   
-  
-  margin: 4px;
-  font-size: 4cqi;
+  font-size: 0.625rem;
 }
 
 .calendar .calendar_dates, .calendar_weekdays{
@@ -799,61 +921,42 @@ justify-content on the other hand manages a free space of the whole container
   
   display: flex;
   flex-wrap: wrap;
-  
 }
 
-.calendar img{
-  max-height: 100%;
-  min-width: 100px;
-  min-height: 100px;
-  width: 200px;
-  height: 200px;  
-  object-fit: fill;
-}
-
-header .calendar_navigation span{
-  background: #ffede3;
-  border-radius: 5px;
-  cursor: pointer;
-  user-select: none;
-}
-
-.calendar_weekdays li{
-  background: white;
-  outline-style: solid;
-  outline-color: #E65C81;
-  outline-width: 2px;
+.calendar_weekdays{
+  background-color: #FBD7D0;
+  border-radius: 0.626rem;
 }
 
 .calendar_dates li{
-  background-color: pink;
-  outline-style: solid;
-  outline-color: #F783A2;
-  outline-width: 2px;
+  font-weight: bold;
+  border-radius: 0.313rem;
   cursor: pointer;
+  color: #741A2E;
 }
-
   
 .calendar_dates .highlight{
-  background-color: white;
-  box-shadow: inset 0 0 0 1px hsl(0, 95%, 70%);
+  background-color: #DE6D85;
+  color: white;
+  box-shadow: 0 1px 2px rgb(0, 0, 0, 0.25);
 }
 
 .calendar_dates .inactive{
   background-color: #FFE3E9;
-  outline-style: solid;
   outline-color: #F0ADBE;
-  outline-width: 2px;
 }
-.calendar_dates li:not(active):not(highlight):hover {
-    background-color: white;
-}
+/* .calendar_dates li:not(active):not(highlight):hover {
+} */
 
 .calendar_dates .active{
-  background-color: orange;
-  outline-style: solid;
-  outline-color: #ff531f;
-  outline-width: 2px;
+  background-color: transparent;
+  outline: solid 1px #DE6D85; 
+  color: #DE6D85;
+}
+
+.calendar_dates li:not(.active):not(.highlight):hover {
+  background-color: #fecfd9;
+  color: black;
 }
 
 

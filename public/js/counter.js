@@ -1,10 +1,16 @@
-const increase = document.getElementById("increase");
-const num = document.getElementById("numeration");
+function clicksCount() {
+  let count = 0;
+  const btn = document.getElementById("like");
+  const amount = document.getElementById("likesAmount");
 
-let count = 0;
+  if (!amount || !btn) return;
 
-increase.onclick = function(){
-  count++;
-  num.textContent = count;
+  btn.addEventListener('click' , () => {
+    count++;
+    amount.textContent = count.toString();
+  })
+
+  console.log(count);
 }
 
+clicksCount();

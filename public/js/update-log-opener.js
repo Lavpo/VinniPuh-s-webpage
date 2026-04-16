@@ -17,7 +17,7 @@ function LogOpener (){
             lt.style.border = "solid 1px #741A2E";
             ci.src = "images/icons/chevrons/chevron-down-svgrepo-com.svg";
 
-            console.log("something happened");
+            console.log("1width: " + lt.style.width + ", offsetwidth: " + lt.offsetWidth + ", boundingClient: " + lt.getBoundingClientRect().width);
         }
         else if(getComputedStyle(lb).height === "0px"){
             lb.style.maxHeight = "224px";
@@ -28,6 +28,8 @@ function LogOpener (){
             ul.style.border = "solid 1px #741A2E";
             lt.style.border = "none";
             ci.src = "images/icons/chevrons/chevron-up-svgrepo-com.svg";
+
+            console.log("2width: " + lt.style.width + ", offsetwidth: " + lt.offsetWidth + ", boundingClient: " + lt.getBoundingClientRect().width);
         }
     }
 }

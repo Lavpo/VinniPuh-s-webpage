@@ -72,7 +72,7 @@
           <a class="gbtn" href="https://vinnipuh.atabook.org">
             <span class="front">Guestbook</span>
           </a>
-          <img src="gifs/lay.gif">
+          <img src="gifs/lie.gif">
           <div class="guestbook iframe">
             <iframe src="https://vinnipuh.atabook.org">Guestbook link</iframe>
           </div>
@@ -147,15 +147,14 @@
                 
                 <div class="Melia-ov1 ov" id="overlay1"></div>
                 <div class="Melia-ov2 ov" id="overlay2"></div>
+
                 <script src="/js/Melia-face-changer.js"></script>
                 
-              </div>
-              <div class="attach_flowers1">
-                  <!--smfl stands for small flower and "1 2 3" just stands for numeration-->
-                  <img class="smfl1" src="images/flowers/yellow_and_pink_flowers.png" alt="small flower">
-                </div>
-              <div class="attach_flowers2">
-                <img class="smfl3" src="images/flowers/white_and_red_flowers.png" alt="small flower">
+                <img class="attach fl1" src="images/flowers/yellow_and_pink_flowers.png">
+                <img class="attach fl2" src="images/flowers/white_and_red_flowers.png">
+                <img class="attach fl3" src="images/flowers/pink-flower-long.webp">
+                <img class="attach fl4" src="images/flowers/pink-flower-long.webp">
+
               </div>
             <img class="phrase" src="images/other/paper2.webp"> 
         </main>
@@ -163,14 +162,27 @@
         
         <div class="item rightside" style="grid-area: box-3">
             <div class="col artoftheday">
-                <h3>Art of the day</h3>        
-                <img src="images/other/inprogress.png">
+                <div class="label">
+                  <h3>Art of the day</h3>
+                </div>        
+                <div class="daytoday">
+                  <a id="doodle-link">
+                    <img class="doodle" src="images/gallery-images/2026/shiho.webp"></img>
+                  </a>
+                  <script src="js/image-changer.js"></script>
+                </div>
             </div>
-            <div class="col gifbulb">
-              <img src="images/other/bulb.png" alt="bulb">
-              <div class = "gifs">
-                <img src="gifs/standie.gif" alt="gif1">
-                <img src="gifs/boxie2.gif" alt="gif2">
+            <div class="col bulbAndGifs">
+              <div class="item bulb-container">
+                <div class="bulb-top">
+                  <h3>Theme</h3>
+                </div>
+                <a href="https://google.com"><img class="bulb" src="images/other/bulb.png"></a>
+              </div>
+
+              <div class = "item gifs-group">
+                <img class="gif1" src="gifs/standie.gif">
+                <img class="gif2" src="gifs/boxie2.gif">
               </div>
             </div>
             
@@ -179,8 +191,14 @@
               <header class="calendar_header">
                 <p class="current_date"></p>
                 <div class="calendar_navigation">
-                  <span id="calendar_next" class="material-symbols-rounded"> chevron_left</span>
-                  <span id="calendar_previous" class="material-symbols-rounded"> chevron_right</span>
+                  <span class="chevrons"> 
+                    <svg id="chevron-left" width="20px" height="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M8 5L15.57 11.6237C15.7976 11.8229 15.7976 12.1771 15.57 12.3763L8 19" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <svg id="chevron-right" width="20px" height="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M8 5L15.57 11.6237C15.7976 11.8229 15.7976 12.1771 15.57 12.3763L8 19" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </span>
                 </div>
               </header>
               <div class="calendar_body">
@@ -196,7 +214,7 @@
                 <ul class="calendar_dates"></ul>
               </div>
             </div>
-            <script src="calendar.js"></script>          
+            <script src="js/calendar.js"></script>          
         </div>
       </div>
       <script src="js/HamburgerClicker.js"></script>
