@@ -1,10 +1,12 @@
 (function () {
   var key = "sadforever";
-  console.log("test01");
   
   
   
   var img = document.getElementById("idMelia");
+  if (!img) return;
+  console.log(img);
+
   var srcsaver = img.src;
   var ismousedown = false;
   var isclicked = false;
@@ -19,11 +21,13 @@
   
   // for sad face expression
   var sad = "/images/Melia/Melia-sad.webp";
+  console.log(sad);
   
   //Check if key is 0, 1 nor not present
   if (localStorage.getItem(key) === "1") {
     RevertFunc();
     img.src = sad;
+  
     setOverlayMode(false);
   }
   else {
@@ -94,11 +98,11 @@
     
     img.src = squint;
     
+    console.log(img);
     
     revertTimer = setTimeout(() => {
     img.src = srcsaver;
     isclicked = false;
-    console.log("test2");
       }, 300);
       
     if (count === 31){
