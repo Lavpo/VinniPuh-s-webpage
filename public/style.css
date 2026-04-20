@@ -241,6 +241,7 @@ a {
 
   transform: translateY(-0.5rem);
   width: 7rem;
+  cursor: pointer;
 }
 
 .btn:hover .edge{
@@ -260,7 +261,7 @@ a {
   --front-hover-bg: #FF6363;
   --edge-hover-bg: #D44C4C;
 
-  --text-hover-color: green;
+  --text-hover-color: black;
 }
 .btn2 {
   --front-bg: #FFD876;
@@ -508,6 +509,7 @@ li::marker{
   color: #DE6D85;
   background-image: url("images/bg/guestbook-lightpink.jpg");
   transition: 0.3s;
+  cursor: pointer;
 }
 
 .container-guestbook .front:active{
@@ -844,7 +846,7 @@ justify-content on the other hand manages a free space of the whole container
 }
 
 
-#chevron-right{
+.chevron-right{
   stroke: black;
   background-color: #FFF5EE;
   border-radius: 0.313rem;
@@ -852,7 +854,7 @@ justify-content on the other hand manages a free space of the whole container
   user-select: none;
   box-shadow: 0 1px 1px rgb(0, 0, 0, 0.25);
 }
-#chevron-left{
+.chevron-left{
   stroke: black;
   background-color: #FFF5EE;
   border-radius: 0.313rem;
@@ -861,7 +863,7 @@ justify-content on the other hand manages a free space of the whole container
   box-shadow: 0 1px 1px rgb(0, 0, 0, 0.25);
   transform: scaleX(-1);
 }
-#chevron-right:hover, #chevron-left:hover{
+.chevron-right:hover, .chevron-left:hover{
   stroke: #DE6D85;
   outline: solid 1px #DE6D85;
 }
@@ -890,6 +892,9 @@ justify-content on the other hand manages a free space of the whole container
   align-items: center;
   background-color: #FFFAF7;
   padding: 0.438rem;
+}
+.calendar_navigation{
+  user-select: none;
 }
 
 .calendar_body ul{
@@ -1475,75 +1480,3 @@ justify-content on the other hand manages a free space of the whole container
     display: none;
   }
 }
-
-
-
-
-/* 5) Warning/Disclaime  page ----------------------------------*/
-/* .warning-overlay {
-  position: fixed;
-  inset: 0;
-  z-index: 99999;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  padding: 24px;
-
-  background-color: white;
-  
-  font-family: "Kosugi Maru";
-}
-
-.warning-overlay[hidden] {
-  display: none !important;
-}
-
-/* Dialog card */
-/* .warning-card {
-  width: min(300px, 100%);
-  background: white;
-  color: #111;
-  border-radius: 5px;
-  padding: 18px 18px 16px;
-  border: 3px solid #DA6F6F;
-}
-
-.warning-card h2 {
-  font-size: 1.25rem;
-  text-align: center;
-}
-
-.warning-card p {
-  line-height: 1.4;
-}
-
-.warning-actions {
-  display: flex;
-  gap: 10px;
-  justify-content: flex-end;
-  flex-wrap: wrap;
-}
-
-.warning-btn {
-  appearance: none;
-  background: #DA6F6F;
-  color: #111;
-  padding: 10px 14px;
-  border-radius: 5px;
-  cursor: pointer;
-  font: inherit;
-  border: none;
-  outline: none;
-}
-
-.warning-btn.primary {
-  background: #DA6F6F;
-  color: #fff;
-  border-color: #111;
-}
-
-.warning-btn.primary:hover{
-  color: pink;
-} */

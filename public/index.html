@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:image" content="images/Melia/Melia_preview1.png">
     <title>VinniPuh's Page || MyWebPage</title>
     
     <!--Fonts-->
@@ -19,25 +20,8 @@
     <!--<script defer src="/js/overlayListener.js"></script>-->
     
 </head>
-  
   <!--will turn of this spoiler overlay for now, it doesn't really work well as I expected-->
   <body>
-  
-  <!---->
-  <!--  <div id="warningOverlay" class="warning-overlay" hidden>-->
-  <!--    <div class="warning-card" role="dialog" aria-modal="true" aria-labelledby="warningTitle" aria-describedby="warningText">-->
-  <!--      <h2 id="warningTitle">Content warning</h2>-->
-  <!--      <p id="warningText">-->
-  <!--        All drawings that are on this website are fanmade by me.-->
-  <!--        This website contains some audio visuals.-->
-  <!--        <br>Also, this website is optimised for 1980 x 1080 resolution and does not contain properly implemented mobile support.-->
-  <!--      </p>-->
-    
-  <!--      <div class="warning-actions">-->
-  <!--        <button id="warningEnter" class="warning-btn primary" type="button">Enter</button>-->
-  <!--      </div>-->
-  <!--    </div>-->
-  <!--  </div>-->
 
     <div class="main-wrapper" id="main">
       <div class="navbar">
@@ -45,37 +29,47 @@
       </div>
       <div class="container-main">
         <div class="Menu active" style="grid-area: box-1">
+
+          <audio id="button-click">
+            <source src="audio/button-click.mp3" type="audio/mp3">
+          </audio>
           <!-- menu buttons -->
           <nav class="item menuButtons">
             <h2 class="menuTitle">MENU</h2>
-            <a href="pages/about.html" class="btn btn1">
+            <a data-target="pages/about.html" href="pages/about.html" class="btn btn1">
               <span class="edge"></span>
               <span class="front">about</span>
             </a>
-            <a href="pages/gallery.html" class="btn btn2">
+            <a data-target="pages/gallery.html" href="pages/gallery.html" class="btn btn2">
               <span class="edge"></span>
               <span class="front">gallery</span>
             </a>
-            <a href="pages/links.html" class="btn btn3">
+            <a data-target="pages/links.html" href="pages/links.html" class="btn btn3">
               <span class="edge"></span>
               <span class="front">links</span>
             </a>
-            <a href="pages/thoughts.html" class="btn btn4">
+            <a data-target="pages/thoughts.html" href="pages/thoughts.html" class="btn btn4">
               <span class="edge"></span>
               <span class="front">thoughts</span>
             </a>
+            <script src="js/audio/menu-buttons-audio.js"></script>
           </nav>
         </div>
 
         <!-- guest book -->
         <div class="container-guestbook" style="grid-area: box-4">
-          <a class="gbtn" href="https://vinnipuh.atabook.org">
+          <a id="gbtn" data-target="https://vinnipuh.atabook.org">
             <span class="front">Guestbook</span>
           </a>
           <img src="gifs/lie.gif">
           <div class="guestbook iframe">
             <iframe src="https://vinnipuh.atabook.org">Guestbook link</iframe>
           </div>
+
+          <audio id="guestbook-sound">
+            <source src="audio/plump.mp3" type="audio/mp3">
+          </audio>
+          <script src="js/audio/guestbook-sound.js"></script>
         </div>
 
         <!-- update log -->
@@ -84,7 +78,7 @@
             <div class="log-top" id="log-top">
               <div class="log">
                 <p>Update Log</p>
-                <button class="log-btn" onclick="LogOpener()">
+                <button class="log-btn" id="sound-capturer" onclick="LogOpener()">
                   <svg id="chevron-up-down" width="20px" height="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M5 8L11.6237 15.57C11.8229 15.7976 12.1771 15.7976 12.3763 15.57L19 8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                   </svg>
@@ -192,10 +186,10 @@
                 <p class="current_date"></p>
                 <div class="calendar_navigation">
                   <span class="chevrons"> 
-                    <svg id="chevron-left" width="20px" height="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <svg class="chevron-left" id="sound-capturer" width="20px" height="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M8 5L15.57 11.6237C15.7976 11.8229 15.7976 12.1771 15.57 12.3763L8 19" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
-                    <svg id="chevron-right" width="20px" height="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <svg class="chevron-right" id="sound-capturer" width="20px" height="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M8 5L15.57 11.6237C15.7976 11.8229 15.7976 12.1771 15.57 12.3763L8 19" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
                   </span>
@@ -218,6 +212,11 @@
         </div>
       </div>
       <script src="js/HamburgerClicker.js"></script>
+
+      <audio id="pop">
+        <source src="audio/pop.mp3" type="audio/mp3">
+      </audio>
+      <script src="js/audio/other.js"></script>
     </div>
   </body>
 </html>

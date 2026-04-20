@@ -74,7 +74,7 @@ manipulate();
 
 prenexIcons.forEach(icon => {
   icon.addEventListener("click", () => {
-    month = icon.id === "chevron-left" ? month - 1 : month + 1;
+    month = icon.classList.contains("chevron-left") ? month - 1 : month + 1;
 
     if (month < 0 || month > 11) {
       date = new Date(year, month, 1);

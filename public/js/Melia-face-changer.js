@@ -5,7 +5,6 @@
   
   var img = document.getElementById("idMelia");
   if (!img) return;
-  console.log(img);
 
   var srcsaver = img.src;
   var ismousedown = false;
@@ -21,7 +20,6 @@
   
   // for sad face expression
   var sad = "/images/Melia/Melia-sad.webp";
-  console.log(sad);
   
   //Check if key is 0, 1 nor not present
   if (localStorage.getItem(key) === "1") {
@@ -93,12 +91,10 @@
     if (isclicked) return;
     
     count++;
-    console.log(count);
     isclicked = true;
     
     img.src = squint;
     
-    console.log(img);
     
     revertTimer = setTimeout(() => {
     img.src = srcsaver;
