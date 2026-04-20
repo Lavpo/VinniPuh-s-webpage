@@ -53,7 +53,11 @@
   
   document.querySelector("#overlay1").addEventListener("click", () => {
       if (ismousedown) return;
+      let audio = document.getElementById("bubble-pop");
       
+      audio.volume = 0.2;
+      audio.play();
+
       RevertFunc();
       
       img.src = happy;
@@ -65,6 +69,11 @@
   
   document.querySelector("#overlay1").addEventListener("mousedown", () => {
     RevertFunc();
+    let audio = document.getElementById("bubble-pop");
+
+    audio.volume = 0.2;
+    audio.play();
+
     ismousedown = true;
     img.src = happy;
   });
@@ -89,6 +98,11 @@
   
   document.querySelector("#overlay2").addEventListener("click", () =>{
     if (isclicked) return;
+
+    let audio = document.getElementById("retro-hurt");
+
+    audio.volume = 0.05;
+    audio.play();
     
     count++;
     isclicked = true;
@@ -99,7 +113,7 @@
     revertTimer = setTimeout(() => {
     img.src = srcsaver;
     isclicked = false;
-      }, 300);
+      }, 500);
       
     if (count === 31){
       localStorage.setItem(key, "1");
