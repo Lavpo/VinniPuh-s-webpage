@@ -8,8 +8,17 @@
 
 /* 1) Main page ----------------------------------*/
 
+html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden;
+}
+
 body {
   margin: 0;
+  padding: 0;
+  width: 100%;
   color: black;
 }
 
@@ -32,6 +41,9 @@ a {
   min-height: 100vh;
   width: 100%;
   overflow-x: hidden;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 /* -----------------------------------------*/
@@ -137,8 +149,11 @@ a {
   "box-4 box-2 box-3"
   "box-5 box-2 box-3";
   
-  margin-inline: auto;
-  max-width: 77.5rem; 
+  margin: 0 auto;
+  width: 100%;
+  max-width: 77.5rem;
+  box-sizing: border-box;
+  padding: 0;
 
   
   
@@ -1426,36 +1441,72 @@ justify-content on the other hand manages a free space of the whole container
     padding: 1em;
     width: 100%;
     background-color: white;
+    border-radius: 0 0 1.563rem 1.563rem;
+    border: solid 1px #741A2E;
   }
-  .navbar #hambtn{
-    border: none;
+  #hambtn{
+    position: relative;
+    border-radius: 0.939rem;
+    border: 0;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    background: transparent;
+    padding: 0;
     margin: 0;
-    background-color: rgb(185, 114, 114);
   }
-  #hambtn img{
-    height: clamp(1rem, 4rem, 6rem);
-    width: clamp(1rem, 4rem, 6rem);
+  #hambtn span{
+    position: absolute;
+    width: 28px;
+    height: 3px;
+    background-color: #741A2E;
+    left: 6px;
+    transition: all 0.2s ease;
   }
+  #hambtn span:nth-child(1){
+    top: 11px;
+  }
+  #hambtn span:nth-child(2){
+    top: 19px;
+  }
+  #hambtn span:nth-child(3){
+    top: 27px;
+  }
+
+  #hambtn.active span:nth-child(1){
+    transform: rotate(45deg);
+    top: 19px;
+  }
+  #hambtn.active span:nth-child(2){
+    opacity: 0;
+  }
+  #hambtn.active span:nth-child(3){
+    transform: rotate(-45deg);
+    top: 19px;
+  }
+
+
 
   /* Menu */
 
   .Menu{
     position: absolute;
     display: flex;
-    z-index: 5;
+    z-index: 1;
     justify-content: center;
     align-self: start;
     border: solid 1px #741A2E;
     width: 100%;
     height: auto;
+    top: 103px;
   }
+
   .Menu.active {
     display:  none;
   }
 
 
   /* centerpage */
-
   .Melia_container{
     display: flex;
     width: 100%;
@@ -1519,8 +1570,9 @@ justify-content on the other hand manages a free space of the whole container
   }
 
   .menuButtons{
-    padding-bottom: 20px;
+    padding-bottom: 1.25rem;
   }
+
 
   /* bulb and gifs */
   .bulbAndGifs{
@@ -1619,15 +1671,6 @@ justify-content on the other hand manages a free space of the whole container
     width: 100%;
     background-color: white;
   }
-  .navbar #hambtn{
-    border: none;
-    margin: 0;
-    background-color: rgb(185, 114, 114);
-  }
-  #hambtn img{
-    height: clamp(1rem, 4rem, 6rem);
-    width: clamp(1rem, 4rem, 6rem);
-  }
 
   /* Menu */
 
@@ -1642,7 +1685,7 @@ justify-content on the other hand manages a free space of the whole container
     height: auto;
   }
   .Menu.active {
-    display:  none;
+    display: none;
   }
 
   /* centerpage */
@@ -1652,25 +1695,25 @@ justify-content on the other hand manages a free space of the whole container
     text-align: center;
   }
   .Melia_container{
-    width: 300px;
+    max-width: 300px
   }
   .Melia-ov1 {
-    width: 50px;
+    max-width: 50px;
   }
   .Melia-ov2 {
-    width: 20px;
+    max-width: 20px;
   }
   .fl1{
-    width: 70px;
+    max-width: 70px;
   } 
   .fl2{
-    width: 125px;
+    max-width: 125px;
   }
   .fl3, .fl4{
-    width: 80px;
+    max-width: 80px;
   }
   .phrase{
-    width: 19rem;
+    max-width: 19rem;
   }
 
 
