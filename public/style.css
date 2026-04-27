@@ -27,6 +27,7 @@ a {
   background-image: url("bg-images/pinkbear.png");
   background-size: 40px 40px;
   background-repeat: repeat; 
+  animation: move 5s linear infinite;
   
   min-height: 100vh;
   width: 100%;
@@ -157,7 +158,7 @@ a {
   justify-items: center;
 
   border-radius: 15px;
-  border: solid, 0.2px, #741A2E;
+  border: solid 0.2px #741A2E;
   
   /* outline-style: solid;
   outline-color: #FDB7C5;
@@ -317,7 +318,6 @@ a {
   justify-content: flex-start;
   height: 16.125rem;
 
-
   border-radius: 11px 11px 0 0;
   border: solid 1px #741A2E;
 }
@@ -429,8 +429,6 @@ li::marker{
 .updatelog .updtop p{
   align-self: end;
   color: rgb(0, 0, 0, 0.60);
-  font-size: 0.813rem;
-  margin: 0 0 0.313rem 0;
 
   font-size: 0.813rem;
   margin: 0 0 0.313rem 0;
@@ -494,7 +492,7 @@ li::marker{
   width: 10rem;
   height: 2.5rem;
   border-radius: 10px;
-  border: solid, 0.2px, #741A2E;
+  border: solid 0.2px #741A2E;
   box-shadow: 0 0.313rem 0.438rem #741a2e4d;
   transition: 0.2s;
 
@@ -551,7 +549,7 @@ justify-content on the other hand manages a free space of the whole container
 
 
 */
-.container-main .centerpage {
+.centerpage {
   display: flex;
   flex-direction: column;
   
@@ -562,21 +560,20 @@ justify-content on the other hand manages a free space of the whole container
   
   /*background: linear-gradient(rgba(255, 243, 243, 0.25) 90%, rgba(231, 158, 158, 0.25)); */
   /* transparency of background could only be achieved in this way sadly */
-  
 }
 
-.container-main .Melia_container{
+.Melia_container{
   position: relative;
+  box-sizing: border-box;
+  justify-self: center;
   
-  width: 100%;
-  max-width: 21.875rem;
-  border-radius: 10px;
+  width: 21.875rem;
   border-radius: 10px;
   outline: solid 1px #741A2E;
   margin-bottom: 0.939rem;
-  object-fit: contain;
   padding: 0.5rem;
   background-color: #FBD7D0;
+  box-shadow: 0 5px 7px #741a2e4d;
 }
 
 .pageTitle {
@@ -595,6 +592,7 @@ justify-content on the other hand manages a free space of the whole container
   font-size: 0.75rem;
   letter-spacing: 15%;
   color: #741A2E;
+  box-shadow: 0 5px 7px #741a2e4d;
 }
 
 .Melia {
@@ -658,8 +656,7 @@ justify-content on the other hand manages a free space of the whole container
   left: 86%;
   bottom: 0%;
   rotate: 90%;
-  transform: scaleX(-1);
-  transform: rotate(15deg);
+  transform: scaleX(-1) rotate(-15deg);
 }
 .fl4{
   width: 6.25rem;
@@ -724,10 +721,10 @@ justify-content on the other hand manages a free space of the whole container
 }
 
 .artoftheday .doodle{
+  box-sizing: border-box;
   width: 7.813rem;
   height: 10rem;
   object-fit: contain;
-  background-image: url("images/gallery-images/2026/shiho.webp");
   padding: 0.188rem 0.188rem 0 0.188rem;
 
   box-shadow: 2px 2px 2px inset #00000040;
@@ -737,8 +734,6 @@ justify-content on the other hand manages a free space of the whole container
 #doodle-link{
   cursor: pointer;
 }
-
-
 
 .bulb-container{
   border-radius: 10px;
@@ -804,7 +799,6 @@ justify-content on the other hand manages a free space of the whole container
   border-radius: 0 0 10px 10px;
   object-fit: contain;
   background-color: white;
-  border-radius: 0 0 10px 10px;
 }
 
 
@@ -866,13 +860,6 @@ justify-content on the other hand manages a free space of the whole container
 .chevron-right:hover, .chevron-left:hover{
   stroke: #DE6D85;
   outline: solid 1px #DE6D85;
-}
-
-.updatelog .log-btn:hover{
-  outline: 1px solid #DE6D85;
-}
-.updatelog .log-btn:active{
-  background-color: #DE6D85;
 }
 
 
@@ -1071,7 +1058,7 @@ justify-content on the other hand manages a free space of the whole container
   max-height: 372px;
   overflow: auto;
   margin: 0 15px 15px 15px;
-  padding: 30px 30px 0px 30px;
+  padding: 1.875rem 1.875rem 0px 1.875rem;
    /*min widht/height will be added later*/
   font-size: 20px;
   background-color: white;
@@ -1141,17 +1128,17 @@ justify-content on the other hand manages a free space of the whole container
 }
 
 .center p {
-  line-height: 60px;
+  line-height: 3;
   color: #5E5E5E;
 }
 
 .center li {
-  line-height: 40px;
+  line-height: 2;
   color: #5E5E5E;
 }
 
 .center h1 {
-  line-height: 40px;
+  line-height: 2;
   color: #5E5E5E;
 }
 .captions {
@@ -1257,6 +1244,7 @@ justify-content on the other hand manages a free space of the whole container
   background-image: url("/bg-images/gallery-bg/darkgreen.png");
   /*background-size: 500px 500px;*/
   
+  text-align: center;
   border-right: 5px solid white;
   
   outline-offset: 5px;
@@ -1405,19 +1393,25 @@ justify-content on the other hand manages a free space of the whole container
   transform: translateY(0rem);
 }
 
-@media screen and (max-width: 800px){
-  .container-main{
-    grid-template-columns: 2fr;
-    grid-template-rows: repeat(300px, 7);
+@media screen and (max-width: 1050px){
+.container-main{
+    box-sizing: border-box;
+    grid-template-columns: 100%;
+    grid-template-rows: repeat(9, auto);
 
     grid-template-areas:
     "box-1"
     "box-2"
     "box-2"
+    "box-2"
+    "box-3"
     "box-3"
     "box-3"
     "box-5"
     "box-4";
+
+    width: 100%;
+    padding: 15px;
 
     gap: 2rem;
   }
@@ -1450,18 +1444,294 @@ justify-content on the other hand manages a free space of the whole container
     display: flex;
     z-index: 5;
     justify-content: center;
-    max-width: 100vh;
+    align-self: start;
+    border: solid 1px #741A2E;
     width: 100%;
+    height: auto;
   }
   .Menu.active {
     display:  none;
   }
 
+
+  /* centerpage */
+
+  .Melia_container{
+    display: flex;
+    width: 100%;
+    height: auto;
+    max-width: 30rem;
+    justify-content: center;
+  }
+
+  .pageTitle{
+    width: 100%;
+    max-width: 20rem;
+    text-align: center;
+  }
+
+  .Melia_container .Melia{
+    width: 100%;
+    height: auto;
+  }
+
+  .Melia-ov1 {
+    width: 75px;
+  }
+  .Melia-ov2 {
+    width: 20px;
+  }
+  .fl1{
+    width: 140px;
+  } 
+  .fl2{
+    width: 100%;
+    max-width: 190px;
+  }
+  .fl3, .fl4{
+    width: 100%;
+    max-width: 100px;
+  }
+  .phrase{
+    width: 100%;
+    max-width: 30rem;
+  }
+
+
+
+  /* rightside */
+  .rightside{
+    width: 100%;
+  }
+
+  .artoftheday{
+    width: 100%; 
+  }
+  .daytoday{
+    height: auto;
+  }
+  .artoftheday .doodle{
+    width: 100%;
+    height: 400px;
+  }
+  .container-log, .log-top, .updatelog .log-message{
+    width: 100%;
+  }
+
+  .menuButtons{
+    padding-bottom: 20px;
+  }
+
+  /* bulb and gifs */
+  .bulbAndGifs{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    object-fit: contain;
+  }
+  .bulb-container{
+    width: 100%;
+    background-color: white;
+  }
+  .gifs-group{
+    display: flex;
+    flex-direction: row;
+    gap: 0.938rem;
+  }
+
+  .gifs-group .gif1, .gifs-group .gif2{
+    width: 100%;
+    transform: translate(0);
+  }
+
+
+  /* Guestbook */
   .guestbook{
     box-sizing: border-box;
     align-self: flex-start;
     justify-self: center;
-    height: 300px;
+  }
+  .guestbook iframe{
+    text-decoration: none;
+    height: 31.25rem;
+    border: solid 1px #741A2E;
+    border-radius: 0.938rem;
+  }
+
+  #gbtn{
+    display: none;
+  }
+
+  .guestbook.iframe{
+    display: block;
+  }
+  .guestbook.link{
+    display: none;
+  }
+
+  .guestbook a{
+    background-color: orange;
+    padding: 1rem;
+  }
+
+  .calendar{
+    display: none;
+  }
+
+}
+
+@media screen and (max-width: 466px){
+
+  .container-main{
+    box-sizing: border-box;
+    grid-template-columns: 100%;
+    grid-template-rows: repeat(9, auto);
+
+    grid-template-areas:
+    "box-1"
+    "box-2"
+    "box-2"
+    "box-2"
+    "box-3"
+    "box-3"
+    "box-3"
+    "box-5"
+    "box-4";
+
+    width: 100%;
+    padding: 15px;
+
+    gap: 2rem;
+  }
+
+  h1{
+    font-size: 20px;
+  }
+
+  /* navigation bar */
+  .navbar{
+    position: relative;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    height: auto;
+    padding: 1em;
+    width: 100%;
+    background-color: white;
+  }
+  .navbar #hambtn{
+    border: none;
+    margin: 0;
+    background-color: rgb(185, 114, 114);
+  }
+  #hambtn img{
+    height: clamp(1rem, 4rem, 6rem);
+    width: clamp(1rem, 4rem, 6rem);
+  }
+
+  /* Menu */
+
+  .Menu{
+    position: absolute;
+    display: flex;
+    z-index: 5;
+    justify-content: center;
+    align-self: start;
+    border: solid 1px #741A2E;
+    width: 100%;
+    height: auto;
+  }
+  .Menu.active {
+    display:  none;
+  }
+
+  /* centerpage */
+
+  .pageTitle{
+    max-width: 12rem;
+    text-align: center;
+  }
+  .Melia_container{
+    width: 300px;
+  }
+  .Melia-ov1 {
+    width: 50px;
+  }
+  .Melia-ov2 {
+    width: 20px;
+  }
+  .fl1{
+    width: 70px;
+  } 
+  .fl2{
+    width: 125px;
+  }
+  .fl3, .fl4{
+    width: 80px;
+  }
+  .phrase{
+    width: 19rem;
+  }
+
+
+  .rightside{
+    width: 100%;
+  }
+
+  /* bulb and gifs */
+  .bulb-container{
+    width: 300px;
+  }
+
+  .gifs-group{
+    display: flex;
+    flex-direction: row;
+    gap: 0.938rem;
+  }
+
+  .gifs-group .gif1, .gifs-group .gif2{
+    width: 100%;
+    height: 7rem;
+    transform: translate(0);
+  }
+
+
+
+  /* art of the day */
+  .artoftheday{
+    width: 175px;
+  }
+  .daytoday{
+    height: auto;
+  }
+  .artoftheday .doodle{
+    width: 100%;
+    height: 100%;
+  }
+
+  .container-log, .log-top, .updatelog .log-message{
+    width: 300px;
+  }
+
+  .menuButtons{
+    padding-bottom: 20px;
+  }
+
+  /* Guestbook */
+  .guestbook{
+    box-sizing: border-box;
+    align-self: flex-start;
+    justify-self: center;
+  }
+  .guestbook iframe{
+    text-decoration: none;
+    height: 31.25rem;
+    border: solid 1px #741A2E;
+    border-radius: 0.938rem;
+  }
+
+  #gbtn{
+    display: none;
   }
 
   .guestbook.iframe{

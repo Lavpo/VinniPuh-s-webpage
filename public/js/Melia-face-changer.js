@@ -53,10 +53,10 @@
   
   document.querySelector("#overlay1").addEventListener("click", () => {
       if (ismousedown) return;
-      let audio = document.getElementById("bubble-pop");
+      // let audio = document.getElementById("bubble-pop");
       
-      audio.volume = 0.2;
-      audio.play();
+      // audio.volume = 0.1;
+      // audio.play();
 
       RevertFunc();
       
@@ -71,7 +71,7 @@
     RevertFunc();
     let audio = document.getElementById("bubble-pop");
 
-    audio.volume = 0.2;
+    audio.volume = 0.1;
     audio.play();
 
     ismousedown = true;
