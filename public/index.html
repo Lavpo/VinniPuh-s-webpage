@@ -23,12 +23,35 @@
   <!--will turn of this spoiler overlay for now, it doesn't really work well as I expected-->
   <body>
     <div class="navbar">
-        <button id="hambtn">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-      </div>
+      <button id="hambtn">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <img class="mobfl" src="images/flowers/pinkflower.png">
+
+      <nav class="item menuButtonsMobile">
+          <a data-target="pages/about.html" href="pages/about.html" class="btn btn1">
+            <span class="edge"></span>
+            <span class="front">about</span>
+          </a>
+          <a data-target="pages/gallery.html" href="pages/gallery.html" class="btn btn2">
+            <span class="edge"></span>
+            <span class="front">gallery</span>
+          </a>
+          <a data-target="pages/links.html" href="pages/links.html" class="btn btn3">
+            <span class="edge"></span>
+            <span class="front">links</span>
+          </a>
+          <a data-target="pages/thoughts.html" href="pages/thoughts.html" class="btn btn4">
+            <span class="edge"></span>
+            <span class="front">thoughts</span>
+          </a>
+          <script src="js/audio/menu-buttons-audio.js"></script>
+      </nav>
+      <img class="mobfl" src="images/flowers/pinkflower.png">
+
+    </div>
     <div class="main-wrapper" id="main">
       <div class="container-main">
         <div class="Menu active" style="grid-area: box-1">

@@ -655,7 +655,7 @@ justify-content on the other hand manages a free space of the whole container
 .fl1{
   width: 6.25rem;
   height: auto;
-  left: 79%;
+  left: 79%; /* 79 % */
   bottom: -2%;
   z-index: 2;
 }
@@ -1426,84 +1426,62 @@ justify-content on the other hand manages a free space of the whole container
     "box-4";
 
     width: 100%;
-    padding: 15px;
+    padding: 0.938rem;
 
     gap: 2rem;
   }
 
   /* navigation bar */
   .navbar{
-    position: relative;
     box-sizing: border-box;
     display: flex;
+    justify-content: center;
     align-items: center;
-    height: auto;
     padding: 1em;
     width: 100%;
-    background-color: white;
+    height: auto;
     border-radius: 0 0 1.563rem 1.563rem;
+    background-color: #FFFAF7;
     border: solid 1px #741A2E;
+    gap: 2.5rem;
+  }
+  .mobfl{
+    width: 3.125rem;
+    height: 3.125rem;
+  }
+
+  .menuButtonsMobile{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    max-width: 31.25rem;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .btn .front{
+    border-radius: 6px;
+    max-width: 6rem;
+    height: 1.8rem;
+  }
+  .btn .edge{
+    max-width: 6rem;
+  }
+
+  /* general button settings */
+  .btn:hover .front{
+    max-width: 6rem;
+  }
+
+  .btn:hover .edge{
+    max-width: 6rem;
+  }
+  .Menu{
+    display: none;
   }
   #hambtn{
-    position: relative;
-    border-radius: 0.939rem;
-    border: 0;
-    width: 40px;
-    height: 40px;
-    cursor: pointer;
-    background: transparent;
-    padding: 0;
-    margin: 0;
-  }
-  #hambtn span{
-    position: absolute;
-    width: 28px;
-    height: 3px;
-    background-color: #741A2E;
-    left: 6px;
-    transition: all 0.2s ease;
-  }
-  #hambtn span:nth-child(1){
-    top: 11px;
-  }
-  #hambtn span:nth-child(2){
-    top: 19px;
-  }
-  #hambtn span:nth-child(3){
-    top: 27px;
+    display: none;
   }
 
-  #hambtn.active span:nth-child(1){
-    transform: rotate(45deg);
-    top: 19px;
-  }
-  #hambtn.active span:nth-child(2){
-    opacity: 0;
-  }
-  #hambtn.active span:nth-child(3){
-    transform: rotate(-45deg);
-    top: 19px;
-  }
-
-
-
-  /* Menu */
-
-  .Menu{
-    position: absolute;
-    display: flex;
-    z-index: 1;
-    justify-content: center;
-    align-self: start;
-    border: solid 1px #741A2E;
-    width: 100%;
-    height: auto;
-    top: 103px;
-  }
-
-  .Menu.active {
-    display:  none;
-  }
 
 
   /* centerpage */
@@ -1569,11 +1547,6 @@ justify-content on the other hand manages a free space of the whole container
     width: 100%;
   }
 
-  .menuButtons{
-    padding-bottom: 1.25rem;
-  }
-
-
   /* bulb and gifs */
   .bulbAndGifs{
     display: flex;
@@ -1598,14 +1571,19 @@ justify-content on the other hand manages a free space of the whole container
 
 
   /* Guestbook */
+  .container-guestbook{
+    width: 100%;
+  }
   .guestbook{
     box-sizing: border-box;
     align-self: flex-start;
     justify-self: center;
+    width: 100%;
   }
   .guestbook iframe{
     text-decoration: none;
-    height: 31.25rem;
+    height: 31.25rem; 
+    width: 100%;
     border: solid 1px #741A2E;
     border-radius: 0.938rem;
   }
@@ -1632,30 +1610,7 @@ justify-content on the other hand manages a free space of the whole container
 
 }
 
-@media screen and (max-width: 466px){
-
-  .container-main{
-    box-sizing: border-box;
-    grid-template-columns: 100%;
-    grid-template-rows: repeat(9, auto);
-
-    grid-template-areas:
-    "box-1"
-    "box-2"
-    "box-2"
-    "box-2"
-    "box-3"
-    "box-3"
-    "box-3"
-    "box-5"
-    "box-4";
-
-    width: 100%;
-    padding: 15px;
-
-    gap: 2rem;
-  }
-
+@media screen and (max-width: 655px){
   h1{
     font-size: 20px;
   }
@@ -1663,29 +1618,137 @@ justify-content on the other hand manages a free space of the whole container
   /* navigation bar */
   .navbar{
     position: relative;
-    box-sizing: border-box;
-    display: flex;
-    align-items: center;
-    height: auto;
+    display: block;
     padding: 1em;
     width: 100%;
+    height: auto;
+    border-radius: 0 0 1.563rem 1.563rem;
     background-color: white;
+    border: solid 1px #741A2E;
   }
+  #hambtn{
+    display: block;
+    position: relative;
+    border-radius: 0.939rem;
+    border: 0;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    background: transparent;
+    padding: 0;
+    margin: 0;
+  }
+  #hambtn span{
+    position: absolute;
+    width: 28px;
+    height: 3px;
+    background-color: #741A2E;
+    left: 6px;
+    transition: all 0.2s ease;
+  }
+  #hambtn span:nth-child(1){
+    top: 11px;
+  }
+  #hambtn span:nth-child(2){
+    top: 19px;
+  }
+  #hambtn span:nth-child(3){
+    top: 27px;
+  }
+
+  #hambtn.active span:nth-child(1){
+    transform: rotate(45deg);
+    top: 19px;
+  }
+  #hambtn.active span:nth-child(2){
+    opacity: 0;
+  }
+  #hambtn.active span:nth-child(3){
+    transform: rotate(-45deg);
+    top: 19px;
+  }
+
+
 
   /* Menu */
 
   .Menu{
     position: absolute;
     display: flex;
-    z-index: 5;
+    z-index: 10;
     justify-content: center;
     align-self: start;
     border: solid 1px #741A2E;
     width: 100%;
     height: auto;
+    top: 77px;
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+
+    transition:
+    opacity 0.35s ease,
+    transform 0.35s ease,
+    visibility 0.35s ease;
   }
-  .Menu.active {
+  .menuButtonsMobile{
     display: none;
+  }
+
+  .menuButtons{
+    width: 100%;
+    align-items: center;
+    padding-inline: 1.25rem;
+  }
+
+  .menuTitle{
+    width: 100%;
+    max-width: 13rem;
+  }
+
+  .btn{
+    width: 100%;
+  }
+
+  .btn .front{
+    border-radius: 6px;
+    width: 100%;
+    max-width: 15rem;
+    height: 1.8rem;
+  }
+  .btn .edge{
+    width: 100%;
+    max-width: 15rem;
+  }
+
+  .btn:hover .front{
+    border-radius: 6px;
+    width: 100%;
+    max-width: 15rem;
+    height: 1.8rem;
+  }
+  .btn:hover .edge{
+    width: 100%;
+    max-width: 15rem;
+  }
+
+  .mobfl{
+    display: none;
+  }
+
+  .Melia_container{
+    min-width: 12.5rem;
+  }
+
+  .Menu.active {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+
+    transition:
+    opacity 0.35s ease,
+    transform 0.35s ease,
+    visibility 0.35s ease;
   }
 
   /* centerpage */
@@ -1704,13 +1767,16 @@ justify-content on the other hand manages a free space of the whole container
     max-width: 20px;
   }
   .fl1{
-    max-width: 70px;
+    max-width: 50px;
+    left: 87%;
   } 
   .fl2{
-    max-width: 125px;
+    max-width: 85px;
+    left: 0%;
+    top: 0%;
   }
   .fl3, .fl4{
-    max-width: 80px;
+    max-width: 60px;
   }
   .phrase{
     max-width: 19rem;
@@ -1723,18 +1789,24 @@ justify-content on the other hand manages a free space of the whole container
 
   /* bulb and gifs */
   .bulb-container{
-    width: 300px;
+    width: 100%;
+    max-width: 18.75rem;
   }
 
   .gifs-group{
     display: flex;
     flex-direction: row;
     gap: 0.938rem;
+    width: 100%;
+    max-width: 18.75rem;
+    background-color: white;
   }
 
   .gifs-group .gif1, .gifs-group .gif2{
     width: 100%;
     height: 7rem;
+    object-fit: contain;
+    
     transform: translate(0);
   }
 
@@ -1753,7 +1825,9 @@ justify-content on the other hand manages a free space of the whole container
   }
 
   .container-log, .log-top, .updatelog .log-message{
-    width: 300px;
+    max-width: 18.75rem;
+    min-width: 12.5rem;
+    width: 100%;
   }
 
   .menuButtons{
@@ -1768,18 +1842,27 @@ justify-content on the other hand manages a free space of the whole container
   }
   .guestbook iframe{
     text-decoration: none;
+    width: 100%;
+    min-width: 12.5rem;
     height: 31.25rem;
+    max-width: 50rem;
     border: solid 1px #741A2E;
     border-radius: 0.938rem;
+  }
+
+  .guestbook.iframe{
+    display: block;
+  }
+
+  .Chloe{
+    width: 100%;
+    max-width: 7.813rem;
   }
 
   #gbtn{
     display: none;
   }
 
-  .guestbook.iframe{
-    display: block;
-  }
   .guestbook.link{
     display: none;
   }
