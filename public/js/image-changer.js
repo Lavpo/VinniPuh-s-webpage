@@ -5,8 +5,8 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!img) return;
     const images = [
         "/images/gallery-images/2026/shiho.webp",
-        "/images/gallery-images/2026/sanae.webp",
-        "/images/gallery-images/2026/sakuya1.webp"
+        "/images/gallery-images/2026/shiho.webp",
+        "/images/gallery-images/2026/shiho.webp"
     ];
 
     const today = new Date().toDateString();

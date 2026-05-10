@@ -19,7 +19,7 @@ body {
   margin: 0;
   padding: 0;
   width: 100%;
-  color: black;
+  color: #37000C;
 }
 
 ::selection{
@@ -33,7 +33,10 @@ a {
 .main-wrapper{
   font-family: "Kosugi Maru";
   
-  background-image: url("bg-images/pinkbear.png");
+  background-image: 
+    linear-gradient(rgba(255,255,255,0.5), rgba(255,255,255,0.5)),
+    url("bg-images/pinkbear.png");
+
   background-size: 40px 40px;
   background-repeat: repeat; 
   animation: move 5s linear infinite;
@@ -172,8 +175,8 @@ a {
   height: 13.7rem;
   justify-items: center;
 
-  border-radius: 15px;
-  border: solid 0.2px #741A2E;
+  border-radius: 10px;
+  border: 1px solid #741A2E;
   
   /* outline-style: solid;
   outline-color: #FDB7C5;
@@ -182,7 +185,7 @@ a {
   /*background: linear-gradient(#fff5f1 80%, #FCAEB9);*/
   background: linear-gradient(white, #FFFAF7);
   background-image: url("images/flowers/pinkflower2.png");
-  box-shadow: 0 5px 7px #741a2e4d;
+  box-shadow: 0 5px 7px #de6d8580;
 }
 .navbar{
   display: none;
@@ -277,7 +280,7 @@ a {
   --front-hover-bg: #FF6363;
   --edge-hover-bg: #D44C4C;
 
-  --text-hover-color: black;
+  --text-hover-color: #37000C;
 }
 .btn2 {
   --front-bg: #FFD876;
@@ -333,8 +336,8 @@ a {
   justify-content: flex-start;
   height: 16.125rem;
 
-  border-radius: 11px 11px 0 0;
-  border: solid 1px #741A2E;
+  border-radius: 10px 10px 0 0;
+  border: solid 1px #790C25;
 }
 
 .log {
@@ -367,14 +370,14 @@ a {
 .updatelog .log-btn{
   width: 1.25rem;
   height: 1.25rem;
-  background-color: #FFF5EE;
+  background-color: #FFFAF9;
   text-align: center;
 
   padding: 0;
 
   border-radius: 20%;
   border: none;
-  box-shadow: 0 1px 1px rgb(0, 0, 0, 0.25);
+  box-shadow: 0 1px 1px #de6d8580;
 }
 
 .updatelog .log-btn:hover{
@@ -386,18 +389,18 @@ a {
 
 
 .log-top{
-  background-color: #FBD7D0;
+  background-color: #FFDAD3;
   border-radius: 10px 10px 0 0;
   width: 13rem;
   
-  box-shadow: 0 5px 7px #741a2e4d;
+  box-shadow: 0 5px 7px #de6d8580;
 }
 
 .updatelog .log-message{
   box-sizing: border-box;
   position: absolute;
   width: 13rem;
-  background-color: #FFFAF7;
+  background-color: #FFFAF9;
   z-index: 1;
   height: 14rem;
   left: 0;
@@ -412,7 +415,7 @@ a {
   scrollbar-width: thin; 
   scrollbar-color: #DE6D85 #f1f1f1;  
 
-  box-shadow: 0 5px 7px #741a2e4d;
+  box-shadow: 0 5px 7px #de6d8580;
 }
 .updatelog .upd{
   margin: 0 0 0.626rem 0;
@@ -462,7 +465,7 @@ li::marker{
   font-family: 'mononoki-bold';
 }
 .updatelog .log-message hr{
-  border-top: 1px solid #741a2e80;
+  border-top: 1px solid #de6d8580;
 }
 
 
@@ -508,7 +511,7 @@ li::marker{
   height: 2.5rem;
   border-radius: 10px;
   border: solid 0.2px #741A2E;
-  box-shadow: 0 0.313rem 0.438rem #741a2e4d;
+  box-shadow: 0 0.313rem 0.438rem #de6d8580;
   transition: 0.2s;
 
   font-family: 'Comfortaa';
@@ -582,32 +585,31 @@ justify-content on the other hand manages a free space of the whole container
   box-sizing: border-box;
   justify-self: center;
   
-  width: 21.875rem;
+  width: 25rem;
   border-radius: 10px;
   outline: solid 1px #741A2E;
   margin-bottom: 0.939rem;
   padding: 0.5rem;
-  background-color: #FBD7D0;
-  box-shadow: 0 5px 7px #741a2e4d;
+  background-color: #FFDAD3;
+  box-shadow: 0 5px 7px #de6d8580;
 }
 
 .pageTitle {
   font-family: 'Lobster';
-  background: linear-gradient(#FFFAF7, #FBD7D0);  
+  background: #FFDAD3;
   border-radius: 40px;
-  padding: 0.25rem 1.5rem 0.25rem 1.5rem;
+  padding: 0.5rem 2.5rem 0.5rem 2.5rem;
   
   -webkit-text-stroke: white;
   
-  border-style: dotted;
-  border-color: #C85F5F;
+  border: 1px solid #C85F5F;
 
   margin-bottom: 0.938rem;
  
   font-size: 0.75rem;
   letter-spacing: 15%;
   color: #741A2E;
-  box-shadow: 0 5px 7px #741a2e4d;
+  box-shadow: 0 5px 7px #de6d8580;
 }
 
 .Melia {
@@ -725,10 +727,10 @@ justify-content on the other hand manages a free space of the whole container
 .daytoday {
   display: flex;
   flex-direction: column;
-  background-color: #FBD7D0;
+  background-color: #FFDAD3;
   border: solid 1px #741A2E;
   padding: 0.313rem;
-  box-shadow: 0 0.313rem 0.438rem #741a2e4d;
+  box-shadow: 0 0.313rem 0.438rem #de6d8580;
 }
 
 .artoftheday .label h3{
@@ -742,7 +744,7 @@ justify-content on the other hand manages a free space of the whole container
   object-fit: contain;
   padding: 0.188rem 0.188rem 0 0.188rem;
 
-  box-shadow: 2px 2px 2px inset #00000040;
+  box-shadow: 2px 2px 2px inset #de6d8580;
   z-index: 2;
 }
 
@@ -755,13 +757,13 @@ justify-content on the other hand manages a free space of the whole container
   border: solid 1px #741A2E;  
   padding: 0;
   margin: 0;
-  box-shadow: 0 0.313rem 0.438rem #741a2e4d;
+  box-shadow: 0 0.313rem 0.438rem #de6d8580;
 }
 
 .bulb-top{
   display: flex;
   justify-content: center;
-  background-color: #FBD7D0;
+  background-color: #FFDAD3;
   border-radius: 10px 10px 0 0;
   border-bottom: solid 1px #741A2E;
 }
@@ -837,7 +839,7 @@ justify-content on the other hand manages a free space of the whole container
   
   border-radius: 0.626rem;
   border: solid 1px #741A2E;
-  box-shadow: 0 5px 7px #741a2e4d;
+  box-shadow: 0 5px 7px #de6d8580;
 }
 
 .calendar_header{
@@ -846,7 +848,7 @@ justify-content on the other hand manages a free space of the whole container
   display: flex;
   justify-content: space-between;
   padding: 0.438rem 0.636rem 0.438rem 0.939rem;
-  background-color: #FBD7D0;
+  background-color: #FFDAD3;
   border-bottom: solid 1px #741A2E;
 }
 .calendar_navigation {
@@ -856,20 +858,20 @@ justify-content on the other hand manages a free space of the whole container
 
 
 .chevron-right{
-  stroke: black;
+  stroke: #37000C;
   background-color: #FFF5EE;
   border-radius: 0.313rem;
   cursor: pointer;
   user-select: none;
-  box-shadow: 0 1px 1px rgb(0, 0, 0, 0.25);
+  box-shadow: 0 1px 1px #de6d8580;
 }
 .chevron-left{
-  stroke: black;
+  stroke: #37000C;
   background-color: #FFF5EE;
   border-radius: 0.313rem;
   cursor: pointer;
   user-select: none;
-  box-shadow: 0 1px 1px rgb(0, 0, 0, 0.25);
+  box-shadow: 0 1px 1px #de6d8580;
   transform: scaleX(-1);
 }
 .chevron-right:hover, .chevron-left:hover{
@@ -882,7 +884,7 @@ justify-content on the other hand manages a free space of the whole container
   margin: 0;
   font-size: 0.875rem;
   align-self: center;
-  color: black;
+  color: #37000C;
 }
 .calendar_body {
   font-family: 'ZenMaruGothic-Regular';
@@ -931,7 +933,7 @@ justify-content on the other hand manages a free space of the whole container
 }
 
 .calendar_weekdays{
-  background-color: #FBD7D0;
+  background-color: #FFDAD3;
   border-radius: 0.626rem;
 }
 
@@ -945,7 +947,7 @@ justify-content on the other hand manages a free space of the whole container
 .calendar_dates .highlight{
   background-color: #DE6D85;
   color: white;
-  box-shadow: 0 1px 2px rgb(0, 0, 0, 0.25);
+  box-shadow: 0 1px 2px #de6d8580;
 }
 
 .calendar_dates .inactive{
@@ -963,7 +965,7 @@ justify-content on the other hand manages a free space of the whole container
 
 .calendar_dates li:not(.active):not(.highlight):hover {
   background-color: #fecfd9;
-  color: black;
+  color: #37000C;
 }
 
 
@@ -1212,7 +1214,7 @@ justify-content on the other hand manages a free space of the whole container
   font-size: 20px;
   
   box-shadow: 
-  inset -3px -3px 3px #5c242499,
+  inset -3px -3px 3px #de6d8580,
   inset 2px 2px 3px white;
   justify-content: center;
   align-items: center;
@@ -1224,7 +1226,7 @@ justify-content on the other hand manages a free space of the whole container
 }
 .captions .close:active{
   background-color: #DA6F6F;
-  box-shadow: inset 3px 3px 3px #5c242499;
+  box-shadow: inset 3px 3px 3px #de6d8580;
 }
 .captions .close:active span{
   transform: translate(5%, 5%);
@@ -1779,7 +1781,7 @@ justify-content on the other hand manages a free space of the whole container
     max-width: 60px;
   }
   .phrase{
-    max-width: 19rem;
+    display: none;
   }
 
 
@@ -1788,26 +1790,37 @@ justify-content on the other hand manages a free space of the whole container
   }
 
   /* bulb and gifs */
-  .bulb-container{
+  .item.bulb-container{
     width: 100%;
+    height: auto;
     max-width: 18.75rem;
+    min-width: 12.5rem;
   }
 
-  .gifs-group{
-    display: flex;
-    flex-direction: row;
-    gap: 0.938rem;
-    width: 100%;
+  .bulbAndGifs .bulb{
+    width: 70%;
     max-width: 18.75rem;
-    background-color: white;
+    min-width: 12.5rem;
+    height: auto;
   }
 
   .gifs-group .gif1, .gifs-group .gif2{
     width: 100%;
-    height: 7rem;
     object-fit: contain;
-    
+    height: 6rem;
+    background-color: white;
     transform: translate(0);
+  }
+
+
+  .item.gifs-group{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.938rem;
+    width: 100%;
+    max-width: 18.75rem;
+    height: auto;
   }
 
 
@@ -1828,6 +1841,10 @@ justify-content on the other hand manages a free space of the whole container
     max-width: 18.75rem;
     min-width: 12.5rem;
     width: 100%;
+    height: 20rem;
+  }
+  #updatelog.updatelog{
+    height: 22.1rem;
   }
 
   .menuButtons{
