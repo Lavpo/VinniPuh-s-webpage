@@ -337,8 +337,8 @@ a {
   height: 16.125rem;
 
   border-radius: 10px 10px 0 0;
-  border: solid 1px #790C25;
 }
+
 
 .log {
   font-family: 'Comfortaa';
@@ -360,6 +360,10 @@ a {
 }
 .log #chevron-up-down:active{
   stroke: white;
+}
+
+.log-btn.opened #chevron-up-down{
+  transform: rotate(180deg);
 }
 
 
@@ -394,9 +398,15 @@ a {
   width: 13rem;
   
   box-shadow: 0 5px 7px #de6d8580;
+  transition: 450ms ease-out;
+  border-radius: 10px;
+  border: solid 1px #741A2E;
+}
+.log-top.opened{
+  border-radius: 10px 10px 0 0;
 }
 
-.updatelog .log-message{
+.log-message{
   box-sizing: border-box;
   position: absolute;
   width: 13rem;
@@ -407,16 +417,32 @@ a {
   overflow-y: scroll;
   overflow-x: hidden;
 
-  transition: 450ms ease-out;
+  width: 100%;
 
-  border-top: solid 1px #741A2E;
-  padding: 1.25rem 0.939rem 0 0.626rem;
+  transition: 450ms ease-out;
 
   scrollbar-width: thin; 
   scrollbar-color: #DE6D85 #f1f1f1;  
 
   box-shadow: 0 5px 7px #de6d8580;
+
+  height: 0;
+  padding: 0;
+  border: solid 1px #741A2E;
+  
+  visibility: hidden;
 }
+
+.log-message.opened{
+  height: 100%;
+  padding: 1.25rem 0.939rem 0 0.626rem;
+  border-radius: 0 0 10px 10px;
+  border: solid 1px #741A2E;
+  visibility: visible;
+}
+
+
+
 .updatelog .upd{
   margin: 0 0 0.626rem 0;
   color: #741A2E;
@@ -440,7 +466,6 @@ li::marker{
   margin-right: 0.3rem;
   vertical-align: middle;
   background: url("images/icons/chevrons/chevron-down-svgrepo-com.svg") center / contain no-repeat;
-  
 }
 
 
@@ -637,7 +662,7 @@ justify-content on the other hand manages a free space of the whole container
   height: 20px;
   
   right: 50.4%;
-  top: 46.5%;
+  top: 45%;
   
   border-radius: 50%;
   
@@ -1508,7 +1533,9 @@ justify-content on the other hand manages a free space of the whole container
   }
 
   .Melia-ov1 {
-    width: 75px;
+    width: 100px;
+    height: 100px;
+    right: 42%;
   }
   .Melia-ov2 {
     width: 20px;
@@ -1769,10 +1796,14 @@ justify-content on the other hand manages a free space of the whole container
     max-width: 300px
   }
   .Melia-ov1 {
-    max-width: 50px;
+    max-width: 100px; 
+    right: 40%;
   }
+  
+  
   .Melia-ov2 {
     max-width: 20px;
+    right: 50%;
   }
   .fl1{
     max-width: 50px;
