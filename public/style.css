@@ -371,7 +371,7 @@ a {
   margin: 0;
 }
 
-.updatelog .log-btn{
+.log-btn{
   width: 1.25rem;
   height: 1.25rem;
   background-color: #FFFAF9;
@@ -382,6 +382,7 @@ a {
   border-radius: 20%;
   border: none;
   box-shadow: 0 1px 1px #de6d8580;
+  cursor: pointer;
 }
 
 .updatelog .log-btn:hover{
@@ -440,8 +441,6 @@ a {
   border: solid 1px #741A2E;
   visibility: visible;
 }
-
-
 
 .updatelog .upd{
   margin: 0 0 0.626rem 0;
@@ -570,7 +569,7 @@ li::marker{
   border: solid 0.2px #741A2E;
 }
 
-.guestbook.iframe{
+.guestbook-frame.iframe{
   display: none;
 }
 
@@ -646,15 +645,19 @@ justify-content on the other hand manages a free space of the whole container
 }
 
 .Melia-ov1 {
-  width: 80px; 
+  width: 160px; 
   height: 80px;
   
-  right: 44.5%;
-  top: 15%;
+  right: 31%;
+  top: 13%;
   
   border-radius: 50%;
   
   position: absolute;
+  cursor: grab;
+}
+.Melia-ov1:active{
+  cursor: grabbing;
 }
 
 .Melia-ov2 {
@@ -667,11 +670,8 @@ justify-content on the other hand manages a free space of the whole container
   border-radius: 50%;
   
   position: absolute;
-}
-.ov:hover{
   cursor: pointer;
 }
-
 
 /* configuring items with absolute position */
 .attach{
@@ -890,6 +890,7 @@ justify-content on the other hand manages a free space of the whole container
   user-select: none;
   box-shadow: 0 1px 1px #de6d8580;
 }
+
 .chevron-left{
   stroke: #37000C;
   background-color: #FFFAF9;
@@ -902,6 +903,10 @@ justify-content on the other hand manages a free space of the whole container
 .chevron-right:hover, .chevron-left:hover{
   stroke: #DE6D85;
   outline: solid 1px #DE6D85;
+}
+.chevron-right:active, .chevron-left:active{
+  background-color: #DE6D85;
+  stroke: white;
 }
 
 
@@ -1626,10 +1631,10 @@ justify-content on the other hand manages a free space of the whole container
     display: none;
   }
 
-  .guestbook.iframe{
+  .guestbook-frame.iframe{
     display: block;
   }
-  .guestbook.link{
+  .guestbook-frame.link{
     display: none;
   }
 
@@ -1873,10 +1878,17 @@ justify-content on the other hand manages a free space of the whole container
     width: 100%;
     height: 100%;
   }
+  .container-log{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 
   /*Update log */
   .updatelog, .log-top{
     box-sizing: border-box;
+    width: 100%;;
+    max-width: 18.75rem;
   }
   .menuButtons{
     padding-bottom: 20px;
@@ -1884,22 +1896,21 @@ justify-content on the other hand manages a free space of the whole container
 
   /* Guestbook */
   .guestbook{
-    box-sizing: border-box;
-    align-self: flex-start;
-    justify-self: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;
   }
+
   .guestbook iframe{
+    display: block;
     text-decoration: none;
     width: 100%;
     min-width: 12.5rem;
     height: 31.25rem;
-    max-width: 50rem;
+    max-width: 18.75rem;
     border: solid 1px #741A2E;
     border-radius: 0.938rem;
-  }
-
-  .guestbook.iframe{
-    display: block;
   }
 
   .Chloe{
