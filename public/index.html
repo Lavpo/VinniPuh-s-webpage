@@ -19,6 +19,24 @@
     
     <!--<script defer src="/js/overlayListener.js"></script>-->
     
+
+    <!-- preloading some audios so the first click on any of the buttons with sounds to have a delay -->
+     <audio id="pop">
+      <source src="audio/pop.mp3" type="audio/mp3">
+    </audio>
+    <audio id="button-click">
+      <source src="audio/button-click.mp3" type="audio/mp3">
+    </audio>
+    <audio id="guestbook-sound">
+      <source src="audio/plump.mp3" type="audio/mp3">
+    </audio>
+    <audio id="bubble-pop">
+      <source src="audio/bubble-pop.mp3" type="audio/mp3">
+    </audio>
+      <audio id="retro-hurt">
+      <source src="audio/retro-hurt.mp3" type="audio/mp3">
+    </audio>
+
 </head>
   <!--will turn of this spoiler overlay for now, it doesn't really work well as I expected-->
   <body>
@@ -56,9 +74,6 @@
       <div class="container-main">
         <div class="Menu active" style="grid-area: box-1">
 
-          <audio id="button-click">
-            <source src="audio/button-click.mp3" type="audio/mp3">
-          </audio>
           <!-- menu buttons -->
           <nav class="item menuButtons">
             <h2 class="menuTitle">MENU</h2>
@@ -91,10 +106,6 @@
             <img src="gifs/lie.gif">
 
             <iframe class="guestbook-frame iframe" src="https://vinnipuh.atabook.org">Guestbook link</iframe>
-
-            <audio id="guestbook-sound">
-              <source src="audio/plump.mp3" type="audio/mp3">
-            </audio>
             <script src="js/audio/guestbook-sound.js"></script>
         </div>
 
@@ -177,12 +188,6 @@
 
             </div>
             <img class="phrase" src="images/other/paper2.webp"> 
-            <audio id="bubble-pop">
-              <source src="audio/bubble-pop.mp3" type="audio/mp3">
-            </audio>
-            <audio id="retro-hurt">
-              <source src="audio/retro-hurt.mp3" type="audio/mp3">
-            </audio>
         </main>
         
         
@@ -244,11 +249,7 @@
         </div>
       </div>
       <script src="js/HamburgerClicker.js"></script>
-
-      <audio id="pop">
-        <source src="audio/pop.mp3" type="audio/mp3">
-      </audio>
-      <script src="js/audio/other.js"></script>
     </div>
+    <script src="js/audio/other.js"></script>
   </body>
 </html>

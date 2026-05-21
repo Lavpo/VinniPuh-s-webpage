@@ -1,8 +1,6 @@
 (function () {
   var key = "sadforever";
   
-  
-  
   var img = document.getElementById("idMelia");
   if (!img) return;
 
@@ -18,7 +16,7 @@
   //surprised expression
   var sur = "/images/Melia/Melia-surprised.webp";
   
-  // for happy face expression
+  // for happy face expressions
   var smile = "/images/Melia/Melia-smile.webp";
   var happy = "/images/Melia/Melia-happy.webp";
   var veryhappy = "/images/Melia/Melia-very-happy.webp";
@@ -26,7 +24,7 @@
   // for >_< face expression
   var squint = "/images/Melia/Melia-squint.webp";
   
-  // for sad face expression
+  // for sad face expressions
   var sad = "/images/Melia/Melia-sad.webp";
   var verysad ="/images/Melia/Melia-very-sad.webp";
   var veryverysad ="/images/Melia/Melia-very-very-sad.webp";
@@ -81,10 +79,11 @@
       img.src = veryhappy;
       
       revertTimer = setTimeout(() => {
-        if (count > 0 && count <= 10){
-          img.src = srcsaver;
+        if (count >= 0 && count < 10){
+          img.src = smile;
         }
-        else if (count > 10){
+        if (count > 10){
+          srcsaver = happy;
           img.src = happy;
         }
         isclicked = false;
@@ -144,14 +143,16 @@
     
     revertTimer = setTimeout(() => {
       
-      if (count > 0 && count < 10){
-        img.src = srcsaver;
+      if (count >= 0 && count < 10){
+        img.src = smile;
       }
-      else if (count >= 10 && count < 20){
+      if (count >= 10 && count < 20){
         img.src = sad;
+        srcsaver = sad;
         issad = true;
       }
       else if (count >= 20 && count < 30){
+        srcsaver = verysad;
         img.src = verysad;
       }
       isclicked = false;
@@ -173,13 +174,17 @@
 
   document.querySelectorAll("#overlay1, #overlay2, .Melia").forEach(e =>{
     e.addEventListener("mouseenter", () => {
-      if (!issad && localStorage.getItem(key) === null){
+      const abssmile = new URL(smile, document.baseURI).href;
+      if (!issad && localStorage.getItem(key) === null && img?.getAttribute("src") === abssmile){
+        console.log("attribute: " + img?.getAttribute("src"));
+        console.log("abssrc: " + abssmile);
+        console.log("\n");
         img.src = sur;
       }
     })
     e.addEventListener("mouseleave", () => {
       if (!issad && localStorage.getItem(key) === null){
-        img.src = smile;
+        img.src = srcsaver;
       }
     })
   })

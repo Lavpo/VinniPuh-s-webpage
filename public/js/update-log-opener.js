@@ -1,8 +1,6 @@
 document.querySelector(".log-btn")?.addEventListener("click", LogOpener);
 
 function LogOpener (){
-
-    console.log("pls see shit");
     // rewritten the whole script in that way, so the css will handle all the style
     // let lt = document.getElementById("log-top");
     let lb = document.querySelector(".log-message");
