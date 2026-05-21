@@ -1,9 +1,15 @@
+<!DOCTYPE html>
 <html>
 <head>
   <title>Popup</title>
 </head>
 <body>
-  <img id="popup-img" style="max-width:100%;">
+  <img id="popup-img" style="max-width:100%;" alt="name">
+  <style>
+    body{
+      background-color: lightpink;
+    }
+  </style>
 
   <script>
     const params = new URLSearchParams(window.location.search);
@@ -12,6 +18,7 @@
 
     if (imgSrc && img) {
       img.setAttribute("src", imgSrc);
+      document.getElementById('popupImage').src = imgUrl;
     }
   </script>
 </body>

@@ -410,7 +410,6 @@ a {
 .log-message{
   box-sizing: border-box;
   position: absolute;
-  width: 13rem;
   background-color: #FFFAF9;
   z-index: 1;
   max-height: 14rem;
@@ -599,9 +598,6 @@ justify-content on the other hand manages a free space of the whole container
   align-items: center;
   
   width: 100%;
-  
-  /*background: linear-gradient(rgba(255, 243, 243, 0.25) 90%, rgba(231, 158, 158, 0.25)); */
-  /* transparency of background could only be achieved in this way sadly */
 }
 
 .Melia_container{
@@ -1582,6 +1578,13 @@ justify-content on the other hand manages a free space of the whole container
     width: 100%;
   }
 
+  .log-message{
+    height: 32rem;
+  }
+
+
+
+
   .updatelog, .log-top{
     box-sizing: border-box;
   }
@@ -1608,21 +1611,30 @@ justify-content on the other hand manages a free space of the whole container
     transform: translate(0);
   }
 
+  .container-guestbook{
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;
+    width: 100%;
+  }
 
   /* Guestbook */
-  .container-guestbook{
+  .guestbook-frame{
+    display: flex;
     width: 100%;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;
   }
-  .guestbook{
-    box-sizing: border-box;
-    align-self: flex-start;
-    justify-self: center;
-    width: 100%;
-  }
-  .guestbook iframe{
+
+  .guestbook-frame.iframe{
+    display: block;  
+    margin: 0 auto;
     text-decoration: none;
-    height: 31.25rem; 
     width: 100%;
+    min-width: 12.5rem;
+    height: 31.25rem;
     border: solid 1px #741A2E;
     border-radius: 0.938rem;
   }
@@ -1707,10 +1719,13 @@ justify-content on the other hand manages a free space of the whole container
     top: 19px;
   }
 
+  .main-wrapper{
+    scrollbar-width: thin; 
+    scrollbar-color: #DE6D85 #f1f1f1;  
+  }
 
 
   /* Menu */
-
   .Menu{
     box-sizing: border-box;
     position: absolute;
@@ -1776,10 +1791,6 @@ justify-content on the other hand manages a free space of the whole container
     display: none;
   }
 
-  .Melia_container{
-    min-width: 12.5rem;
-  }
-
   .Menu.active {
     opacity: 0;
     visibility: hidden;
@@ -1793,12 +1804,21 @@ justify-content on the other hand manages a free space of the whole container
 
   /* centerpage */
 
+  .pageTitle h1{
+    font-size: clamp(1rem, 10vw, 1.25rem);
+    text-align: center;
+  }
+
   .pageTitle{
-    max-width: 12rem;
+    box-sizing: border-box;
+    min-width: 3rem;
+    width: 100%;
+    max-width: 18rem;
     text-align: center;
   }
   .Melia_container{
-    max-width: 300px
+    max-width: 18.75rem;
+    min-width: 12.5rem;
   }
   .Melia-ov1 {
     max-width: 100px; 
@@ -1866,7 +1886,6 @@ justify-content on the other hand manages a free space of the whole container
   }
 
 
-
   /* art of the day */
   .artoftheday{
     width: 10.938rem;
@@ -1885,29 +1904,40 @@ justify-content on the other hand manages a free space of the whole container
   }
 
   /*Update log */
+
+  .updatelog{
+    height: 27rem;
+  }
+
   .updatelog, .log-top{
     box-sizing: border-box;
     width: 100%;;
     max-width: 18.75rem;
+  }
+  .log-message{
+    height: 100%;
+    max-height: 62rem;
   }
   .menuButtons{
     padding-bottom: 20px;
   }
 
   /* Guestbook */
-  .guestbook{
+
+  .container-guestbook .front{
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center; 
     align-items: center;
   }
 
-  .guestbook iframe{
+  .guestbook-frame.iframe{
     display: block;
     text-decoration: none;
     width: 100%;
     min-width: 12.5rem;
-    height: 31.25rem;
+    height: 37.5rem;
     max-width: 18.75rem;
     border: solid 1px #741A2E;
     border-radius: 0.938rem;
@@ -1922,11 +1952,11 @@ justify-content on the other hand manages a free space of the whole container
     display: none;
   }
 
-  .guestbook.link{
+  .guestbook-frame.link{
     display: none;
   }
 
-  .guestbook a{
+  .guestbook-frame a{
     background-color: orange;
     padding: 1rem;
   }
