@@ -8,7 +8,7 @@
   var ismousedown = false;
   var isclicked = false;
   let revertTimer = null;
-  let issad = false;
+  let isexpressing = false;
   let count = 0;
   let wasinov2;
   let wasinov1;
@@ -65,29 +65,36 @@
   //-------------------------------------
 
   document.querySelector("#overlay1").addEventListener("click", () => {
-      if (ismousedown) return;
-      if (wasinov2){
-        count = 0;
-        wasinov2 = false;
-      } 
 
-      wasinov1 = true;
+    if (ismousedown) return;
 
-      count++;
-      isclicked = true;
-      
-      img.src = veryhappy;
-      
-      revertTimer = setTimeout(() => {
-        if (count >= 0 && count < 10){
-          img.src = smile;
-        }
-        if (count > 10){
-          srcsaver = happy;
-          img.src = happy;
-        }
-        isclicked = false;
-      }, 1000);
+    wasinov1 = true;
+
+    if (wasinov2){
+      count = 0;
+      wasinov2 = false;
+      isexpressing = false;
+    } 
+
+    img.src = veryhappy;
+    
+    revertTimer = setTimeout(() => {
+      if (count >= 0 && count < 10){
+        img.src = sur;
+        srcsaver = smile;
+        // restoreHoverExpression();
+      }
+      else if (count >= 10){
+        isexpressing = true;
+        srcsaver = happy;
+        img.src = happy;
+      }
+      isclicked = false;
+    }, 1000);
+    
+    count++;
+    isclicked = true;
+    
   }); 
   
   document.querySelector("#overlay1").addEventListener("mousedown", () => {
@@ -129,14 +136,12 @@
     if(wasinov1) {
       count = 0;
       wasinov1 = false;
+      isexpressing = false;
     }
     let audio = document.getElementById("retro-hurt");
 
     audio.volume = 0.05;
     audio.play();
-    
-    count++;
-    isclicked = true;
     
     img.src = squint;
     
@@ -144,12 +149,14 @@
     revertTimer = setTimeout(() => {
       
       if (count >= 0 && count < 10){
-        img.src = smile;
+        img.src = sur;
+        srcsaver = smile;
+        // restoreHoverExpression();
       }
-      if (count >= 10 && count < 20){
+      else if (count >= 10 && count < 20){
         img.src = sad;
         srcsaver = sad;
-        issad = true;
+        isexpressing = true;
       }
       else if (count >= 20 && count < 30){
         srcsaver = verysad;
@@ -157,12 +164,16 @@
       }
       isclicked = false;
     }, 500);
+
+    count++;
+    isclicked = true;
       
     if (count === 30){
       localStorage.setItem(key, "1");
       count = 0;
       RevertFunc();
       img.src = veryverysad;
+      srcsaver = veryverysad;
       
       setOverlayMode(false);
     }
@@ -172,21 +183,35 @@
   //    surprised expression while hovering main image nor it's overlays
   //--------------------------------------------------------------------------
 
-  document.querySelectorAll("#overlay1, #overlay2, .Melia").forEach(e =>{
+  const hovered = new Set();
+  const abssmile = new URL(smile, document.baseURI).href;
+  const abssur = new URL(sur, document.baseURI).href;
+
+  document.querySelectorAll(".ov").forEach(e =>{
     e.addEventListener("mouseenter", () => {
-      const abssmile = new URL(smile, document.baseURI).href;
-      if (!issad && localStorage.getItem(key) === null && img?.getAttribute("src") === abssmile){
-        console.log("attribute: " + img?.getAttribute("src"));
-        console.log("abssrc: " + abssmile);
-        console.log("\n");
+      hovered.add(e);
+      if (!isexpressing && localStorage.getItem(key) === null && img?.src === abssmile){
         img.src = sur;
       }
     })
+    
     e.addEventListener("mouseleave", () => {
-      if (!issad && localStorage.getItem(key) === null){
-        img.src = srcsaver;
+      hovered.delete(e);
+
+      if (!isexpressing && localStorage.getItem(key) === null && hovered.size === 0){
+        if (img.src === new URL(sur, document.baseURI).href) {
+          img.src = srcsaver;
+        }
       }
     })
   })
-
+  // function restoreHoverExpression() {
+  // if (
+  //   hovered.size > 0 &&
+  //   !isexpressing &&
+  //   localStorage.getItem(key) === null &&
+  //   srcsaver === abssmile
+  // ) {
+  //   img.src = sur;
+  // }
 })();

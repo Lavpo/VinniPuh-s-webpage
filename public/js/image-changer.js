@@ -32,15 +32,14 @@ document.addEventListener("DOMContentLoaded", () => {
         event.preventDefault();
 
         const src = img.src;
-        console.log(src);
 
         const width = 400;
-        const height = 400;
+        const height = 450;
         const left = 0;
         const top = 0;
 
         window.open(
-        `https://vinnipuh.neocities.org/pages/popup.html?img=${encodeURIComponent(src)}`,
+        `/pages/popup.html?img=${encodeURIComponent(src)}`,
         ``,
         `width=${width},height=${height},left=${left},top=${top}`
         );
