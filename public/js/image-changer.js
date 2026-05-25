@@ -29,20 +29,28 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     
     imgContainer.addEventListener("click", (event) =>{
+
         event.preventDefault();
 
         const src = img.src;
 
         const width = 400;
         const height = 450;
-        const left = 0;
-        const top = 0;
+        const left = (window.innerWidth - width) - 200;
+        const top = window.innerHeight / 4;
+        
+        if (screen.availWidth >= 1050){
 
-        window.open(
-        `/pages/popup.html?img=${encodeURIComponent(src)}`,
-        ``,
-        `width=${width},height=${height},left=${left},top=${top}`
-        );
+            window.open(
+            `/pages/popup.html?img=${encodeURIComponent(src)}`,
+            ``,
+            `width=${width},height=${height},left=${left},top=${top}`
+            );
+        }
+        else {
+            window.location.href =
+            `/pages/popup-mobile.html?img=${encodeURIComponent(src)}`;
+        }
     } ) ;
 
 });

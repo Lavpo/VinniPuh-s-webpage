@@ -35,11 +35,11 @@ a {
   
   background-image: 
     linear-gradient(rgba(255,255,255,0.5), rgba(255,255,255,0.5)),
-    url("bg-images/pinkbear.png");
+    url("bg-images/pinkbear4.png");
 
   background-size: 40px 40px;
   background-repeat: repeat; 
-  animation: move 5s linear infinite;
+  animation: move 7s linear infinite;
   
   min-height: 100vh;
   width: 100%;
@@ -1263,6 +1263,10 @@ justify-content on the other hand manages a free space of the whole container
 
 
 /* 4) Gallery page ----------------------------------*/
+/* 4) Gallery page ----------------------------------*/
+/* 4) Gallery page ----------------------------------*/
+/* 4) Gallery page ----------------------------------*/
+/* 4) Gallery page ----------------------------------*/
 
 .gallery-wrapper{
   margin: 0;
@@ -1436,8 +1440,24 @@ justify-content on the other hand manages a free space of the whole container
   transform: translateY(0rem);
 }
 
+
+
+
+/* 5) Popup-mobile page ----------------------------------*/
+/* 5) Popup-mobile page ----------------------------------*/
+/* 5) Popup-mobile page ----------------------------------*/
+/* 5) Popup-mobile page ----------------------------------*/
+/* 5) Popup-mobile page ----------------------------------*/
+
+
+
+
+
+
+
+
 @media screen and (max-width: 1050px){
-.container-main{
+  .container-main{
     box-sizing: border-box;
     grid-template-columns: 100%;
     grid-template-rows: repeat(9, auto);
