@@ -210,7 +210,7 @@ a {
 }
 
 .menuTitle::before, .menuTitle::after {
-  content: "🌟";
+  content: "⭐";
 }
 
 .btn {
@@ -232,7 +232,7 @@ a {
   width: 7.99rem;
   height: 100%;
   background-color: #B3877D;
-  transition: 0.2s;
+  transition: 250ms ease-out;
 
   background-color: var(--edge-bg);
 }
@@ -246,10 +246,17 @@ a {
   width: 8rem;
   height: 1.8rem;
   transform: translateY(-0.25rem);
-  transition: 0.2s;
+  transition: 250ms ease-out;
   font-size: 1rem;
 
   background-color: var(--front-bg);
+}
+.f1{
+  margin: 0.625rem;
+  justify-self: center;
+}
+.f2{
+  display: none;
 }
 
 /* general button settings */
@@ -535,7 +542,7 @@ li::marker{
   border-radius: 10px;
   border: solid 0.2px #741A2E;
   box-shadow: 0 0.313rem 0.438rem #de6d8580;
-  transition: 0.2s;
+  transition: 150ms ease-out;
 
   font-family: 'Comfortaa';
   font-weight: 900;
@@ -547,7 +554,7 @@ li::marker{
   height: 3rem;
   color: #DE6D85;
   background-image: url("images/bg/guestbook-lightpink.jpg");
-  transition: 0.3s;
+  transition: 250ms ease-out;
   cursor: pointer;
 }
 
@@ -556,7 +563,7 @@ li::marker{
   height: 2.5rem;
   color: #DE6D85;
   background-image: url("images/bg/guestbook-lightpink.jpg");
-  transition: 0.3s;
+  transition: 250ms ease-out;
 }
 
 /* will return here later */
@@ -796,26 +803,20 @@ justify-content on the other hand manages a free space of the whole container
   font-weight: 600;
 }
 
-
-
-
-
 .bulbAndGifs {
   display: flex;
   flex-wrap: nowrap;
   align-items: center;
   gap: 1.25rem;
   margin-bottom: 0.938rem;
+  height: 11.25rem;
 }
 
 .gifs-group{
+  height: 11.25rem;
   display: flex; 
   flex-direction: column;
   justify-content: space-between;
-}
-
-.bulbAndGifs .item{
-  height: 11.25rem;
 }
 
 .gifs-group img{
@@ -1052,9 +1053,12 @@ justify-content on the other hand manages a free space of the whole container
 /* 3) About page ----------------------------------*/
 
 .about-wrapper{
+  box-sizing: border-box;
   width: 100%;
   min-height: 100vh;
   
+  padding: 15px;
+
   display: flex;
   flex-direction: column;
   
@@ -1063,8 +1067,9 @@ justify-content on the other hand manages a free space of the whole container
   
   background-image: url("bg-images/pastel-pink-stripe.jpg");
   background-repeat: repeat; 
-  background-size: 40px;
+  background-size: 30px;
   animation: move 3s linear infinite;
+  scrollbar-color: #DA6F6F #f1f1f1; 
 }
 
 @keyframes move{
@@ -1072,29 +1077,27 @@ justify-content on the other hand manages a free space of the whole container
     background-position: 0px 0px;
   }
   to {
-    background-position: 40px 40px;
+    background-position: 30px 30px;
   }
 }
 
 
 .container-about {
   color: #DA6F6F;
-  width: 100%;
   
   /*min widht/height will be added later*/
   max-width: 800px;
   max-height: 720px;
   border-radius: 10px 10px 0px 0px;
   box-shadow: 
-    0px 2px 10px 0px #DA6F6F,
-    inset 7px 7px 10px white,
-    inset -3px -3px 10px #DA6F6F;
-  
-  
+    0 8px 10px #de6d8580,
+    inset 3px 4px 3px white,
+    inset -1px -1px 5px #DA6F6F;
   background-color: #FFE4E4;
 }
 
 .container-about .center{
+  margin: 15px;
   position: relative;
   font-family: 'ZenMaruGothic-Medium';
   box-sizing: border-box;
@@ -1196,9 +1199,7 @@ justify-content on the other hand manages a free space of the whole container
   width: 30px;
   height: 30px;
   color: #DA6F6F;
-  box-shadow: 
-    inset -3px -3px 3px #b26c6c99,
-    inset 3px 3px 4px white;
+  box-shadow: inset -2px -2px 1px #b26c6c99;
   border-radius: 5px;
   border: none;
   font-size: 20px;
@@ -1207,7 +1208,7 @@ justify-content on the other hand manages a free space of the whole container
 
 .captions .minimise:hover {
   background-color: #FFC1C1;
-  transition: 0.3s;
+  transition: 200ms ease-out;
 }
 
 .captions .minimise:active {
@@ -1216,13 +1217,13 @@ justify-content on the other hand manages a free space of the whole container
   box-shadow: 
     inset 3px 3px 3px #b26c6c99,
     inset -3px -3px 3px white;
-  transition: 0.1s;
+  transition: transform 10ms;
   background-color: white;
 }
 
 .captions .minimise span{
   display: inline-block;
-  transition: 0.1s;
+  transition: transform 10ms;
 }
 
 .captions .minimise:active span{
@@ -1239,24 +1240,22 @@ justify-content on the other hand manages a free space of the whole container
   color: white;
   font-size: 20px;
   
-  box-shadow: 
-  inset -3px -3px 3px #de6d8580,
-  inset 2px 2px 3px white;
+  box-shadow: inset -2px -2px 1px #5c1f2c80;
   justify-content: center;
   align-items: center;
 }
 
 .captions .close:hover{
   background-color: #FFB4B4;
-  transition: 0.1s;
+  transition: 200ms ease-out;
 }
 .captions .close:active{
   background-color: #DA6F6F;
-  box-shadow: inset 3px 3px 3px #de6d8580;
+  box-shadow: inset 2px 2px 3px #5c1f2c80;
 }
 .captions .close:active span{
   transform: translate(5%, 5%);
-  transition: 0.1s;
+  transition: transform 10ms;
 }
 
 
@@ -1271,6 +1270,7 @@ justify-content on the other hand manages a free space of the whole container
 .gallery-wrapper{
   margin: 0;
   font-family: 'mononoki';
+  display: flex;
 }
 
 .gallery-container{
@@ -1284,18 +1284,32 @@ justify-content on the other hand manages a free space of the whole container
 }
 
 .gallery-container .leftside{
+  position: relative;
   height: 100vh;
   width: 100%;
   margin: 0;
   padding: 0;
   background-image: url("/bg-images/gallery-bg/darkgreen.png");
-  /*background-size: 500px 500px;*/
   
   text-align: center;
-  border-right: 5px solid white;
-  
-  outline-offset: 5px;
-  outline: 2px solid white; 
+}
+.lace{
+  position: absolute;
+  left: 100%;
+  top: 0;
+  height: 100vh;
+  background-repeat: repeat;
+  width: 50px;
+}
+.rest-gallery{
+  display: flex;
+  height: 100%;
+  align-items: end;
+}
+
+.gallery-gif{
+  width: 300px;
+  height: auto;
 }
 
 .gallery-container .centerpage{
@@ -1428,12 +1442,12 @@ justify-content on the other hand manages a free space of the whole container
 
 .gallery-container .content .years a:hover .front{
   background-color: #F1FFB8;
-  transition: 0.1s ease;
+  transition: 50ms ease-out;
 }
 
 .gallery-container .content .home a:hover .front{
   background-color: white;
-  transition: 0.1s ease;
+  transition: 50ms ease-out;
 }
 
 .gallery-container .content a:active .front{
@@ -1449,6 +1463,109 @@ justify-content on the other hand manages a free space of the whole container
 /* 5) Popup-mobile page ----------------------------------*/
 /* 5) Popup-mobile page ----------------------------------*/
 
+.pop-body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* margin: auto; */
+  width: 100%;
+  height: 100vh;
+  padding: 0;
+  margin: 0;
+  background-image: url("../bg-images/bear.webp");
+  background-size: 2.5rem 2.5rem;
+  background-repeat: repeat;
+}
+.pop-body img{
+  width: 250px;
+  height: auto;
+  border: 1px solid black;
+  box-shadow: 0 5px 7px #9a5d2880;
+}
+
+.pop-mob-body{
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  width: 100%;
+  padding: 6.25rem;
+  background-image: url("../bg-images/bear.webp");
+  background-size: 2.5rem 2.5rem;
+  background-repeat: repeat;
+}
+.pop-mob-body a{
+  display: inline-block;
+  position: relative;
+  border: none;
+  cursor: pointer;
+
+  margin: 1.5rem;
+}
+
+.pop-mob-body .front{
+  display: flex;
+  font-family: 'Comfortaa';
+  letter-spacing: 10%;
+  position: relative;
+  border: solid 1px #790C25;
+  border-radius: 0.625rem;
+  color: #37000C;
+  background-color: #FFDAD3;
+  /* transform: translateY(-1rem); */
+  transition: 450ms ease-out;
+  padding: 0.656rem;
+  transform: translateY(-0.25rem);
+}
+
+.pop-mob-body .edge{
+  display: flex;
+  position: absolute;
+  border-radius: 0.625rem;
+  background-color: #741a2eff;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+.pop-mob-body a:hover .front{
+  color: #DE6D85;
+  background-color: #FFFFFF;
+}
+.pop-mob-body a:active .front{
+  transform: translateY(0);
+  transition: 450ms ease-out;
+  transition: transform 10ms;
+}
+
+.pop-mob-body img{
+  width: 600px;
+  height: auto;
+  border: 1px solid black;
+  box-shadow: 0 5px 7px #9a5d2880;
+} 
+
+.pop-mob-body ::selection{
+  background-color: #cc9b7180;
+}
+
+@media screen and (max-width: 1050px){
+  .pop-mob-body{
+    height: auto;
+    padding: 1.875rem;
+  }
+  .pop-mob-body img{
+    width: 37.5rem;
+    height: auto;
+    border: 1px solid black;
+    box-shadow: 0 5px 7px #9a5d2880;
+    padding: 0;
+    margin: 0;
+  }
+}
 
 
 
@@ -1583,6 +1700,21 @@ justify-content on the other hand manages a free space of the whole container
   .rightside{
     width: 100%;
   }
+  .updatelog{
+    height: 30rem;
+    transition: 450ms ease-out;
+  }
+  .log-message{
+    transition: 650ms ease-out;
+    max-height: 0;
+  }
+  .log-message.opened{
+    height: 100%;
+    max-height: 30rem;
+    border-radius: 0 0 10px 10px;
+    border: solid 1px #741A2E;
+    visibility: visible;
+  }
 
   .artoftheday{
     width: 100%; 
@@ -1598,15 +1730,23 @@ justify-content on the other hand manages a free space of the whole container
     width: 100%;
   }
 
-  .log-message{
-    height: 32rem;
+  .Chloe{
+    margin-top: 1.875rem;
+    width: 15.625rem;
+    height: auto;
   }
 
-
+  .f1{
+    display: none;
+  }
+  .f2{
+    display: block;
+  }
 
 
   .updatelog, .log-top{
     box-sizing: border-box;
+    transition: 450ms ease-out;
   }
 
   /* bulb and gifs */
@@ -1615,10 +1755,15 @@ justify-content on the other hand manages a free space of the whole container
     flex-direction: column;
     width: 100%;
     object-fit: contain;
+    height: auto;
   }
   .bulb-container{
+    height: 20rem;
     width: 100%;
     background-color: white;
+  }
+  .bulb-container .bulb{
+    width: 12.5rem;
   }
   .gifs-group{
     display: flex;
@@ -1631,6 +1776,12 @@ justify-content on the other hand manages a free space of the whole container
     transform: translate(0);
   }
 
+
+
+
+
+  /* Guestbook */
+
   .container-guestbook{
     display: flex;
     flex-direction: column;
@@ -1638,8 +1789,6 @@ justify-content on the other hand manages a free space of the whole container
     align-items: center;
     width: 100%;
   }
-
-  /* Guestbook */
   .guestbook-frame{
     display: flex;
     width: 100%;
@@ -1654,7 +1803,7 @@ justify-content on the other hand manages a free space of the whole container
     text-decoration: none;
     width: 100%;
     min-width: 12.5rem;
-    height: 31.25rem;
+    height: 43.75rem;
     border: solid 1px #741A2E;
     border-radius: 0.938rem;
   }
@@ -1715,7 +1864,7 @@ justify-content on the other hand manages a free space of the whole container
     height: 3px;
     background-color: #741A2E;
     left: 6px;
-    transition: all 0.2s ease;
+    transition: all 200ms ease;
   }
   #hambtn span:nth-child(1){
     top: 11px;
@@ -1872,7 +2021,7 @@ justify-content on the other hand manages a free space of the whole container
   }
 
   /* bulb and gifs */
-  .item.bulb-container{
+  .bulb-container{
     width: 100%;
     height: auto;
     max-width: 18.75rem;
@@ -1883,7 +2032,6 @@ justify-content on the other hand manages a free space of the whole container
     width: 70%;
     max-width: 18.75rem;
     min-width: 12.5rem;
-    height: auto;
   }
 
   .gifs-group .gif1, .gifs-group .gif2{
@@ -1917,27 +2065,50 @@ justify-content on the other hand manages a free space of the whole container
     width: 100%;
     height: 100%;
   }
-  .container-log{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
 
   /*Update log */
 
+  .container-log{
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+  }
+
   .updatelog{
-    height: 27rem;
+    height: 20rem;
+  }
+  .updatelog .Chloe{
+    margin-top: 25px;
+    width: 100%;
+    max-width: 9.375rem;
+    height: auto;
+  }
+
+  .f1{
+    display: none;
+  }
+  .f2{
+    display: block;
   }
 
   .updatelog, .log-top{
     box-sizing: border-box;
-    width: 100%;;
+    width: 100%;
     max-width: 18.75rem;
+    transition: 450ms ease-out;
   }
   .log-message{
-    height: 100%;
-    max-height: 62rem;
+    transition: 450ms ease-out;
+    max-height: 0rem;
   }
+  .log-message.opened{
+    height: 100%;
+    max-height: 20rem;
+    border-radius: 0 0 10px 10px;
+    border: solid 1px #741A2E;
+    visibility: visible;
+  }
+
   .menuButtons{
     padding-bottom: 20px;
   }
@@ -1963,11 +2134,6 @@ justify-content on the other hand manages a free space of the whole container
     border-radius: 0.938rem;
   }
 
-  .Chloe{
-    width: 100%;
-    max-width: 7.813rem;
-  }
-
   #gbtn{
     display: none;
   }
@@ -1983,5 +2149,20 @@ justify-content on the other hand manages a free space of the whole container
 
   .calendar{
     display: none;
+  }
+
+
+  /* About page */
+  .center .chibi{
+    position: relative;
+    left: 0;
+    top: 0;
+  }
+  .firstP{
+    align-items: start;
+  }
+
+  .ah1{
+    font-size: 40px;
   }
 }

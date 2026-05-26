@@ -7,13 +7,13 @@ document.querySelectorAll(".btn").forEach((btn) =>{
         if (!audio) return;
 
         audio.currentTime = 0;
-        audio.play();
+        audio.play().catch(() => {});;
 
         const target = btn.dataset.target;
         if (!target) return;
 
-        audio.addEventListener("ended", () => {
+        setTimeout(() => {
             window.location.href = target;
-        }, { once: true });
+        }, 120);
     });
 })
