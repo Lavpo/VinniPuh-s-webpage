@@ -4,7 +4,103 @@
   
   all fonts that have been used here for making this website are free and open source 
 */
+.lightmode{
+  /* --------- */
+  /* Main page */
+  /* --------- */
 
+  --bg: #FFF6F6;
+  --wincolor1: #FFDAD3;
+  --wincolor2: #FFFAF9;
+  --border: #790C25;
+  --emphasize: #DE6D85;
+  --win-text-color1: #37000C;
+  --win-text-color2: #741A2E;
+  --win-text-color3: #00000099;
+  --guestbook-text: #790C25;
+  --guestbook-text2: #DE6D85;
+  --calendar-base: #FFE3E9;
+  --calendar-hover1: #F0ADBE;
+  --calendar-hover2: #fecfd9;
+  --bulb-bg: white;
+
+  --box-shadow:#de6d8580;
+
+  --menu-img: url("images/flowers/pinkflower2.png");
+  --guestbook-img: url("images/bg/guestbook-pink.jpg");
+  --guestbook-img-light: url("images/bg/guestbook-lightpink.jpg");
+  /* --phrase-img: url(images/other/paper2.webp); */
+  --phrase-img: invert(0%);
+  --background-pattern: url("bg-images/pinkbear41.png");
+
+  /* animations */
+  --general-transition: 250ms ease-out;
+
+  /* --------- */
+  /* Link page */
+  /* --------- */
+
+  --linkpage-pattern: url("images/bg/pink-pattern.png");
+  --link-before: "🌸";
+}
+
+.blue{
+  --wincolor1: #D3F6FF;
+  --wincolor2: #F9FDFF;
+  --border: #0C4E79;
+  --emphasize: #6DBFDE;
+  --win-text-color1: #002437;
+  --win-text-color2: #1A5274;
+  --win-text-color3: #00000099;
+  --calendar-base: #ace3f1;
+  --calendar-hover1: #5f92da;
+  --calendar-hover2: #97c2ff;
+
+  --background-pattern: url("bg-images/moonsm.png");
+}
+
+.darkmode{
+  /* --------- */
+  /* Main page */
+  /* --------- */
+
+  --bg: #1D2E4F;
+  --wincolor1: #001418;
+  --wincolor2: #1f1940;
+  --border: #5692b8;
+  --emphasize: #5bc7ee;
+  --win-text-color1: white;
+  --win-text-color2: #c3e8ff;
+  --win-text-color3: #e9e9fdce;
+  --guestbook-text: white;
+  --guestbook-text2: #1f1940;
+  --calendar-base: #4e6e9e;
+  --calendar-hover1: #1a3c6b;
+  --calendar-hover2: #6aa0ec;
+  --bulb-bg: #1f1940;
+
+  --box-shadow:#5b4bb980;
+
+  --menu-img: url("images/flowers/moonflower.png");
+  --guestbook-img: url("images/bg/guestbook-pattern-dark.jpg");
+  --guestbook-img-light: url("images/bg/guestbook-pattern2-dark.jpg");
+  /* --phrase-img: url(images/other/paper-dark.png); */
+  --phrase-img: invert(100%);
+  --background-pattern: url("bg-images/moonsm.png");
+
+  /* --------- */
+  /* Link page */
+  /* --------- */
+
+  --linkpage-pattern: url("images/bg/darkblue-pattern.png");
+  --link-before: "🌙";
+}
+
+
+
+.preload * {
+  transition: none !important;
+}
 
 /* 1) Main page ----------------------------------*/
 
@@ -19,11 +115,12 @@ body {
   margin: 0;
   padding: 0;
   width: 100%;
-  color: #37000C;
+  color: var(--win-text-color1);
+  background-color: var(--bg);
 }
 
 ::selection{
-  background-color: #e7849f;
+  background-color: var(--emphasize);
 }
 
 a {
@@ -33,13 +130,11 @@ a {
 .main-wrapper{
   font-family: "Kosugi Maru";
   
-  background-image: 
-    linear-gradient(rgba(255,255,255,0.5), rgba(255,255,255,0.5)),
-    url("bg-images/pinkbear4.png");
+  background-image: var(--background-pattern);
 
   background-size: 40px 40px;
   background-repeat: repeat; 
-  animation: move 7s linear infinite;
+  animation: move1 7s linear infinite;
   
   min-height: 100vh;
   width: 100%;
@@ -48,6 +143,16 @@ a {
   margin: 0;
   padding: 0;
 }
+
+@keyframes move1{
+  from {
+    background-position: 0px 0px;
+  }
+  to {
+    background-position: 40px 40px;
+  }
+}
+
 
 /* -----------------------------------------*/
 /* Font Styles */
@@ -176,16 +281,13 @@ a {
   justify-items: center;
 
   border-radius: 10px;
-  border: 1px solid #741A2E;
+  border: 1px solid var(--border);
   
-  /* outline-style: solid;
-  outline-color: #FDB7C5;
-  outline-width: 3px; */
-  
-  /*background: linear-gradient(#fff5f1 80%, #FCAEB9);*/
-  background: linear-gradient(white, #FFFAF7);
-  background-image: url("images/flowers/pinkflower2.png");
-  box-shadow: 0 5px 7px #de6d8580;
+  background-image: var(--menu-img);
+  background-position: 85% 0%;
+  background-size: 300px;
+  box-shadow: 0 5px 7px var(--box-shadow);
+  transition: var(--general-transition);
 }
 .navbar{
   display: none;
@@ -205,8 +307,8 @@ a {
   margin: 0.313rem 0.313rem 0.626rem 0.313rem;
   font-size: 1.125rem;
   padding-bottom: 0.313rem;
-  border-bottom: 5px dotted #CB5E77;
-  color: #741A2E;
+  border-bottom: 5px dotted var(--emphasize);
+  color: var(--win-secondary-text3);
 }
 
 .menuTitle::before, .menuTitle::after {
@@ -254,9 +356,11 @@ a {
 .f1{
   margin: 0.625rem;
   justify-self: center;
+  transition: var(--general-transition);
 }
 .f2{
   display: none;
+  transition: var(--general-transition);
 }
 
 /* general button settings */
@@ -287,7 +391,7 @@ a {
   --front-hover-bg: #FF6363;
   --edge-hover-bg: #D44C4C;
 
-  --text-hover-color: #37000C;
+  --text-hover-color: var(--win-text-color1);
 }
 .btn2 {
   --front-bg: #FFD876;
@@ -360,17 +464,19 @@ a {
 }
 
 .log #chevron-up-down{
-  stroke: #000000;
+  stroke: var(--win-text-color1);
+  transition: var(--general-transition);
 }
 .log #chevron-up-down:hover{
-  stroke: #DE6D85;
+  stroke: var(--emphasize);
 }
 .log #chevron-up-down:active{
-  stroke: white;
+  stroke: var(--wincolor2);
 }
 
 .log-btn.opened #chevron-up-down{
   transform: rotate(180deg);
+  transition: var(--general-transition);
 }
 
 
@@ -381,34 +487,34 @@ a {
 .log-btn{
   width: 1.25rem;
   height: 1.25rem;
-  background-color: #FFFAF9;
+  background-color: var(--wincolor2);;
   text-align: center;
 
   padding: 0;
 
   border-radius: 20%;
   border: none;
-  box-shadow: 0 1px 1px #de6d8580;
+  box-shadow: 0 1px 1px var(--box-shadow);
   cursor: pointer;
+  transition: var(--general-transition);
 }
 
 .updatelog .log-btn:hover{
-  outline: 1px solid #DE6D85;
+  outline: 1px solid var(--emphasize);
 }
 .updatelog .log-btn:active{
-  background-color: #DE6D85;
+  background-color: var(--emphasize);
 }
 
-
 .log-top{
-  background-color: #FFDAD3;
+  background-color: var(--wincolor1);
   border-radius: 10px 10px 0 0;
   width: 13rem;
   
-  box-shadow: 0 5px 7px #de6d8580;
-  transition: 450ms ease-out;
+  box-shadow: 0 5px 7px var(--box-shadow);
+  transition: var(--general-transition);
   border-radius: 10px;
-  border: solid 1px #741A2E;
+  border: solid 1px var(--border);
 }
 .log-top.opened{
   border-radius: 10px 10px 0 0;
@@ -417,7 +523,7 @@ a {
 .log-message{
   box-sizing: border-box;
   position: absolute;
-  background-color: #FFFAF9;
+  background-color: var(--wincolor2);
   z-index: 1;
   max-height: 14rem;
   left: 0;
@@ -426,16 +532,16 @@ a {
 
   width: 100%;
 
-  transition: 450ms ease-out;
+  transition: var(--general-transition);
 
   scrollbar-width: thin; 
-  scrollbar-color: #DE6D85 #f1f1f1;  
+  scrollbar-color: var(--emphasize) var(--wincolor2);  
 
-  box-shadow: 0 5px 7px #de6d8580;
+  box-shadow: 0 5px 7px var(--box-shadow);
 
   height: 0;
   padding: 0;
-  border: solid 1px #741A2E;
+  border: solid 1px var(--border);
   
   visibility: hidden;
 }
@@ -444,13 +550,13 @@ a {
   height: 100%;
   padding: 1.25rem 0.939rem 0 0.626rem;
   border-radius: 0 0 10px 10px;
-  border: solid 1px #741A2E;
+  border: solid 1px var(--border);
   visibility: visible;
 }
 
 .updatelog .upd{
   margin: 0 0 0.626rem 0;
-  color: #741A2E;
+  color: var(--win-text-color2);
 }
 
 .updatelog .updtop{
@@ -476,7 +582,7 @@ li::marker{
 
 .updatelog .updtop p{
   align-self: end;
-  color: rgb(0, 0, 0, 0.60);
+  color: var(--win-text-color3);
 
   font-size: 0.813rem;
   margin: 0 0 0.313rem 0;
@@ -495,7 +601,7 @@ li::marker{
   font-family: 'mononoki-bold';
 }
 .updatelog .log-message hr{
-  border-top: 1px solid #de6d8580;
+  border-top: 1px solid var(--box-shadow);
 }
 
 
@@ -505,7 +611,7 @@ li::marker{
   width: 7.813rem;
   height: auto;
   border-radius: 15px;
-  border: solid 1px #741A2E;
+  border: solid 1px var(--border);
   margin-top: 0.25rem;
 }
 
@@ -534,26 +640,26 @@ li::marker{
   position: relative;
   left: 0;
   top: 0;
-  background-image: url("images/bg/guestbook-pink.jpg");
+  background-image: var(--guestbook-img);
   background-size: 200%;
 
   width: 10rem;
   height: 2.5rem;
   border-radius: 10px;
-  border: solid 0.2px #741A2E;
-  box-shadow: 0 0.313rem 0.438rem #de6d8580;
+  border: solid 0.2px var(--border);
+  box-shadow: 0 0.313rem 0.438rem var(--box-shadow);
   transition: 150ms ease-out;
 
   font-family: 'Comfortaa';
   font-weight: 900;
-  color: #741A2E;
+  color: var(--guestbook-text);
 }
 
 .container-guestbook .front:hover{
   width: 11rem;
   height: 3rem;
-  color: #DE6D85;
-  background-image: url("images/bg/guestbook-lightpink.jpg");
+  color: var(--guestbook-text2);
+  background-image: var(--guestbook-img-light);
   transition: 250ms ease-out;
   cursor: pointer;
 }
@@ -561,7 +667,7 @@ li::marker{
 .container-guestbook .front:active{
   width: 10rem;
   height: 2.5rem;
-  color: #DE6D85;
+  color: var(--emphasize);
   background-image: url("images/bg/guestbook-lightpink.jpg");
   transition: 250ms ease-out;
 }
@@ -572,7 +678,7 @@ li::marker{
   width: 6.25rem;
 
   border-radius: 10px;
-  border: solid 0.2px #741A2E;
+  border: solid 0.2px var(--border);
 }
 
 .guestbook-frame.iframe{
@@ -614,29 +720,31 @@ justify-content on the other hand manages a free space of the whole container
   
   width: 25rem;
   border-radius: 10px;
-  outline: solid 1px #741A2E;
+  outline: solid 1px var(--border);
   margin-bottom: 0.939rem;
   padding: 0.5rem;
-  background-color: #FFDAD3;
-  box-shadow: 0 5px 7px #de6d8580;
+  background-color: var(--wincolor1);
+  box-shadow: 0 5px 7px var(--box-shadow);
+  transition: var(--general-transition);
 }
 
 .pageTitle {
   font-family: 'Lobster';
-  background: #FFDAD3;
+  background: var(--wincolor1);
   border-radius: 40px;
   padding: 0.5rem 2.5rem 0.5rem 2.5rem;
   
-  -webkit-text-stroke: white;
+  -webkit-text-stroke: var(--wincolor2);
   
-  border: 1px solid #C85F5F;
+  border: 1px solid var(--border);
 
   margin-bottom: 0.938rem;
  
   font-size: 0.75rem;
   letter-spacing: 15%;
-  color: #741A2E;
-  box-shadow: 0 5px 7px #de6d8580;
+  color: var(--win-text-color2);
+  box-shadow: 0 5px 7px var(--box-shadow);
+  transition: var(--general-transition);
 }
 
 .Melia {
@@ -713,6 +821,8 @@ justify-content on the other hand manages a free space of the whole container
 
 .phrase{
   width: 34.375rem;
+  filter: var(--phrase-img);
+  transition: var(--general-transition);
 }
 
 .pageTitle h1{
@@ -745,20 +855,22 @@ justify-content on the other hand manages a free space of the whole container
   padding: 0;
   font-family: 'OwlsNInk';
   font-size: 1rem;
-  color: #741A2E;
-  background-color: #FFF5EE;
+  color: var(--border);
+  background-color: var(--wincolor2);
 
-  border: solid 2px #741A2E;
+  border: solid 2px var(--border);
   margin-bottom: 0.626rem;
+  transition: var(--general-transition);
 }
 
 .daytoday {
   display: flex;
   flex-direction: column;
-  background-color: #FFDAD3;
-  border: solid 1px #741A2E;
+  background-color: var(--wincolor1);
+  border: solid 1px var(--win-text-color2);
   padding: 0.313rem;
-  box-shadow: 0 0.313rem 0.438rem #de6d8580;
+  box-shadow: 0 0.313rem 0.438rem var(--box-shadow);
+  transition: var(--general-transition);
 }
 
 .artoftheday .label h3{
@@ -772,7 +884,7 @@ justify-content on the other hand manages a free space of the whole container
   object-fit: contain;
   padding: 0.188rem 0.188rem 0 0.188rem;
 
-  box-shadow: 2px 2px 2px inset #de6d8580;
+  box-shadow: 2px 2px 2px inset var(--box-shadow);
   z-index: 2;
 }
 
@@ -780,20 +892,46 @@ justify-content on the other hand manages a free space of the whole container
   cursor: pointer;
 }
 
+#darkmode-switcher{
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+  text-decoration: none;
+  flex: 1;
+  border: none;
+  line-height: 0;
+  border-radius: 0 0 10px 10px;
+  margin: 0;
+  padding: 0;
+  max-height: calc(11.25rem - 2rem);
+  width: 100%;
+  background-color: transparent;
+  transition: var(--general-transition);
+  cursor: pointer;
+}
+
 .bulb-container{
   border-radius: 10px;
-  border: solid 1px #741A2E;  
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  border: solid 1px var(--border);  
+  max-width: 7.25rem;
+  width: 100%;
+  background-color: var(--bulb-bg);
+  height: 100%;
   padding: 0;
   margin: 0;
-  box-shadow: 0 0.313rem 0.438rem #de6d8580;
+  box-shadow: 0 0.313rem 0.438rem var(--box-shadow);
 }
 
 .bulb-top{
   display: flex;
   justify-content: center;
-  background-color: #FFDAD3;
+  background-color: var(--wincolor1);
   border-radius: 10px 10px 0 0;
-  border-bottom: solid 1px #741A2E;
+  border-bottom: solid 1px var(--border);
+  transition: var(--general-transition);
 }
 .bulb-top h3{
   margin: 0.188rem 0 0.188rem 0;
@@ -804,9 +942,9 @@ justify-content on the other hand manages a free space of the whole container
 }
 
 .bulbAndGifs {
+  box-sizing: border-box;
   display: flex;
   flex-wrap: nowrap;
-  align-items: center;
   gap: 1.25rem;
   margin-bottom: 0.938rem;
   height: 11.25rem;
@@ -821,7 +959,8 @@ justify-content on the other hand manages a free space of the whole container
 
 .gifs-group img{
   border-radius: 10px;
-  border: solid 0.2px #741A2E;
+  border: solid 0.2px var(--border);
+  background-color: white;
 }
 
 .gifs-group .gif1{
@@ -833,11 +972,11 @@ justify-content on the other hand manages a free space of the whole container
 }
 
 .bulbAndGifs .bulb{
-  width: 7.25rem;
-  height: auto;
-  border-radius: 0 0 10px 10px;
+  display: block;
+  width: auto;
+  height: 100%;
   object-fit: contain;
-  background-color: white;
+  background-color: transparent;
 }
 
 
@@ -860,8 +999,8 @@ justify-content on the other hand manages a free space of the whole container
   height: auto;
   
   border-radius: 0.626rem;
-  border: solid 1px #741A2E;
-  box-shadow: 0 5px 7px #de6d8580;
+  border: solid 1px var(--border);
+  box-shadow: 0 5px 7px var(--box-shadow);
 }
 
 .calendar_header{
@@ -870,8 +1009,9 @@ justify-content on the other hand manages a free space of the whole container
   display: flex;
   justify-content: space-between;
   padding: 0.438rem 0.636rem 0.438rem 0.939rem;
-  background-color: #FFDAD3;
-  border-bottom: solid 1px #741A2E;
+  background-color: var(--wincolor1);
+  border-bottom: solid 1px var(--border);
+  transition: var(--general-transition);
 }
 .calendar_navigation {
   flex-wrap: nowrap;
@@ -880,30 +1020,32 @@ justify-content on the other hand manages a free space of the whole container
 
 
 .chevron-right{
-  stroke: #37000C;
-  background-color: #FFFAF9;
+  stroke: var(--win-text-color1);
+  background-color: var(--wincolor2);
   border-radius: 0.313rem;
   cursor: pointer;
   user-select: none;
-  box-shadow: 0 1px 1px #de6d8580;
+  box-shadow: 0 1px 1px var(--box-shadow);
+  transition: var(--general-transition);
 }
 
 .chevron-left{
-  stroke: #37000C;
-  background-color: #FFFAF9;
+  stroke: var(--win-text-color1);
+  background-color: var(--wincolor2);
   border-radius: 0.313rem;
   cursor: pointer;
   user-select: none;
-  box-shadow: 0 1px 1px #de6d8580;
+  box-shadow: 0 1px 1px var(--box-shadow);
   transform: scaleX(-1);
+  transition: var(--general-transition);
 }
 .chevron-right:hover, .chevron-left:hover{
-  stroke: #DE6D85;
-  outline: solid 1px #DE6D85;
+  stroke: var(--emphasize);
+  outline: solid 1px var(--emphasize);
 }
 .chevron-right:active, .chevron-left:active{
-  background-color: #DE6D85;
-  stroke: white;
+  background-color: var(--emphasize);
+  stroke: var(--wincolor2);
 }
 
 
@@ -911,7 +1053,7 @@ justify-content on the other hand manages a free space of the whole container
   margin: 0;
   font-size: 0.875rem;
   align-self: center;
-  color: #37000C;
+  color: var(--win-text-color1);
 }
 .calendar_body {
   font-family: 'ZenMaruGothic-Regular';
@@ -921,8 +1063,9 @@ justify-content on the other hand manages a free space of the whole container
 
   justify-content: space-around;
   align-items: center;
-  background-color: #FFFAF9;
+  background-color: var(--wincolor2);
   padding: 0.438rem;
+  transition: var(--general-transition);
 }
 .calendar_navigation{
   user-select: none;
@@ -960,7 +1103,7 @@ justify-content on the other hand manages a free space of the whole container
 }
 
 .calendar_weekdays{
-  background-color: #FFDAD3;
+  background-color: var(--wincolor1);
   border-radius: 0.626rem;
 }
 
@@ -968,31 +1111,32 @@ justify-content on the other hand manages a free space of the whole container
   font-weight: bold;
   border-radius: 0.313rem;
   cursor: pointer;
-  color: #741A2E;
+  color: var(--win-text-color2);
 }
   
 .calendar_dates .highlight{
-  background-color: #DE6D85;
-  color: white;
-  box-shadow: 0 1px 2px #de6d8580;
+  background-color: var(--emphasize);
+  color: var(--wincolor2);
+  box-shadow: 0 1px 2px var(--box-shadow);
 }
 
 .calendar_dates .inactive{
-  background-color: #FFE3E9;
-  outline-color: #F0ADBE;
+  background-color: var(--calendar-base);
+  outline-color: var(--calendar-hover1);
+  transition: var(--general-transition);
 }
 /* .calendar_dates li:not(active):not(highlight):hover {
 } */
 
 .calendar_dates .active{
   background-color: transparent;
-  outline: solid 1px #DE6D85; 
-  color: #DE6D85;
+  outline: solid 1px var(--emphasize); 
+  color: var(--emphasize);
 }
 
 .calendar_dates li:not(.active):not(.highlight):hover {
-  background-color: #fecfd9;
-  color: #37000C;
+  background-color: var(--calendar-hover2);
+  color: var(--win-text-color2);
 }
 
 
@@ -1001,6 +1145,8 @@ justify-content on the other hand manages a free space of the whole container
 /*------------------------------------------------*/
 /*------------------------------------------------*/
 
+
+
 .link-wrapper{
   display: flex;
   justify-content: center;
@@ -1008,46 +1154,129 @@ justify-content on the other hand manages a free space of the whole container
   
   min-height: 100vh;
   
-  background-image: url("/images/backgrounds/wallhaven.jpg");
+  background-image: var(--linkpage-pattern);
+  background-repeat: repeat; 
+  animation: move3 7s linear infinite;
 }
 
 .container-link{
   font-size: 20px;
   
-  width: 100%;
-    
-  min-width: 200px;
-  max-width: 400px;
-  height: 400px;
+  width: 400px;
+  height: 400px;  
+
+  margin: 25px;
+
+  background-color: var(--calendar-base);
+  border-radius: 40px;
   
-  background-color: #cdf2bd;
-  border-radius: 30%;
-  
-  border-color: white;
-  border-style: solid;
-  border-width: 10px;
-  box-shadow: 0 0 30px #fffdee;
+  border: 2px solid var(--emphasize);
+  box-shadow: 0 0 30px var(--box-shadow), 0 0 50px var(--bulb-bg) inset;
   
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   gap: 15px;
-  
+
+  padding: 30px;
+
+  text-align: center;
+
   font-family: "Kosugi Maru";
+}
+@keyframes move3{
+  from {
+    background-position: 0px 0px;
+  }
+  to {
+    background-position: 143px 143px;
+  }
+}
+
+
+.container-link img{
+  height: 35px;
+  width: 35px;
+}
+.container-link h1{
+  letter-spacing: 10%;
+}
+
+.container-link a{
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.container-link .front{
+  position: relative;
+  display: flex;
+  height: 2rem;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--wincolor1);
+  border-radius: 10px;
+  border: 2px solid var(--border);
+  transition: var(--general-transition);
+  color: var(--win-text-color1);
+}
+.container-link .front:hover::before, .container-link .front:hover::after{
+  content: var(--link-before);
+  padding-bottom: 5px;
+}
+
+.container-link .edge{
+  box-sizing: border-box;
+  position: absolute;
+  background-color: var(--box-shadow);
+  border: 2px solid var(--border);
+  top: 24%;
+  left: 0;
+  width: 100%;
+  height: 2rem;
+  border-radius: 10px;
+}
+
+/* hover */
+.container-link .front:hover{
+  background-color: var(--bg);
+  transform: translateY(-0.15rem);
+}
+.container-link .front:active{
+  background-color: lightblue;
+  transform: translateY(0.25rem);
+  transition: 50ms ease-out;
 }
 
 .container-link ul{
   display: flex;
   flex-direction: column;
+  width: 100%;
+  justify-content: start;
   gap: 10px;
+  height: 100%;
   list-style: none;
   margin: 0;
-  padding: 0;
+  padding: 10px;
+  background-color: var(--bg);
+  border-radius: 15px;
 }
 .container-link li{
+  position: relative;
   margin: 5px;
 }
+.container-link li:first-child{
+  margin-top: 10px;
+}
+.container-link .link-back .front{
+  padding-inline: 15px;
+  margin-top: auto;
+  width: 100px;
+  /* align-self: center; */
+}
+
 
 
 /* 3) About page ----------------------------------*/
@@ -1068,11 +1297,11 @@ justify-content on the other hand manages a free space of the whole container
   background-image: url("bg-images/pastel-pink-stripe.jpg");
   background-repeat: repeat; 
   background-size: 30px;
-  animation: move 3s linear infinite;
+  animation: move2 3s linear infinite;
   scrollbar-color: #DA6F6F #f1f1f1; 
 }
 
-@keyframes move{
+@keyframes move2{
   from {
     background-position: 0px 0px;
   }
@@ -1270,7 +1499,6 @@ justify-content on the other hand manages a free space of the whole container
 .gallery-wrapper{
   margin: 0;
   font-family: 'mononoki';
-  display: flex;
 }
 
 .gallery-container{
@@ -1285,10 +1513,11 @@ justify-content on the other hand manages a free space of the whole container
 
 .gallery-container .leftside{
   position: relative;
+  box-sizing: border-box;
   height: 100vh;
   width: 100%;
   margin: 0;
-  padding: 0;
+  padding-inline: 10px;
   background-image: url("/bg-images/gallery-bg/darkgreen.png");
   
   text-align: center;
@@ -1301,6 +1530,10 @@ justify-content on the other hand manages a free space of the whole container
   background-repeat: repeat;
   width: 50px;
 }
+.lace-hor{
+  display: none;
+}
+
 .rest-gallery{
   display: flex;
   height: 100%;
@@ -1308,7 +1541,7 @@ justify-content on the other hand manages a free space of the whole container
 }
 
 .gallery-gif{
-  width: 300px;
+  width: 250px;
   height: auto;
 }
 
@@ -1423,7 +1656,6 @@ justify-content on the other hand manages a free space of the whole container
   height: 2rem;
 }
 
-
 .gallery-container .edge{
   position: absolute;
   background-color: #00000033;
@@ -1510,12 +1742,12 @@ justify-content on the other hand manages a free space of the whole container
   font-family: 'Comfortaa';
   letter-spacing: 10%;
   position: relative;
-  border: solid 1px #790C25;
+  border: solid 1px var(--border);
   border-radius: 0.625rem;
-  color: #37000C;
-  background-color: #FFDAD3;
+  color: var(--win-text-color1);
+  background-color: var(--wincolor1);
   /* transform: translateY(-1rem); */
-  transition: 450ms ease-out;
+  transition: var(--general-transition);
   padding: 0.656rem;
   transform: translateY(-0.25rem);
 }
@@ -1532,12 +1764,12 @@ justify-content on the other hand manages a free space of the whole container
 }
 
 .pop-mob-body a:hover .front{
-  color: #DE6D85;
+  color: var(--emphasize);
   background-color: #FFFFFF;
 }
 .pop-mob-body a:active .front{
   transform: translateY(0);
-  transition: 450ms ease-out;
+  transition: var(--general-transition);
   transition: transform 10ms;
 }
 
@@ -1607,9 +1839,11 @@ justify-content on the other hand manages a free space of the whole container
     width: 100%;
     height: auto;
     border-radius: 0 0 1.563rem 1.563rem;
-    background-color: #FFFAF9;
-    border: solid 1px #741A2E;
+    background-color: var(--wincolor2);
+
+    border: solid 1px var(--border);
     gap: 2.5rem;
+    transition: var(--general-transition);
   }
   .mobfl{
     width: 3.125rem;
@@ -1623,6 +1857,7 @@ justify-content on the other hand manages a free space of the whole container
     max-width: 31.25rem;
     justify-content: space-between;
     align-items: center;
+    transition: var(--general-transition);
   }
   .btn .front{
     border-radius: 6px;
@@ -1702,7 +1937,7 @@ justify-content on the other hand manages a free space of the whole container
   }
   .updatelog{
     height: 30rem;
-    transition: 450ms ease-out;
+    transition: var(--general-transition);
   }
   .log-message{
     transition: 650ms ease-out;
@@ -1712,7 +1947,7 @@ justify-content on the other hand manages a free space of the whole container
     height: 100%;
     max-height: 30rem;
     border-radius: 0 0 10px 10px;
-    border: solid 1px #741A2E;
+    border: solid 1px var(--border);
     visibility: visible;
   }
 
@@ -1753,17 +1988,24 @@ justify-content on the other hand manages a free space of the whole container
   .bulbAndGifs{
     display: flex;
     flex-direction: column;
+    align-items: center;
     width: 100%;
     object-fit: contain;
     height: auto;
   }
   .bulb-container{
-    height: 20rem;
+    box-sizing: border-box;
+    display: flex;
+    max-width: 100%;
     width: 100%;
-    background-color: white;
   }
   .bulb-container .bulb{
-    width: 12.5rem;
+    width: 100%;
+    height: auto;
+  }
+  #darkmode-switcher{
+    max-height: 21rem;
+    padding-bottom: 0.938rem;
   }
   .gifs-group{
     display: flex;
@@ -1804,7 +2046,7 @@ justify-content on the other hand manages a free space of the whole container
     width: 100%;
     min-width: 12.5rem;
     height: 43.75rem;
-    border: solid 1px #741A2E;
+    border: solid 1px var(--border);
     border-radius: 0.938rem;
   }
 
@@ -1837,14 +2079,16 @@ justify-content on the other hand manages a free space of the whole container
 
   /* navigation bar */
   .navbar{
+    box-sizing: border-box; 
     position: relative;
     display: block;
     padding: 1em;
     width: 100%;
     height: auto;
     border-radius: 0 0 1.563rem 1.563rem;
-    background-color: #FFFAF9;
-    border: solid 1px #741A2E;
+    background-color: var(--wincolor2);
+    border: solid 1px var(--border);
+    transition: var(--general-transition);
   }
   #hambtn{
     display: block;
@@ -1862,7 +2106,7 @@ justify-content on the other hand manages a free space of the whole container
     position: absolute;
     width: 28px;
     height: 3px;
-    background-color: #741A2E;
+    background-color: var(--border);
     left: 6px;
     transition: all 200ms ease;
   }
@@ -1890,7 +2134,7 @@ justify-content on the other hand manages a free space of the whole container
 
   .main-wrapper{
     scrollbar-width: thin; 
-    scrollbar-color: #DE6D85 #f1f1f1;  
+    scrollbar-color: var(--emphasize) var(--wincolor2);  
   }
 
 
@@ -1902,7 +2146,7 @@ justify-content on the other hand manages a free space of the whole container
     z-index: 10;
     justify-content: center;
     align-self: start;
-    border: solid 1px #741A2E;
+    border: solid 1px var(--border);
     width: 100%;
     height: auto;
     top: 77px;
@@ -1914,6 +2158,7 @@ justify-content on the other hand manages a free space of the whole container
     opacity 0.35s ease,
     transform 0.35s ease,
     visibility 0.35s ease;
+    transition: var(--general-transition);
   }
   .menuButtonsMobile{
     display: none;
@@ -2029,16 +2274,17 @@ justify-content on the other hand manages a free space of the whole container
   }
 
   .bulbAndGifs .bulb{
-    width: 70%;
     max-width: 18.75rem;
     min-width: 12.5rem;
+  }
+  #darkmode-switcher{
+    max-height: 15rem;
   }
 
   .gifs-group .gif1, .gifs-group .gif2{
     width: 100%;
     object-fit: contain;
     height: 6rem;
-    background-color: white;
     transform: translate(0);
   }
 
@@ -2105,7 +2351,7 @@ justify-content on the other hand manages a free space of the whole container
     height: 100%;
     max-height: 20rem;
     border-radius: 0 0 10px 10px;
-    border: solid 1px #741A2E;
+    border: solid 1px var(--border);
     visibility: visible;
   }
 
@@ -2130,7 +2376,7 @@ justify-content on the other hand manages a free space of the whole container
     min-width: 12.5rem;
     height: 37.5rem;
     max-width: 18.75rem;
-    border: solid 1px #741A2E;
+    border: solid 1px var(--border);
     border-radius: 0.938rem;
   }
 
@@ -2164,5 +2410,63 @@ justify-content on the other hand manages a free space of the whole container
 
   .ah1{
     font-size: 40px;
+  }
+
+
+  .gallery-container{
+    display: flex;
+    flex-direction: column;
+  }
+  .gallery-container .centerpage{
+    height: 100%;
+    overflow: none;
+    padding-top: 100px;
+    overflow: visible;
+  }
+
+  .gallery-container .home{
+    margin-bottom: 15px;
+  }
+  .lace{
+    display: none;
+  }
+  .lace-hor{
+    position: absolute;
+    display: flex;
+    width: 100%;
+    top: 100%;
+    left: 0;
+  }
+  .gallery-container .leftside{
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    height: 100vh;
+  }
+  .gallery-container .goup{
+    margin: 15px;
+  }
+  .gallery-container .goup .front{
+    position: relative;
+    display: flex;
+    align-items: center;      
+    justify-content: center;
+    transform: translateY(-0.25rem);
+    color: #2E7F2E;
+    background-color: #F1FFB8;
+    
+    border-radius: 10px;
+    
+    width: 100%;
+    min-width: 4rem;
+    max-width: 8rem;
+    height: 2rem;
+  }
+  .gallery-container .goup a:hover .front{
+    background-color: white;
+    transition: 50ms ease-out;
+  }
+  .gallery-container a:active .front{
+    transform: translateY(0rem);
   }
 }

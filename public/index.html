@@ -3,13 +3,22 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#000000">
     <meta property="og:image" content="images/Melia/Melia_preview1.png">
     <title>VinniPuh's Page || MyWebPage</title>
-    
-    <!--Fonts-->
     <link href="style.css" rel="stylesheet" type="text/css" media="all">
+    <script>
+      let darkmode = localStorage.getItem("darkmode");
+      if(darkmode === "1"){
+        document.documentElement.style.setProperty("--bg", "#1D2E4F");
+      }
+      else{
+        document.documentElement.style.setProperty("--bg", "#FFF6F6");
+      }
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!--Fonts-->
     <link href="https://fonts.googleapis.com/css2?family=Hachi+Maru+Pop&amp;family=Kosugi+Maru&amp;family=Oooh+Baby&amp;family=Kirang+Haerang&amp;family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&amp;family=Teko:wght@300..700&amp;family=SN+Pro:ital,wght@0,200..900;1,200..900&amp;display=swap" rel="stylesheet">
     
     <!--Google Icons-->
@@ -19,8 +28,7 @@
     
     <!--<script defer src="/js/overlayListener.js"></script>-->
     
-
-    <!-- preloading some audios so the first click on any of the buttons with sounds to have a delay -->
+    <!-- preloading some audios too prevent sounds not responding properly -->
     <audio id="pop">
       <source src="audio/pop.mp3" type="audio/mp3">
     </audio>
@@ -39,36 +47,39 @@
     <audio id="jingle-bells">
       <source src="audio/jingle-bells.mp3" type="audio/mp3">
     </audio>
-
+    <audio id="light-switch">
+      <source src="audio/light-switch2.mp3" type="audio/mp3">
+    </audio>
+    <script src="js/darkmode.js" defer></script>
 </head>
-  <!--will turn of this spoiler overlay for now, it doesn't really work well as I expected-->
-  <body>
+  <body class="preload">
     <div class="navbar">
       <button id="hambtn">
         <span></span>
         <span></span>
         <span></span>
       </button>
+      <script src="js/audio/navbar-sound.js"></script>
       <img class="mobfl" src="images/flowers/pinkflower.png">
 
       <nav class="item menuButtonsMobile">
-          <a data-target="pages/about.html" href="pages/about.html" class="btn btn1">
-            <span class="edge"></span>
-            <span class="front">about</span>
-          </a>
-          <a data-target="pages/gallery.html" href="pages/gallery.html" class="btn btn2">
-            <span class="edge"></span>
-            <span class="front">gallery</span>
-          </a>
-          <a data-target="pages/links.html" href="pages/links.html" class="btn btn3">
-            <span class="edge"></span>
-            <span class="front">links</span>
-          </a>
-          <a data-target="pages/thoughts.html" href="pages/thoughts.html" class="btn btn4">
-            <span class="edge"></span>
-            <span class="front">thoughts</span>
-          </a>
-          <script src="js/audio/menu-buttons-audio.js"></script>
+        <a data-target="pages/about.html" href="pages/about.html" class="btn btn1">
+          <span class="edge"></span>
+          <span class="front">about</span>
+        </a>
+        <a data-target="pages/gallery.html" href="pages/gallery.html" class="btn btn2">
+          <span class="edge"></span>
+          <span class="front">gallery</span>
+        </a>
+        <a data-target="pages/links.html" href="pages/links.html" class="btn btn3">
+          <span class="edge"></span>
+          <span class="front">links</span>
+        </a>
+        <a data-target="pages/thoughts.html" href="pages/thoughts.html" class="btn btn4">
+          <span class="edge"></span>
+          <span class="front">thoughts</span>
+        </a>
+        <script src="js/audio/menu-buttons-audio.js"></script>
       </nav>
       <img class="mobfl" src="images/flowers/pinkflower.png">
 
@@ -214,7 +225,7 @@
                 <div class="bulb-top">
                   <h3>Theme</h3>
                 </div>
-                <a href="https://google.com"><img class="bulb" src="images/other/bulb.png"></a>
+                <button id="darkmode-switcher"><img class="bulb" src="images/other/bulb.png"></button>
               </div>
 
               <div class = "item gifs-group">

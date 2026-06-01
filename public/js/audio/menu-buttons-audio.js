@@ -1,6 +1,5 @@
 document.querySelectorAll(".btn").forEach((btn) =>{
     btn.addEventListener("click", (e) => {
-        console.log("menu-buttons test");
         e.preventDefault();
 
         const audio = document.getElementById("button-click");
