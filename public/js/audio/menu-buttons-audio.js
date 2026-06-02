@@ -3,10 +3,9 @@ document.querySelectorAll(".btn").forEach((btn) =>{
         e.preventDefault();
 
         const audio = document.getElementById("button-click");
-        if (!audio) return;
 
         audio.currentTime = 0;
-        audio.play().catch(() => {});;
+        audio.play();
 
         const target = btn.dataset.target;
         if (!target) return;

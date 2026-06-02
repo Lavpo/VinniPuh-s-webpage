@@ -4,14 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>2025</title>
+    <script>
+      darkmode = localStorage.getItem("darkmode");
+      darkmode = localStorage.getItem("darkmode");
+      if(darkmode === "1"){
+        document.documentElement.style.setProperty("--bg", "#0b0110");
+        document.documentElement.style.setProperty("--gallery-lace", "invert(100%)");
+      }
+      else {
+        document.documentElement.style.setProperty("--bg", "#F1FFB8");
+        document.documentElement.style.setProperty("--gallery-text1-color", "#69b069");
+      }
+    </script>
     <link href="/style.css" rel="stylesheet" type="text/css" media="all">
-    
-    <link rel="icon" type="image/x-icon" href="/images/favicon/gallery-pencil.ico">
+    <script src="/js/darkmode-other.js" defer></script>
+    <link rel="icon" type="image/x-icon" href="/images/favicons/gallery-pencil.ico">
   </head>
   <body>
     <main class="gallery-wrapper">
       <div class="gallery-container">
-        <div class="leftside">        
+        <div class="leftside" id="C1">        
           <div class="title"> 
             <h1> GALLERY </h1>
           </div>
@@ -28,6 +40,9 @@
                 <span class="front">2025</span>
               </a>
             </div>
+            <div class="rest-gallery">
+              <img class="gallery-gif" src="/gifs/naridesu.gif">
+            </div>
             
             <div class="home"> 
               <a href="/index.html">
@@ -36,7 +51,9 @@
               </a>
             </div>
           </div>
-          </div>
+          <img class="lace" src="/images/other/lace1.png">
+          <img class="lace-hor" src="/images/other/lace1-horizontal.png">
+        </div>
         <div class="centerpage">
           <header>
           <h1> 2025 </h1>
@@ -44,8 +61,14 @@
           
           <div class="gallery" id="gallery">
           </div>
-            <script src="/js/createImagesDescending.js"></script>
-            <script> CreateDescendingImages("#gallery", 51, 0, "img", "/images/gallery-images/2025/", "webp"); </script>
+          <script src="/js/createImagesDescending.js"></script>
+          <script> CreateDescendingImages("#gallery", 51, 0, "img", "/images/gallery-images/2025/", "webp"); </script>
+          <div class="goup"> 
+              <a href="#C1">
+                <span class="edge"></span>
+                <span class="front">^ Go up ^</span>
+              </a>
+            </div>
         </div>
       </div>
     </main>

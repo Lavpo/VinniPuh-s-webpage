@@ -2,14 +2,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const imgContainer = document.getElementById("doodle-link");
     if (!imgContainer) return;
-    const img = imgContainer.querySelector("img");
+    const img = imgContainer.querySelector(".doodle");
     if (!img) return;
-    const images = [
-        "/images/gallery-images/2026/shiho.webp",
-        "/images/gallery-images/2026/shiho.webp",
-        "/images/gallery-images/2026/shiho.webp"
-    ];
-
+    let images = [];
+    for(let i = 0; i <= 51; i++){
+        images.push(`/images/gallery-images/2025/img${i}.webp`);
+    }
+    for(let i = 52; i <= 56; i++){
+        images.push(`/images/gallery-images/2026/img${i}.webp`);
+    }
+    
     const today = new Date().toDateString();
     const savedDay = localStorage.getItem("imageDay");
     let savedImage = localStorage.getItem("imageSrc");
@@ -27,7 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
         localStorage.setItem("imageDay", today);
         localStorage.setItem("imageSrc", newImage);
     }
-    
+
     imgContainer.addEventListener("click", (event) =>{
 
         event.preventDefault();
