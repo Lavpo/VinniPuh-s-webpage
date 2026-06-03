@@ -102,7 +102,7 @@
     RevertFunc();
     let audio = document.getElementById("bubble-pop");
 
-    audio.volume = 0.1;
+    audio.volume = 0.3;
     audio.play();
 
     ismousedown = true;
@@ -140,7 +140,7 @@
     }
     let audio = document.getElementById("retro-hurt");
 
-    audio.volume = 0.05;
+    audio.volume = 0.12;
     audio.play();
     
     img.src = squint;

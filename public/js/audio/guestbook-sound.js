@@ -6,7 +6,7 @@ document.getElementById("gbtn")?.addEventListener("click", (e) => {
 
     if(!audio && target) return;
     
-    audio.volume = 0.2;
+    audio.volume = 0.4;
     audio.play();
 
     const width = 400;
