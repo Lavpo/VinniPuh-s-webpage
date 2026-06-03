@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>2025</title>
+    <script src="/js/load.js"></script>
     <script>
       darkmode = localStorage.getItem("darkmode");
-      darkmode = localStorage.getItem("darkmode");
       if(darkmode === "1"){
-        document.documentElement.style.setProperty("--bg", "#0b0110");
+        document.documentElement.style.setProperty("--bg", "#3E2044");
         document.documentElement.style.setProperty("--gallery-lace", "invert(100%)");
       }
       else {
@@ -19,6 +19,9 @@
     <link href="/style.css" rel="stylesheet" type="text/css" media="all">
     <script src="/js/darkmode-other.js" defer></script>
     <link rel="icon" type="image/x-icon" href="/images/favicons/gallery-pencil.ico">
+    <audio id="button-click">
+      <source src="/audio/button-click.mp3" type="audio/mp3">
+    </audio>
   </head>
   <body>
     <main class="gallery-wrapper">
@@ -31,28 +34,29 @@
           <div class="content">
             <div class="years">
               <div class="year-box"> Year </div>
-              <a id="2026" href="/pages/gallery-pages/2026.html">
+              <a class="btn" id="2026" href="/pages/gallery-pages/2026.html">
                 <span class="edge"></span>
                 <span class="front">2026</span>
               </a>
-              <a id="2025" href="/pages/gallery-pages/2025.html">
+              <a class="btn" id="2025" href="/pages/gallery-pages/2025.html">
                 <span class="edge"></span>
                 <span class="front">2025</span>
               </a>
+              <script src="/js/audio/menu-buttons-audio.js"></script>
             </div>
             <div class="rest-gallery">
               <img class="gallery-gif" src="/gifs/naridesu.gif">
             </div>
             
             <div class="home"> 
-              <a href="/index.html">
+              <a class="btn" href="/index.html">
                 <span class="edge"></span>
                 <span class="front">Home</span>
               </a>
             </div>
           </div>
-          <img class="lace" src="/images/other/lace1.png">
-          <img class="lace-hor" src="/images/other/lace1-horizontal.png">
+          <img class="lace" src="/images/other/lace1.webp">
+          <img class="lace-hor" src="/images/other/lace1-horizontal.webp">
         </div>
         <div class="centerpage">
           <header>
@@ -64,11 +68,11 @@
           <script src="/js/createImagesDescending.js"></script>
           <script> CreateDescendingImages("#gallery", 51, 0, "img", "/images/gallery-images/2025/", "webp"); </script>
           <div class="goup"> 
-              <a href="#C1">
-                <span class="edge"></span>
-                <span class="front">^ Go up ^</span>
-              </a>
-            </div>
+            <a href="#C1">
+              <span class="edge"></span>
+              <span class="front">^ Go up ^</span>
+            </a>
+          </div>
         </div>
       </div>
     </main>

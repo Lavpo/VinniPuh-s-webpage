@@ -1,4 +1,4 @@
-(function () {
+(() => {
   var key = "sadforever";
   
   var img = document.getElementById("idMelia");

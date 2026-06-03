@@ -3,13 +3,24 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/style.css" rel="stylesheet" type="text/css" media="all">
     <title>Thoughts</title>
+    <script>
+      darkmode = localStorage.getItem("darkmode");
+      if(darkmode === "1"){
+        document.documentElement.style.setProperty("--bg", "#1D2E4F");
+      }
+      else{
+        document.documentElement.style.setProperty("--bg", "#FFF6F6");
+      }
+    </script>
     <link href="style.css" rel="stylesheet" type="text/css" media="all">
+    <script src="/js/darkmode-other.js" defer></script>
   </head>
   <body>
     <!-- construction -->
     <h3> Sorry, but this page is currently under construction. </h3>
-    <img src="/gifs/underconstruction.gif" alt="working..." height="189" width="189">
+    <img src="/gifs/construction.gif" alt="working..." height="189" width="189">
     <p>Back: <a href="/index.html">home</a></p>
     <!-- construction -->
   </body>

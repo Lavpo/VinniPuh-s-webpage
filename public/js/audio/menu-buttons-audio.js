@@ -3,15 +3,15 @@ document.querySelectorAll(".btn").forEach((btn) =>{
         e.preventDefault();
 
         const audio = document.getElementById("button-click");
-
+        if(!audio){
+            window.location.href = btn.href; 
+            return;
+        }
         audio.currentTime = 0;
         audio.play();
 
-        const target = btn.dataset.target;
-        if (!target) return;
-
         setTimeout(() => {
-            window.location.href = target;
+            window.location.href = btn.href;
         }, 120);
     });
 })

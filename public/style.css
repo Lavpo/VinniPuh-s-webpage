@@ -25,12 +25,12 @@
 
   --box-shadow:#de6d8580;
 
-  --menu-img: url("images/flowers/pinkflower2.png");
+  --menu-img: url("images/flowers/pinkflower2.webp");
   --guestbook-img: url("images/bg/guestbook-pink.jpg");
   --guestbook-img-light: url("images/bg/guestbook-lightpink.jpg");
   /* --phrase-img: url(images/other/paper2.webp); */
   --phrase-img: invert(0%);
-  --background-pattern: url("images/bg/pinkbear41.png");
+  --background-pattern: url("images/bg/pinkbear41.jpg");
 
   /* animations */
   --general-transition: 350ms ease-out;
@@ -38,6 +38,7 @@
   /* ---------- */
   /* About page */
   /* ---------- */
+  --about-boxshadow-inset: white;
   --about-wincolor1: #FFE4E4;
   --about-textcolor1: #DA6F6F;
   --about-textcolor2: #5E5E5E;
@@ -45,12 +46,13 @@
   --about-boxshadow-close: #5c1f2c80;
   --about-hover-close: #FFB4B4;
   --about-bg: url("images/bg/pastel-pink-stripe.jpg");
-  
+  --about-ico: invert(0%);
+  --box-shadow: #de6d8580;
 
   /* --------- */
   /* Link page */
   /* --------- */
-  --linkpage-pattern: url("images/bg/pink-pattern.png");
+  --linkpage-pattern: url("images/bg/pink-pattern.webp");
   --link-before: "🌸";
 
   /* ---------- */
@@ -70,8 +72,8 @@
   --gallery-boxshadow: #30470c33;
   --gallery-hover1: white;
   --gallery-hover2: #e3f4cc;
-  --gallery-bg: url("/images/bg/gallery-bg/darkgreen.png");
-  --gallery-side: url("/images/bg/gallery-bg/green1.png");
+  --gallery-bg: url("/images/bg/gallery-bg/darkgreen.webp");
+  --gallery-side: url("/images/bg/gallery-bg/green1.webp");
   --gallery-lace: invert(0%);
 }
 
@@ -87,7 +89,7 @@
   --calendar-hover1: #5f92da;
   --calendar-hover2: #97c2ff;
 
-  --background-pattern: url("images/bg/moonsm.png");
+  --background-pattern: url("/images/bg/moonsm.jpg");
 }
 
 .darkmode{
@@ -111,36 +113,38 @@
 
   --box-shadow:#5b4bb980;
 
-  --menu-img: url("images/flowers/moonflower.png");
+  --menu-img: url("images/flowers/moonflower.webp");
   --guestbook-img: url("images/bg/guestbook-pattern-dark.jpg");
   --guestbook-img-light: url("images/bg/guestbook-pattern2-dark.jpg");
   /* --phrase-img: url(images/other/paper-dark.png); */
   --phrase-img: invert(100%);
-  --background-pattern: url("images/bg/moonsm.png");
+  --background-pattern: url("images/bg/moonsm.jpg");
   --general-transition: 350ms ease-out;
 
   /* ---------- */
   /* About page */
   /* ---------- */
+  --about-boxshadow-inset: rgb(137, 137, 255);
   --about-wincolor1: #000000;
   --about-textcolor1: #5bc7ee;
   --about-textcolor2: #a3c9ff;
   --about-minimise: #1a3c6b;
-  --about-boxshadow-close: #5b4bb980;
+  --about-boxshadow-close: #2903ff80;
   --about-hover-close: #9ea4eb;
   --about-bg: url("images/bg/pastel-blue-stripe.jpg");
-
+  --about-ico: invert(100%);
+    
   /* --------- */
   /* Link page */
   /* --------- */
-  --linkpage-pattern: url("images/bg/darkblue-pattern.png");
+  --linkpage-pattern: url("images/bg/darkblue-pattern.webp");
   --link-before: "🌙";
   
   /* ---------- */
   /* Popup page */
   /* ---------- */
 
-  --popup-bg: url("../images/bg/darkpink-bear.png");
+  --popup-bg: url("../images/bg/darkpink-bear.jpg");
 
   /* ------------ */
   /* Gallery page */
@@ -154,8 +158,8 @@
   --gallery-boxshadow: #680e76;
   --gallery-hover1: rgb(255, 202, 250);
   --gallery-hover2: rgb(185, 98, 191);
-  --gallery-bg: url("/images/bg/gallery-bg/darkpurple.png");
-  --gallery-side: url("/images/bg/gallery-bg/purple.png");
+  --gallery-bg: url("/images/bg/gallery-bg/darkpurple.webp");
+  --gallery-side: url("/images/bg/gallery-bg/purple.webp");
   --gallery-lace: invert(100%);
 
 }
@@ -174,7 +178,6 @@ html {
   width: 100%;
   overflow-x: hidden;
 }
-
 body {
   margin: 0;
   padding: 0;
@@ -182,15 +185,12 @@ body {
   color: var(--win-text-color1);
   background-color: var(--bg);
 }
-
 ::selection{
-  background-color: var(--emphasize);
+  background-color: var(--calendar-hover2);
 }
-
 a {
   text-decoration: none;
 }
-
 .main-wrapper{
   font-family: "Kosugi Maru";
   
@@ -207,7 +207,6 @@ a {
   margin: 0;
   padding: 0;
 }
-
 @keyframes move1{
   from {
     background-position: 0px 0px;
@@ -222,63 +221,51 @@ a {
 /* Font Styles */
 /* -----------------------------------------*/
 
+
+/* OwlsNInk */
 @font-face{
   font-family: 'OwlsNInk';
   src: url(fonts/OwlsNInk-subset.woff2) format('woff2');
 }
 
-
 /* ZenMaru */
 @font-face{
-  font-family: 'ZenMaruGothic-Medium';
-  src: url(fonts/ZenMaruGothic/ZenMaruGothic-Medium.woff2) format('woff2');
-}
-@font-face{
-  font-family: 'ZenMaruGothic-Light';
-  src: url(fonts/ZenMaruGothic/ZenMaruGothic-Light-subset.woff2) format('woff2');
-}
-@font-face{
   font-family: 'ZenMaruGothic-Regular';
-  src: url(fonts/ZenMaruGothic/ZenMaruGothic-Regular-subset.woff2) format('woff2');
+  src: url(fonts/ZenMaruGothic-Regular-subset.woff2) format('woff2');
 }
-
+@font-face{
+  font-family: 'ZenMaruGothic-Medium';
+  src: url(fonts/ZenMaruGothic-Medium-subset.woff2) format('woff2');
+}
 
 /* Comfortaa */
 @font-face{
   font-family: 'Comfortaa';
-  src: url(fonts/Comfortaa/Comfortaa-VariableFont_wght-subset.woff2) format('woff2');
+  src: url(fonts/Comfortaa-VariableFont_wght-subset.woff2) format('woff2');
 }
-
 
 /* KosugiMaru */
 @font-face{
   font-family: 'KosugiMaru';
-  src: url(fonts/KosugiMaru/KosugiMaru-Regular-subset.woff2) format('woff2');
+  src: url(fonts/KosugiMaru-Regular-subset.woff2) format('woff2');
 }
 
 /* mononoki */
 @font-face{
   font-family: 'mononoki-regular';
-  src: url(fonts/mononoki/mononoki-Regular-subset.woff2) format('woff2');
+  src: url(fonts/mononoki-Regular-subset.woff2) format('woff2');
 }
 @font-face{
   font-family: 'mononoki-bold';
-  src: url(fonts/mononoki/mononoki-Bold.woff2) format('woff2');
+  src: url(fonts/mononoki-Bold.woff2) format('woff2');
 }
 
+/* Lobster */
 @font-face{
   font-family: 'Lobster';
-  src: url(fonts/Lobster/Lobster-Regular-subset.woff2) format('woff2');
+  src: url(fonts/Lobster-Regular-subset.woff2) format('woff2');
 }
 
-
-
-/*Google fonts*/
-/*.sn-pro {*/
-/*  font-family: "SN Pro", sans-serif;*/
-/*  font-weight: 100;*/
-/*  font-style: normal;*/
-/*}*/
 
 /* will later convert all those fonts*/
 .kosugi-maru-regular {
@@ -291,19 +278,6 @@ a {
   font-weight: 400;
   font-style: normal;
 }
-
-
-/*.teko {*/
-/*  font-family: "Teko", sans-serif;*/
-/*  font-weight: 400;*/
-/*  font-style: normal;*/
-/*}*/
-
-/*.oooh-baby-regular {*/
-/*  font-family: "Oooh Baby", cursive;*/
-/*  font-weight: 400;*/
-/*  font-style: normal;*/
-/*}*/
 
 /* Container */
 .container-main {
@@ -326,13 +300,8 @@ a {
   max-width: 77.5rem;
   box-sizing: border-box;
   padding: 0;
-
-  
-  
-  /*justify is used for columns, align is used for rows*/
   align-items: start;
 }
-
 
 /*------------------------*/
 /*--------- Menu ---------*/
@@ -349,7 +318,7 @@ a {
   
   background-image: var(--menu-img);
   background-position: 85% 0%;
-  background-size: 300px;
+  background-size: 18.75rem;
   box-shadow: 0 5px 7px var(--box-shadow);
   transition: var(--general-transition);
 }
@@ -359,10 +328,8 @@ a {
 
 .menuButtons {
   height: auto;
-
   display: flex;
   flex-direction: column;
-
   font-size: 1rem;
 }
 
@@ -379,7 +346,7 @@ a {
   content: "⭐";
 }
 
-.btn {
+.mainb .btn{
   display: flex;
   justify-content: center;
   border-radius: 10px;
@@ -392,7 +359,7 @@ a {
   line-height: 1;
 }
 
-.btn .edge{
+.mainb .btn .edge{
   position: absolute;
   border-radius: 6px;
   width: 7.99rem;
@@ -403,7 +370,8 @@ a {
   background-color: var(--edge-bg);
 }
 
-.btn .front{
+
+.mainb .btn .front{
   position: relative;
   display: flex;
   justify-content: center;
@@ -417,6 +385,10 @@ a {
 
   background-color: var(--front-bg);
 }
+
+.mainb .btn:visited{
+  color: black;
+}
 .f1{
   margin: 0.625rem;
   justify-self: center;
@@ -428,48 +400,45 @@ a {
 }
 
 /* general button settings */
-.btn:hover .front{
-
+.mainb .btn:hover .front{
   background-color: var(--front-hover-bg);
-  color: var(--text-hover-color);
-
+  color: black;
   transform: translateY(-0.5rem);
   width: 7rem;
   cursor: pointer;
 }
 
-.btn:hover .edge{
+.mainb .btn:hover .edge{
   width: 100%;
   width: 7rem;
   background-color: var(--edge-hover-bg);
 }
 
-.btn:link .front, .btn:visited .front{
+.mainb .btn:link .front{
   color: #1A0409;
 }
 
 
-.btn1 {
+.mainb .btn1{
   --front-bg: #FF8F8F;
   --edge-bg: #C85F5F;
   --front-hover-bg: #FF6363;
   --edge-hover-bg: #D44C4C;
-
   --text-hover-color: var(--win-text-color1);
 }
-.btn2 {
+.mainb .btn2{
   --front-bg: #FFD876;
   --edge-bg: #EDBC39;
   --front-hover-bg: #FFC94F;
   --edge-hover-bg: #F0B522;
 }
-.btn3 {
+.mainb .btn3{
   --front-bg: #b7fab7;
   --edge-bg: #67C767;
   --front-hover-bg: #7af57a;
   --edge-hover-bg: #38B538;
 }
-.btn4 {
+.mainb .btn4{
   --front-bg: #b7b7fa;
   --edge-bg: #7575f5;
   --front-hover-bg: #9797F7;
@@ -477,12 +446,12 @@ a {
 }
 
 
-.btn:active .front{
+.mainb .btn:active .front{
   transform: translateY(-0.15rem);
   transition: transform 10ms;
 }
 
-.btn:active .edge{
+.mainb .btn:active .edge{
   transition: transform 10ms;
 }
 
@@ -500,7 +469,6 @@ a {
 .container-log{
   justify-content: flex-start;
   margin-inline: auto;
-  /* #ffe4e4 */
   box-sizing: border-box;
 }
 .updatelog{
@@ -510,7 +478,6 @@ a {
   align-items: center;
   justify-content: flex-start;
   height: 16.125rem;
-
   border-radius: 10px 10px 0 0;
 }
 
@@ -520,7 +487,6 @@ a {
   letter-spacing: 10%;
   font-size: 0.875rem;
   font-weight: 600;
-
   display: flex;
   justify-content: space-between;
   align-items: center; 
@@ -553,9 +519,7 @@ a {
   height: 1.25rem;
   background-color: var(--wincolor2);;
   text-align: center;
-
   padding: 0;
-
   border-radius: 20%;
   border: none;
   box-shadow: 0 1px 1px var(--box-shadow);
@@ -574,7 +538,6 @@ a {
   background-color: var(--wincolor1);
   border-radius: 10px 10px 0 0;
   width: 13rem;
-  
   box-shadow: 0 5px 7px var(--box-shadow);
   transition: var(--general-transition);
   border-radius: 10px;
@@ -593,20 +556,14 @@ a {
   left: 0;
   overflow-y: scroll;
   overflow-x: hidden;
-
   width: 100%;
-
   transition: var(--general-transition);
-
   scrollbar-width: thin;
   scrollbar-color: var(--emphasize) var(--wincolor2);  
-
   box-shadow: 0 5px 7px var(--box-shadow);
-
   height: 0;
   padding: 0;
   border: solid 1px var(--border);
-  
   visibility: hidden;
 }
 
@@ -668,9 +625,6 @@ li::marker{
   border-top: 1px solid var(--box-shadow);
 }
 
-
-
-
 .Chloe{
   width: 7.813rem;
   height: auto;
@@ -690,9 +644,7 @@ li::marker{
   justify-content: center;
   align-items: center;
   flex-direction: column;
-
   gap: 0.625rem;
-
   padding: 1rem 0 0.626rem 0;
   height: 100%;
 }
@@ -706,14 +658,12 @@ li::marker{
   top: 0;
   background-image: var(--guestbook-img);
   background-size: 200%;
-
   width: 10rem;
   height: 2.5rem;
   border-radius: 10px;
   border: solid 0.2px var(--border);
   box-shadow: 0 0.313rem 0.438rem var(--box-shadow);
-  transition: 150ms ease-out;
-
+  transition: var(--general-transition);
   font-family: 'Comfortaa';
   font-weight: 900;
   color: var(--guestbook-text);
@@ -724,7 +674,7 @@ li::marker{
   height: 3rem;
   color: var(--guestbook-text2);
   background-image: var(--guestbook-img-light);
-  transition: 250ms ease-out;
+  transition: var(--general-transition);
   cursor: pointer;
 }
 
@@ -733,14 +683,13 @@ li::marker{
   height: 2.5rem;
   color: var(--emphasize);
   background-image: url("images/bg/guestbook-lightpink.jpg");
-  transition: 250ms ease-out;
+  transition: var(--general-transition);
 }
 
 /* will return here later */
 .container-guestbook img{
   height: 4.8rem;
   width: 6.25rem;
-
   border-radius: 10px;
   border: solid 0.2px var(--border);
 }
@@ -750,30 +699,14 @@ li::marker{
 }
 
 
-
-
 /*------------------------*/
 /*------ Centerpage ------*/
 /*------------------------*/
-
-/*Had some problems to figure out how do justify/align-items/content work
-
-apparently, justify-self cannot be applied to elements in flexbox cuz it considers all those individual elements 
-as one big element that gets changed.
-basically trying to align an item within itself 
-and based on that justify-items cannot be applied too
-
-justify-content on the other hand manages a free space of the whole container
-
-
-*/
 .centerpage {
   display: flex;
   flex-direction: column;
-  
   align-self: center;
   align-items: center;
-  
   width: 100%;
 }
 
@@ -781,7 +714,6 @@ justify-content on the other hand manages a free space of the whole container
   position: relative;
   box-sizing: border-box;
   justify-self: center;
-  
   width: 25rem;
   border-radius: 10px;
   outline: solid 1px var(--border);
@@ -797,13 +729,9 @@ justify-content on the other hand manages a free space of the whole container
   background: var(--wincolor1);
   border-radius: 40px;
   padding: 0.5rem 2.5rem 0.5rem 2.5rem;
-  
   -webkit-text-stroke: var(--wincolor2);
-  
   border: 1px solid var(--border);
-
   margin-bottom: 0.938rem;
- 
   font-size: 0.75rem;
   letter-spacing: 15%;
   color: var(--win-text-color2);
@@ -820,14 +748,11 @@ justify-content on the other hand manages a free space of the whole container
 }
 
 .Melia-ov1 {
-  width: 160px; 
-  height: 80px;
-  
+  width: 10rem; 
+  height: 5rem;
   right: 31%;
   top: 13%;
-  
   border-radius: 50%;
-  
   position: absolute;
   cursor: grab;
 }
@@ -836,19 +761,15 @@ justify-content on the other hand manages a free space of the whole container
 }
 
 .Melia-ov2 {
-  width: 20px; 
-  height: 20px;
-  
+  width: 1.25rem; 
+  height: 1.25rem;
   right: 50.4%;
   top: 45%;
-  
   border-radius: 50%;
-  
   position: absolute;
   cursor: pointer;
 }
 
-/* configuring items with absolute position */
 .attach{
   position: absolute;
 }
@@ -882,25 +803,19 @@ justify-content on the other hand manages a free space of the whole container
   bottom: 0%;
   transform: rotate(-15deg);
 }
-
 .phrase{
   width: 34.375rem;
   filter: var(--phrase-img);
   transition: var(--general-transition);
 }
-
 .pageTitle h1{
   margin: 0;
   padding: 0;
 }
 
-
-
-
 /*------------------------*/
 /*------ Rightside -------*/
 /*------------------------*/
-
 .rightside{
   align-self: center;
   display: flex;
@@ -921,7 +836,6 @@ justify-content on the other hand manages a free space of the whole container
   font-size: 1rem;
   color: var(--border);
   background-color: var(--wincolor2);
-
   border: solid 2px var(--border);
   margin-bottom: 0.626rem;
   transition: var(--general-transition);
@@ -947,7 +861,6 @@ justify-content on the other hand manages a free space of the whole container
   height: 10rem;
   object-fit: contain;
   padding: 0.188rem 0.188rem 0 0.188rem;
-
   box-shadow: 2px 2px 2px inset var(--box-shadow);
   z-index: 2;
 }
@@ -1044,24 +957,19 @@ justify-content on the other hand manages a free space of the whole container
 }
 
 
-/*------------------------------
-            Calendar
-  ------------------------------*/
-
+/*----------------------------
+---------- Calendar ----------
+------------------------------*/
 .calendar{
   display: flex;
   flex-direction: column;
-  
   box-sizing: border-box;
-
   container-type: inline-size;
   overflow: hidden;
   min-width: 3.125rem;
   max-width: 14.063rem;
-  
   width: 12.5rem;
   height: auto;
-  
   border-radius: 0.626rem;
   border: solid 1px var(--border);
   box-shadow: 0 5px 7px var(--box-shadow);
@@ -1081,7 +989,6 @@ justify-content on the other hand manages a free space of the whole container
   flex-wrap: nowrap;
   gap: 0.313rem;
 }
-
 
 .chevron-right{
   stroke: var(--win-text-color1);
@@ -1112,7 +1019,6 @@ justify-content on the other hand manages a free space of the whole container
   stroke: var(--wincolor2);
 }
 
-
 .calendar_header p{
   margin: 0;
   font-size: 0.875rem;
@@ -1121,10 +1027,8 @@ justify-content on the other hand manages a free space of the whole container
 }
 .calendar_body {
   font-family: 'ZenMaruGothic-Regular';
-  
   display: flex;
   flex-direction: column;
-
   justify-content: space-around;
   align-items: center;
   background-color: var(--wincolor2);
@@ -1134,7 +1038,6 @@ justify-content on the other hand manages a free space of the whole container
 .calendar_navigation{
   user-select: none;
 }
-
 .calendar_body ul{
   margin: 0;
   padding: 0;
@@ -1144,7 +1047,7 @@ justify-content on the other hand manages a free space of the whole container
   list-style: none;
   margin-bottom: 0.313rem;
 }
-/**/
+
 .calendar_body li{
   display: flex;
   justify-content: center;
@@ -1153,15 +1056,10 @@ justify-content on the other hand manages a free space of the whole container
   aspect-ratio: 1 / 1;
   margin: 1px;
   /* 8px is for margin added from both sides of calendar body, and 20px is from padding from same calendar body */
-  
   font-size: 0.625rem;
 }
 
 .calendar .calendar_dates, .calendar_weekdays{
-  /*display: grid;*/
-  /*grid-template-columns: repeat(7, 1fr);*/
-  /*grid-template-rows: repeat(6, 1fr);*/
-  
   display: flex;
   flex-wrap: wrap;
 }
@@ -1189,8 +1087,6 @@ justify-content on the other hand manages a free space of the whole container
   outline-color: var(--calendar-hover1);
   transition: var(--general-transition);
 }
-/* .calendar_dates li:not(active):not(highlight):hover {
-} */
 
 .calendar_dates .active{
   background-color: transparent;
@@ -1208,45 +1104,32 @@ justify-content on the other hand manages a free space of the whole container
 /*------------------------------------------------*/
 /*------------------------------------------------*/
 /*------------------------------------------------*/
-
-
-
 .link-wrapper{
   display: flex;
   justify-content: center;
   align-items: center;
-  
   min-height: 100vh;
-  
   background-image: var(--linkpage-pattern);
   background-repeat: repeat; 
   animation: move3 7s linear infinite;
 }
 
 .container-link{
-  font-size: 20px;
-  
-  width: 400px;
-  height: 400px;  
-
-  margin: 25px;
-
+  font-size: 1.25rem;
+  width: 25rem;
+  height: 25rem;  
+  margin: 1.25rem;
   background-color: var(--calendar-base);
   border-radius: 40px;
-  
   border: 2px solid var(--emphasize);
   box-shadow: 0 0 30px var(--box-shadow), 0 0 50px var(--bulb-bg) inset;
-  
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 15px;
-
-  padding: 30px;
-
+  gap: 0.938rem;
+  padding: 1.875rem;
   text-align: center;
-
   font-family: "Kosugi Maru";
 }
 @keyframes move3{
@@ -1254,19 +1137,18 @@ justify-content on the other hand manages a free space of the whole container
     background-position: 0px 0px;
   }
   to {
-    background-position: 143px 143px;
+    background-position: 8.938rem 8.938rem;
   }
 }
 
 
 .container-link img{
-  height: 35px;
-  width: 35px;
+  height: 2.188rem;
+  width: 2.188rem;
 }
 .container-link h1{
   letter-spacing: 10%;
 }
-
 .container-link a{
   position: relative;
   display: flex;
@@ -1307,6 +1189,7 @@ justify-content on the other hand manages a free space of the whole container
 .container-link .front:hover{
   background-color: var(--bg);
   transform: translateY(-0.15rem);
+  transition: var(--general-transition);
 }
 .container-link .front:active{
   background-color: lightblue;
@@ -1337,30 +1220,27 @@ justify-content on the other hand manages a free space of the whole container
 .container-link .link-back .front{
   padding-inline: 15px;
   margin-top: auto;
-  width: 100px;
-  /* align-self: center; */
+  width: 6.25rem;
 }
 
 
 
-/* 3) About page ----------------------------------*/
-
+/* 2) About page ---------------------------------*/
+/*------------------------------------------------*/
+/*------------------------------------------------*/
+/*------------------------------------------------*/
 .about-wrapper{
   box-sizing: border-box;
   width: 100%;
   min-height: 100vh;
-  
-  padding: 15px;
-
+  padding: 0.938rem;
   display: flex;
   flex-direction: column;
-  
   justify-content: center;
   align-items: center;
-  
   background-image: var(--about-bg);
   background-repeat: repeat; 
-  background-size: 30px;
+  background-size: 1.875rem;
   animation: move2 3s linear infinite;
   scrollbar-color: var(--emphasize) var(--bg); 
 }
@@ -1370,41 +1250,32 @@ justify-content on the other hand manages a free space of the whole container
     background-position: 0px 0px;
   }
   to {
-    background-position: 30px 30px;
+    background-position: 1.875rem 1.875rem;
   }
 }
 
-
 .container-about {
   color: var(--about-textcolor1);
-  
-  /*min widht/height will be added later*/
   max-width: 800px;
   max-height: 720px;
   border-radius: 10px 10px 0px 0px;
   box-shadow: 
     0 8px 10px var(--box-shadow),
-    inset 3px 4px 3px var(--bulb-bg),
+    inset 3px 4px 3px var(--about-boxshadow-inset),
     inset -1px -1px 5px var(--about-textcolor1);
   background-color: var(--about-wincolor1);
 }
 
 .container-about .center{
-  margin: 15px;
   position: relative;
   font-family: 'ZenMaruGothic-Medium';
   box-sizing: border-box;
   max-height: 372px;
   overflow: auto;
-  margin: 0 15px 15px 15px;
+  margin: 0 0.938rem 0.938rem 0.938rem;
   padding: 1.875rem 1.875rem 0px 1.875rem;
-   /*min widht/height will be added later*/
   font-size: 20px;
   background-color: var(--bulb-bg);
- 
-  /* box-shadow:
-    inset 3px 3px 5px #b26c6c99,
-    inset -3px -3px 10px white; */
 }
 
 .center .firstP{
@@ -1420,35 +1291,36 @@ justify-content on the other hand manages a free space of the whole container
   top: 40%;
   z-index: 2;
 }
-.center #chibi{
-  height: 200px;
-  width: 200px;
-}
 
+.center #chibi{
+  height: 12.5rem;
+  width: 12.5rem;
+}
+#chibi:hover{
+  cursor: pointer;
+} 
 .center .chibi p{
   color: var(--about-textcolor1);
 }
-
 .about-wrapper img{
   width: 200px;
-  object-fit: contain;
-  
+  object-fit: contain; 
 }
-
 .about-wrapper .top{
   display: flex;
-  margin: 15px 20px 5px 15px;
+  margin: 0.938rem 1.25rem 0.313rem 0.938rem;
   justify-content: space-between;
   align-items: flex-end;
-  font-size: 12px;
+  font-size: 0.75rem;
 }
 
 .about-wrapper .Title::before {
   content: "";
   position: absolute;
   background: url("images/icons/about-window.png") no-repeat center / contain;
-  height: 40px;
-  width: 40px;
+  filter: var(--about-ico);
+  height: 2.5rem;
+  width: 2.5rem;
   left: 0;
   top: 50%;
   transform: translateY(-60%);
@@ -1459,26 +1331,22 @@ justify-content on the other hand manages a free space of the whole container
   padding: 0;
   position: relative;
   /*font-family: "Hachi Maru Pop";*/
-  padding-left: 45px;
+  padding-left: 2.813rem;
   margin: 0;
   color: var(--about-textcolor1);
   font-weight: 400;
 }
-
 .center p, .center li, .center h3, .center h2, .center h1{
   margin: 0;
 }
-
 .center p {
   line-height: 3;
   color: var(--about-textcolor2);
 }
-
 .center li {
   line-height: 2;
   color: var(--about-textcolor2);
 }
-
 .center h1 {
   line-height: 2;
   color: var(--about-textcolor2);
@@ -1489,8 +1357,9 @@ justify-content on the other hand manages a free space of the whole container
   gap: 10px;
 }
 
-/* Link and button configurations */
 .captions .minimise {
+  display: flex;
+  justify-content: center;
   background-color: var(--bulb-bg);
   width: 30px;
   height: 30px;
@@ -1501,27 +1370,21 @@ justify-content on the other hand manages a free space of the whole container
   font-size: 20px;
   font-weight: bold;
 }
-
 .captions .minimise:hover {
   background-color: var(--about-minimise);
   transition: var(--general-transition);
 }
-
 .captions .minimise:active {
-  /*interesting idea of changing inner shadows, but it may be not really how old window ui were designed*/
-  
   box-shadow: 
     inset 3px 3px 3px var(--box-shadow),
-    inset -3px -3px 3px var(--bulb-bg);
+    inset -3px -3px 3px var(--about-boxshadow-inset);
   transition: transform 10ms;
   background-color: var(--wincolor2);
 }
-
 .captions .minimise span{
   display: inline-block;
   transition: transform 10ms;
 }
-
 .captions .minimise:active span{
   transform: translate(10%, 10%);
 }
@@ -1556,39 +1419,33 @@ justify-content on the other hand manages a free space of the whole container
 
 
 
-/* 4) Gallery page ----------------------------------*/
-/* 4) Gallery page ----------------------------------*/
-/* 4) Gallery page ----------------------------------*/
-/* 4) Gallery page ----------------------------------*/
-/* 4) Gallery page ----------------------------------*/
-
+/* 2) Gallery page -------------------------------*/
+/*------------------------------------------------*/
+/*------------------------------------------------*/
+/*------------------------------------------------*/
 .gallery-wrapper{
   margin: 0;
   font-family: 'mononoki';
 }
-
 .gallery-container{
   display: grid;
   grid-template-columns: 1fr 4fr;
 }
-
 .gallery-wrapper .years{
   display: flex;
   flex-direction: column;
 }
-
 .gallery-container .leftside{
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
   position: relative;
-  padding: 40px 15px 20px 15px;
+  padding: 2.5rem 0.938rem 1.25rem 0.938rem;
   height: 100%;
   max-height: 100vh;
   width: 100%;
   margin: 0;
   background: var(--gallery-side);
-  
   text-align: center;
 }
 .gallery-container .content {
@@ -1599,7 +1456,6 @@ justify-content on the other hand manages a free space of the whole container
   align-items: center;
   height: 100%;
 }
-
 .lace{
   position: absolute;
   left: 100%;
@@ -1627,7 +1483,7 @@ justify-content on the other hand manages a free space of the whole container
 .gallery-container .centerpage{
   box-sizing: border-box;
   height: 100vh;
-  padding: 0 40px 40px 40px;
+  padding: 0 2.5rem 2.5rem 2.5rem;
   background-image: var(--gallery-bg);
   display: flex;
   flex-direction: column;
@@ -1644,29 +1500,25 @@ justify-content on the other hand manages a free space of the whole container
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 5px;
+  gap: 0.313rem;
 }
 
 .gallery-container .gallery img{
-  width: 300px;
+  width: 18.75rem;
   object-fit: contain;
 }
 
 .gallery-container .title h1{
-  margin-top: 5px;
-  margin-bottom: 70px;
-  
+  margin-top: 0.313rem;
+  margin-bottom: 4.375rem;
   color: var(--gallery-text1-color);
-  
   text-shadow: 4px 4px var(--gallery-boxshadow);
-  
-  font-size: 64px;
+  font-size: 4rem;
 }
 
 .gallery-container .years {
   display: flex;
   align-items: center;
-  
   gap: 1rem;
 }
 
@@ -1674,30 +1526,24 @@ justify-content on the other hand manages a free space of the whole container
   color: var(--gallery-text2-color);
   background-color: var(--gallery-blockbg1);
   outline: 1px solid var(--gallery-border);
-  margin-bottom: 10px;
-  
-  border-radius: 10px;
-  
-  width: 100px;
+  margin-bottom: 0.625rem;
+  border-radius: 0.625rem;
+  width: 6.25rem;
   min-width: 4rem;
   max-width: 8rem;
   height: 2rem;
-  
   display: flex;
   align-items: center;      
   justify-content: center;
 }
-
 .gallery-container .years .year-box::before, .gallery-container .years .year-box::after {
   content: "☆";
   margin: 0.5rem;
 }
-
 .gallery-container a{
   position: relative;
   display: block; 
 }
-
 .gallery-container .years .front, .content .home .front{
   position: relative;
   display: flex;
@@ -1707,7 +1553,6 @@ justify-content on the other hand manages a free space of the whole container
 }
 .gallery-container .years .front{
   border-radius: 10px;
-  
   width: 100%;
   background-color: var(--gallery-blockbg2);
   border: 1px solid var(--gallery-border);
@@ -1716,7 +1561,6 @@ justify-content on the other hand manages a free space of the whole container
   height: 2.5rem;
   color: #083208;
 }
-
 .gallery-container .home .front{
   color: var(--gallery-text2-color);
   background-color: var(--gallery-blockbg1);
@@ -1727,7 +1571,6 @@ justify-content on the other hand manages a free space of the whole container
   max-width: 8rem;
   height: 2rem;
 }
-
 .gallery-container .edge{
   position: absolute;
   background-color: var(--gallery-boxshadow);
@@ -1737,22 +1580,18 @@ justify-content on the other hand manages a free space of the whole container
   height: 100%;
   border-radius: 10px;
 }
-
 .gallery-container .centerpage h1{
   text-align: center;
   color: var(--gallery-text3-color);
 }
-
 .gallery-container .content .years a:hover .front{
   background-color: var(--gallery-hover1);
   transition: 50ms ease-out;
 }
-
 .gallery-container .content .home a:hover .front{
   background-color: var(--gallery-hover2);
   transition: 50ms ease-out;
 }
-
 .gallery-container .content a:active .front{
   transform: translateY(0rem);
 }
@@ -1761,16 +1600,15 @@ justify-content on the other hand manages a free space of the whole container
 
 
 /* 5) Popup-mobile page ----------------------------------*/
-/* 5) Popup-mobile page ----------------------------------*/
-/* 5) Popup-mobile page ----------------------------------*/
-/* 5) Popup-mobile page ----------------------------------*/
-/* 5) Popup-mobile page ----------------------------------*/
+/*  ------------------------------------------------------*/
+/*  ------------------------------------------------------*/
+/*  ------------------------------------------------------*/
+/*  ------------------------------------------------------*/
 
 .pop-body{
   display: flex;
   justify-content: center;
   align-items: center;
-  /* margin: auto; */
   width: 100%;
   height: 100vh;
   padding: 0;
@@ -1780,12 +1618,11 @@ justify-content on the other hand manages a free space of the whole container
   background-repeat: repeat;
 }
 .pop-body img{
-  width: 250px;
+  width: 15.625rem;
   height: auto;
   border: 1px solid black;
   box-shadow: 0 5px 7px #9a5d2880;
 }
-
 .pop-mob-body{
   box-sizing: border-box;
   display: flex;
@@ -1804,10 +1641,8 @@ justify-content on the other hand manages a free space of the whole container
   position: relative;
   border: none;
   cursor: pointer;
-
   margin: 1.5rem;
 }
-
 .pop-mob-body .front{
   display: flex;
   font-family: 'Comfortaa';
@@ -1817,12 +1652,10 @@ justify-content on the other hand manages a free space of the whole container
   border-radius: 0.625rem;
   color: var(--win-text-color2);
   background-color: var(--wincolor1);
-  /* transform: translateY(-1rem); */
   transition: var(--general-transition);
   padding: 0.656rem;
   transform: translateY(-0.25rem);
 }
-
 .pop-mob-body .edge{
   display: flex;
   position: absolute;
@@ -1833,7 +1666,6 @@ justify-content on the other hand manages a free space of the whole container
   top: 0;
   left: 0;
 }
-
 .pop-mob-body a:hover .front{
   color: var(--emphasize);
   background-color: #FFFFFF;
@@ -1843,18 +1675,15 @@ justify-content on the other hand manages a free space of the whole container
   transition: var(--general-transition);
   transition: transform 10ms;
 }
-
 .pop-mob-body img{
-  width: 600px;
+  width: 37.5rem;
   height: auto;
   border: 1px solid black;
   box-shadow: 0 5px 7px #9a5d2880;
 } 
-
 .pop-mob-body ::selection{
   background-color: #cc9b7180;
 }
-
 @media screen and (max-width: 1050px){
   .pop-mob-body{
     height: auto;
@@ -1881,7 +1710,6 @@ justify-content on the other hand manages a free space of the whole container
     box-sizing: border-box;
     grid-template-columns: 100%;
     grid-template-rows: repeat(9, auto);
-
     grid-template-areas:
     "box-1"
     "box-2"
@@ -1892,10 +1720,8 @@ justify-content on the other hand manages a free space of the whole container
     "box-3"
     "box-5"
     "box-4";
-
     width: 100%;
     padding: 0.938rem;
-
     gap: 2rem;
   }
 
@@ -1911,7 +1737,6 @@ justify-content on the other hand manages a free space of the whole container
     height: auto;
     border-radius: 0 0 1.563rem 1.563rem;
     background-color: var(--wincolor2);
-
     border: solid 1px var(--border);
     gap: 2.5rem;
     transition: var(--general-transition);
@@ -1920,7 +1745,6 @@ justify-content on the other hand manages a free space of the whole container
     width: 3.125rem;
     height: 3.125rem;
   }
-
   .menuButtonsMobile{
     visibility: visible;
     display: flex;
@@ -1935,27 +1759,23 @@ justify-content on the other hand manages a free space of the whole container
     opacity: 0;
     visibility: visible;
     transform: translateY(20px);
-
     transition:
     opacity 0.35s ease,
     transform 0.35s ease,
     visibility 0.35s ease;
   }
-  .btn .front{
+  .mainb .btn .front{
     border-radius: 6px;
     max-width: 6rem;
     height: 1.8rem;
   }
-  .btn .edge{
+  .mainb .btn .edge{
     max-width: 6rem;
   }
-
-  /* general button settings */
-  .btn:hover .front{
+  .mainb .btn:hover .front{
     max-width: 6rem;
   }
-
-  .btn:hover .edge{
+  .mainb .btn:hover .edge{
     max-width: 6rem;
   }
   .Menu{
@@ -1964,10 +1784,6 @@ justify-content on the other hand manages a free space of the whole container
   #hambtn{
     display: none;
   }
-
-
-
-  /* centerpage */
   .Melia_container{
     display: flex;
     width: 100%;
@@ -1975,36 +1791,33 @@ justify-content on the other hand manages a free space of the whole container
     max-width: 30rem;
     justify-content: center;
   }
-
   .pageTitle{
     width: 100%;
     max-width: 20rem;
     text-align: center;
   }
-
   .Melia_container .Melia{
     width: 100%;
     height: auto;
   }
-
   .Melia-ov1 {
-    width: 100px;
-    height: 100px;
+    width: 6.25rem;
+    height: 6.25rem;
     right: 42%;
   }
   .Melia-ov2 {
-    width: 20px;
+    width: 1.25rem;
   }
   .fl1{
-    width: 140px;
+    width: 8.75rem;
   } 
   .fl2{
     width: 100%;
-    max-width: 190px;
+    max-width: 11.875rem;
   }
   .fl3, .fl4{
     width: 100%;
-    max-width: 100px;
+    max-width: 6.25rem;
   }
   .phrase{
     width: 100%;
@@ -2032,7 +1845,6 @@ justify-content on the other hand manages a free space of the whole container
     border: solid 1px var(--border);
     visibility: visible;
   }
-
   .artoftheday{
     width: 100%; 
   }
@@ -2041,26 +1853,22 @@ justify-content on the other hand manages a free space of the whole container
   }
   .artoftheday .doodle{
     width: 100%;
-    height: 400px;
+    height: 25rem;
   }
   .container-log, .log-top, .updatelog .log-message{
     width: 100%;
   }
-
   .Chloe{
     margin-top: 1.875rem;
     width: 15.625rem;
     height: auto;
   }
-
   .f1{
     display: none;
   }
   .f2{
     display: block;
   }
-
-
   .updatelog, .log-top{
     box-sizing: border-box;
     transition: 450ms ease-out;
@@ -2100,12 +1908,7 @@ justify-content on the other hand manages a free space of the whole container
     transform: translate(0);
   }
 
-
-
-
-
   /* Guestbook */
-
   .container-guestbook{
     display: flex;
     flex-direction: column;
@@ -2120,7 +1923,6 @@ justify-content on the other hand manages a free space of the whole container
     justify-content: center; 
     align-items: center;
   }
-
   .guestbook-frame.iframe{
     display: block;  
     margin: 0 auto;
@@ -2135,7 +1937,6 @@ justify-content on the other hand manages a free space of the whole container
   #gbtn{
     display: none;
   }
-
   .guestbook-frame.iframe{
     display: block;
   }
@@ -2156,9 +1957,8 @@ justify-content on the other hand manages a free space of the whole container
 
 @media screen and (max-width: 655px){
   h1{
-    font-size: 20px;
+    font-size: 1.25rem;
   }
-
   /* navigation bar */
   .navbar{
     box-sizing: border-box; 
@@ -2235,7 +2035,6 @@ justify-content on the other hand manages a free space of the whole container
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
-
     transition:
     opacity 0.35s ease,
     transform 0.35s ease,
@@ -2244,53 +2043,45 @@ justify-content on the other hand manages a free space of the whole container
   .menuButtonsMobile{
     display: none;
   }
-
   .menuButtons{
     width: 100%;
     align-items: center;
     padding-inline: 1.25rem;
   }
-
   .menuTitle{
     width: 100%;
     max-width: 13rem;
   }
-
-  .btn{
+  .mainb .btn{
     width: 100%;
   }
-
-  .btn .front{
+  .mainb .btn .front{
     border-radius: 6px;
     width: 100%;
     max-width: 15rem;
     height: 1.8rem;
   }
-  .btn .edge{
+  .mainb .btn .edge{
     width: 100%;
     max-width: 15rem;
   }
-
-  .btn:hover .front{
+  .mainb .btn:hover .front{
     border-radius: 6px;
     width: 100%;
     max-width: 15rem;
     height: 1.8rem;
   }
-  .btn:hover .edge{
+  .mainb .btn:hover .edge{
     width: 100%;
     max-width: 15rem;
   }
-
   .mobfl{
     display: none;
   }
-
   .Menu.active {
     opacity: 0;
     visibility: hidden;
     transform: translateY(20px);
-
     transition:
     opacity 0.35s ease,
     transform 0.35s ease,
@@ -2298,12 +2089,10 @@ justify-content on the other hand manages a free space of the whole container
   }
 
   /* centerpage */
-
   .pageTitle h1{
     font-size: clamp(1rem, 10vw, 1.25rem);
     text-align: center;
   }
-
   .pageTitle{
     box-sizing: border-box;
     min-width: 3rem;
@@ -2316,32 +2105,28 @@ justify-content on the other hand manages a free space of the whole container
     min-width: 12.5rem;
   }
   .Melia-ov1 {
-    max-width: 100px; 
+    max-width: 6.25rem; 
     right: 40%;
   }
-  
-  
   .Melia-ov2 {
-    max-width: 20px;
+    max-width: 1.25rem;
     right: 50%;
   }
   .fl1{
-    max-width: 50px;
+    max-width: 3.438rem;
     left: 87%;
   } 
   .fl2{
-    max-width: 85px;
+    max-width: 5.313rem;
     left: 0%;
     top: 0%;
   }
   .fl3, .fl4{
-    max-width: 60px;
+    max-width: 3.75rem;
   }
   .phrase{
     display: none;
   }
-
-
   .rightside{
     width: 100%;
   }
@@ -2353,7 +2138,6 @@ justify-content on the other hand manages a free space of the whole container
     max-width: 18.75rem;
     min-width: 12.5rem;
   }
-
   .bulbAndGifs .bulb{
     max-width: 18.75rem;
     min-width: 12.5rem;
@@ -2361,15 +2145,12 @@ justify-content on the other hand manages a free space of the whole container
   #darkmode-switcher{
     max-height: 15rem;
   }
-
   .gifs-group .gif1, .gifs-group .gif2{
     width: 100%;
     object-fit: contain;
     height: 6rem;
     transform: translate(0);
   }
-
-
   .item.gifs-group{
     display: flex;
     flex-direction: row;
@@ -2380,10 +2161,10 @@ justify-content on the other hand manages a free space of the whole container
     height: auto;
   }
 
-
   /* art of the day */
   .artoftheday{
-    width: 10.938rem;
+    width: 100%;
+    max-width: 12.75rem;
   }
   .daytoday{
     height: auto;
@@ -2394,23 +2175,20 @@ justify-content on the other hand manages a free space of the whole container
   }
 
   /*Update log */
-
   .container-log{
     display: flex;
     flex-direction: column;
     align-items: center; 
   }
-
   .updatelog{
     height: 20rem;
   }
   .updatelog .Chloe{
-    margin-top: 25px;
+    margin-top: 1.563rem;
     width: 100%;
     max-width: 9.375rem;
     height: auto;
   }
-
   .f1{
     display: none;
   }
@@ -2435,13 +2213,11 @@ justify-content on the other hand manages a free space of the whole container
     border: solid 1px var(--border);
     visibility: visible;
   }
-
   .menuButtons{
-    padding-bottom: 20px;
+    padding-bottom: 1.25rem;
   }
 
   /* Guestbook */
-
   .container-guestbook .front{
     width: 100%;
     display: flex;
@@ -2449,7 +2225,6 @@ justify-content on the other hand manages a free space of the whole container
     justify-content: center; 
     align-items: center;
   }
-
   .guestbook-frame.iframe{
     display: block;
     text-decoration: none;
@@ -2460,24 +2235,19 @@ justify-content on the other hand manages a free space of the whole container
     border: solid 1px var(--border);
     border-radius: 0.938rem;
   }
-
   #gbtn{
     display: none;
   }
-
   .guestbook-frame.link{
     display: none;
   }
-
   .guestbook-frame a{
     background-color: orange;
     padding: 1rem;
   }
-
   .calendar{
     display: none;
   }
-
 
   /* About page */
   .center .chibi{
@@ -2488,12 +2258,9 @@ justify-content on the other hand manages a free space of the whole container
   .firstP{
     align-items: start;
   }
-
   .ah1{
     font-size: 40px;
   }
-
-
   .gallery-container{
     display: flex;
     flex-direction: column;
@@ -2501,10 +2268,9 @@ justify-content on the other hand manages a free space of the whole container
   .gallery-container .centerpage{
     height: 100%;
     overflow: none;
-    padding-top: 100px;
+    padding-top: 6.25rem;
     overflow: visible;
   }
-
   .gallery-container .home{
     margin-bottom: 15px;
   }
@@ -2517,6 +2283,7 @@ justify-content on the other hand manages a free space of the whole container
     width: 100%;
     top: 100%;
     left: 0;
+    filter: var(--gallery-lace);
   }
   .gallery-container .leftside{
     display: flex;
@@ -2530,7 +2297,6 @@ justify-content on the other hand manages a free space of the whole container
   .goup{
     visibility: visible;
   }
-
   .gallery-container .goup .front{
     position: relative;
     display: flex;
@@ -2539,9 +2305,7 @@ justify-content on the other hand manages a free space of the whole container
     transform: translateY(-0.25rem);
     color: var(--gallery-text3-color);
     background-color: var(--gallery-blockbg1);
-    
     border-radius: 10px;
-    
     width: 100%;
     min-width: 4rem;
     max-width: 8rem;

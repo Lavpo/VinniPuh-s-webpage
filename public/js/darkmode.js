@@ -3,17 +3,13 @@ let bulb = document.querySelector(".bulb");
 let switchaudio = document.getElementById("light-switch");
 switchaudio.volume = 0.1;
 
-window.addEventListener("load", () => {
-  document.body.classList.remove("preload");
-});
-
 if(darkmode === "1"){
     document.body.classList.add("darkmode");
-    bulb.src = "images/other/bulb-dark.png";
+    bulb.src = "images/other/bulb-dark.webp";
 }
 else{
     document.body.classList.add("lightmode");
-    bulb.src = "images/other/bulb.png";
+    bulb.src = "images/other/bulb.webp";
 }
 
 

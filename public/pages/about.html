@@ -4,10 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About</title>
+    <script>
+      darkmode = localStorage.getItem("darkmode");
+      if(darkmode === "1"){
+        document.documentElement.style.setProperty("--bg", "#1D2E4F");
+      }
+      else{
+        document.documentElement.style.setProperty("--bg", "#FFF6F6");
+      }
+    </script>
     <link href="../style.css" rel="stylesheet" type="text/css" media="all">
     <link href="https://fonts.googleapis.com/css2?family=Hachi+Maru+Pop&amp;family=Kosugi+Maru&amp;family=Oooh+Baby&amp;family=Kirang+Haerang&amp;family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&amp;family=Teko:wght@300..700&amp;family=SN+Pro:ital,wght@0,200..900;1,200..900&amp;display=swap" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="/images/favicons/about-face.ico">
+    <script src="/js/load.js"></script>
     <script src="/js/darkmode-other.js" defer></script>
+    <audio id="button-click">
+      <source src="/audio/button-click.mp3" type="audio/mp3">
+    </audio>
+     <audio id="pop2">
+      <source src="/audio/pop2.mp3" type="audio/mp3">
+    </audio>
   </head>
   <body>
     <main class="about-wrapper">
@@ -15,9 +31,10 @@
         <div class="top">
           <h1 class="Title">about.exe</h1>
           <div class="captions">
-            <button class="minimise" href="https://google.com"><span>_</span></button>
-            <a class="close" href="../index.html"><span>X</span></a>
+            <a class="btn minimise" href="#"><span>_</span></a>
+            <a class="btn close" href="/index.html"><span>X</span></a>
           </div> 
+          <script src="/js/audio/menu-buttons-audio.js"></script>
         </div>
         <div class="center">
           <div class="firstP">
@@ -29,13 +46,67 @@
             <hr> 
             <div class="chibi">
               <p> hi~ </p>
-              <img id="chibi" src="/images/Melia/Melia-chibi.png">
+              <img id="chibi" src="/images/Melia/Melia-chibi.webp">
+              <!-- lazy to make this script as an individual file -->
+              <script>
+                (() => {
+                  const chibi = document.getElementById("chibi");
+                  const audio = document.getElementById("pop2");
+                  let hold;
+                  let anim;
+                  chibi.addEventListener("click", () => {
+                    clearTimeout(hold);
+                    hold = null;
+                    chibi.animate(
+                    [
+                      { transform: "scale(1, 1.1)", offset: 0},
+                      { transform: "scale(0.85, 1.3)", offset: 0.1},
+                      { transform: "scale(0.6, 1.45)", offset: 0.2},
+                      { transform: "scale(0.6, 1.5)", offset: 0.25},
+                      { transform: "scale(0.6, 1.53)", offset: 0.3},
+                      { transform: "scale(1.1, 0.5)", offset: 0.8},
+                      { transform: "scale(1.1, 0.7)", offset: 0.9},
+                      { transform: "scale(1, 1)", offset: 1}
+                    ],
+                    {
+                      duration: 300,
+                      easing: "ease-in-out"
+                    }
+                    );
+                    audio.currentTime = 0;
+                    audio.volume = 0.2;
+                    audio.play();
+                  });
+                  chibi.addEventListener("mousedown", () => {
+                    hold = setTimeout(() =>{
+                    anim = chibi.animate(
+                    [
+                      { transform: "scale(1, 1)", offset: 0},
+                      { transform: "scale(0.5, 40)", offset: 1},
+                      console.log("wah...")
+                    ],
+                    {
+                      duration: 10000,
+                      easing: "ease-in-out"
+                    }
+                    );
+                    audio.currentTime = 0;
+                    audio.volume = 0.2;
+                    audio.play();
+                    }, 300);
+                  });
+                  chibi.addEventListener("mouseup", () => {
+                    clearTimeout(hold);
+                    anim.cancel();
+                  });
+                })();
+                
+              </script>
             </div>
           </div>
           <br>
           <br>
           <br>
-          
           
           <h1 class="ah1">INTERESTS</h1>  
           <h3>Favourite games</h3>

@@ -7,6 +7,7 @@
     <meta property="og:image" content="images/Melia/Melia_preview1.png">
     <title>VinniPuh's Page || MyWebPage</title>
     <link href="style.css" rel="stylesheet" type="text/css" media="all">
+    <script src="/js/load.js"></script>
     <script>
       let darkmode = localStorage.getItem("darkmode");
       if(darkmode === "1"){
@@ -16,6 +17,7 @@
         document.documentElement.style.setProperty("--bg", "#FFF6F6");
       }
     </script>
+    <script src="js/darkmode.js" defer></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <!--Fonts-->
@@ -50,9 +52,8 @@
     <audio id="light-switch">
       <source src="audio/light-switch2.mp3" type="audio/mp3">
     </audio>
-    <script src="js/darkmode.js" defer></script>
 </head>
-  <body class="preload">
+  <body class="preload mainb">
     <div class="navbar">
       <button id="hambtn">
         <span></span>
@@ -60,28 +61,28 @@
         <span></span>
       </button>
       <script src="js/audio/navbar-sound.js"></script>
-      <img class="mobfl" src="images/flowers/pinkflower.png">
+      <img class="mobfl" src="images/flowers/pinkflower.webp">
 
       <nav class="item menuButtonsMobile">
         <a data-target="pages/about.html" href="pages/about.html" class="btn btn1">
           <span class="edge"></span>
           <span class="front">about</span>
         </a>
-        <a data-target="pages/gallery-pages/2026.html" href="pages/gallery-pages/2026.html" class="btn btn2">
+        <a href="pages/gallery-pages/2026.html" class="btn btn2">
           <span class="edge"></span>
           <span class="front">gallery</span>
         </a>
-        <a data-target="pages/links.html" href="pages/links.html" class="btn btn3">
+        <a href="pages/links.html" class="btn btn3">
           <span class="edge"></span>
           <span class="front">links</span>
         </a>
-        <a data-target="pages/thoughts.html" href="pages/thoughts.html" class="btn btn4">
+        <a href="pages/thoughts.html" class="btn btn4">
           <span class="edge"></span>
           <span class="front">thoughts</span>
         </a>
         <script src="js/audio/menu-buttons-audio.js"></script>
       </nav>
-      <img class="mobfl" src="images/flowers/pinkflower.png">
+      <img class="mobfl" src="images/flowers/pinkflower.webp">
 
     </div>
     <div class="main-wrapper" id="main">
@@ -197,8 +198,8 @@
 
               <script src="/js/Melia-face-changer.js"></script>
               
-              <img class="attach fl1" src="images/flowers/yellow_and_pink_flowers.png">
-              <img class="attach fl2" src="images/flowers/white_and_red_flowers.png">
+              <img class="attach fl1" src="images/flowers/yellow_and_pink_flowers.webp">
+              <img class="attach fl2" src="images/flowers/white_and_red_flowers.webp">
               <img class="attach fl3" src="images/flowers/pink-flower-long.webp">
               <img class="attach fl4" src="images/flowers/pink-flower-long.webp">
 
@@ -225,7 +226,7 @@
                 <div class="bulb-top">
                   <h3>Theme</h3>
                 </div>
-                <button id="darkmode-switcher"><img class="bulb" src="images/other/bulb.png"></button>
+                <button id="darkmode-switcher"><img class="bulb" src="images/other/bulb.webp"></button>
               </div>
 
               <div class = "item gifs-group">
