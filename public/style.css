@@ -1960,7 +1960,7 @@ li::marker{
   .mainb{
     overflow-y: scroll;
     scrollbar-color: var(--emphasize) var(--calendar-base);
-    height: auto;
+    height: 100vh;
     display: flex;
     flex-direction: column;
   }
