@@ -4,16 +4,28 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="/js/load.js"></script>
+  <script>
+    if(darkmode === "1"){
+      document.documentElement.style.setProperty("--bg", "#1D2E4F");
+    }
+    else{
+      document.documentElement.style.setProperty("--bg", "#FFF6F6");
+    }
+  </script>
   <script src="/js/darkmode-other.js" defer></script>
   <link href="/style.css" rel="stylesheet" type="text/css" media="all">
   <title>Popup</title>
+  <audio id="button-click">
+    <source src="https://lavpo.github.io/audio-host/button-click.mp3" type="audio/mp3">
+  </audio>
 </head>
 <body class="pop-mob-body">
   <img id="popup-img" style="max-width:100%;" alt="name">
-  <a href="/index.html"> 
+  <a class="btn" href="/index.html"> 
     <span class="edge"></span>
     <span class="front"> < Back </span>
   </a>
+  <script src="/js/audio/menu-buttons-audio.js"></script>
   <script>
     const params = new URLSearchParams(window.location.search);
     const imgSrc = params.get("img");
