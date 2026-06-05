@@ -12,7 +12,7 @@
 
             setTimeout(() => {
                 window.location.href = btn.href;
-            }, 120);
+            }, 200);
         });
     })
 })();

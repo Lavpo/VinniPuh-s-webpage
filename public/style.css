@@ -208,6 +208,9 @@ a {
   margin: 0;
   padding: 0;
 }
+.btn{
+  user-select: none;
+}
 @keyframes move1{
   from {
     background-position: 0px 0px;
@@ -1957,7 +1960,7 @@ li::marker{
   .mainb{
     overflow-y: scroll;
     scrollbar-color: var(--emphasize) var(--calendar-base);
-    height: 100dvh;
+    height: auto;
     display: flex;
     flex-direction: column;
   }
