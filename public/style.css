@@ -172,15 +172,19 @@
 
 /* 1) Main page ----------------------------------*/
 
-html,
-body {
+html {
   margin: 0;
   padding: 0;
   width: 100%;
   overflow-x: hidden;
   overflow-y: hidden;
 }
-body {
+.mainb {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden;
+  overflow-y: hidden;
   color: var(--win-text-color1);
   background-color: var(--bg);
 }
@@ -1950,7 +1954,7 @@ li::marker{
   h1{
     font-size: 1.25rem;
   }
-  body{
+  .mainb{
     overflow-y: scroll;
     scrollbar-color: var(--emphasize) var(--calendar-base);
     height: 100dvh;
@@ -2042,6 +2046,7 @@ li::marker{
   }
   .menuButtons{
     box-sizing: border-box;
+    justify-content: center;
     width: 100%;
     align-items: center;
     padding: 0 1.25rem 1.25rem 1.25rem;

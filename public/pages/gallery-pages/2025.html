@@ -6,6 +6,7 @@
     <title>2025</title>
     <script src="/js/load.js"></script>
     <script>
+      let darkmode = localStorage.getItem("darkmode");
       if(darkmode === "1"){
         document.documentElement.style.setProperty("--bg", "#3E2044");
         document.documentElement.style.setProperty("--gallery-lace", "invert(100%)");
