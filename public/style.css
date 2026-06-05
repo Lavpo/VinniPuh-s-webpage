@@ -1415,6 +1415,9 @@ li::marker{
 /*------------------------------------------------*/
 /*------------------------------------------------*/
 /*------------------------------------------------*/
+.gbody{
+  overflow: hidden;
+}
 .gallery-wrapper{
   margin: 0;
   font-family: 'mononoki';
@@ -2042,6 +2045,8 @@ li::marker{
     display: none;
   }
   .menuButtons{
+    display: flex;
+    flex-direction: column;
     box-sizing: border-box;
     justify-content: center;
     width: 100%;
