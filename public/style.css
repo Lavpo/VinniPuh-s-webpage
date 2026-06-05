@@ -1954,14 +1954,7 @@ li::marker{
   h1{
     font-size: 1.25rem;
   }
-  body{
-    overflow-y: scroll;
-    scrollbar-color: var(--emphasize) var(--calendar-base);
-    height: 100dvh;
-    display: flex;
-    flex-direction: column;
-  }
-  .mainb{
+  html, .mainb{
     overflow-y: scroll;
     scrollbar-color: var(--emphasize) var(--calendar-base);
     height: 100dvh;
