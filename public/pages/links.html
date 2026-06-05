@@ -6,7 +6,6 @@
     <title>Links</title>
     <script src="/js/load.js"></script>
     <script>
-      let darkmode = localStorage.getItem("darkmode");
       if(darkmode === "1"){
         document.documentElement.style.setProperty("--bg", "#1D2E4F");
       }
@@ -18,11 +17,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Kosugi+Maru&amp;display=swap" rel="stylesheet">
     <script src="/js/darkmode-other.js" defer></script>
     <link rel="icon" type="image/x-icon" href="/images/favicons/linkchain.ico">
+  </head>
+  <body class="preload">
     <audio id="button-click">
       <source src="https://lavpo.github.io/audio-host/button-click.mp3" type="audio/mp3">
     </audio>
-  </head>
-  <body class="preload">
     <main class="link-wrapper">
       <div class="container-link">
         <h1>links</h1>

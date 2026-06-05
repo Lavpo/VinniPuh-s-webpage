@@ -6,7 +6,6 @@
     <title>2025</title>
     <script src="/js/load.js"></script>
     <script>
-      let darkmode = localStorage.getItem("darkmode");
       if(darkmode === "1"){
         document.documentElement.style.setProperty("--bg", "#3E2044");
         document.documentElement.style.setProperty("--gallery-lace", "invert(100%)");
@@ -19,11 +18,11 @@
     <link href="/style.css" rel="stylesheet" type="text/css" media="all">
     <script src="/js/darkmode-other.js" defer></script>
     <link rel="icon" type="image/x-icon" href="/images/favicons/gallery-pencil.ico">
+  </head>
+  <body>
     <audio id="button-click">
       <source src="https://lavpo.github.io/audio-host/button-click.mp3" type="audio/mp3">
     </audio>
-  </head>
-  <body>
     <main class="gallery-wrapper">
       <div class="gallery-container">
         <div class="leftside" id="C1">        

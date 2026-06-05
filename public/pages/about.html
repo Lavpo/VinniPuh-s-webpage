@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About</title>
+    <script src="/js/load.js"></script>
     <script>
-      let darkmode = localStorage.getItem("darkmode");
       if(darkmode === "1"){
         document.documentElement.style.setProperty("--bg", "#1D2E4F");
       }
@@ -18,14 +18,14 @@
     <link rel="icon" type="image/x-icon" href="/images/favicons/about-face.ico">
     <script src="/js/load.js"></script>
     <script src="/js/darkmode-other.js" defer></script>
+  </head>
+  <body>
     <audio id="button-click">
       <source src="https://lavpo.github.io/audio-host/button-click.mp3" type="audio/mp3">
     </audio>
      <audio id="pop2">
       <source src="https://lavpo.github.io/audio-host/pop2.mp3" type="audio/mp3">
     </audio>
-  </head>
-  <body>
     <main class="about-wrapper">
       <div class="container-about">
         <div class="top">
