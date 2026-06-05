@@ -1960,7 +1960,6 @@ li::marker{
     height: 100dvh;
     display: flex;
     flex-direction: column;
-    overflow: hidden;
   }
   /* navigation bar */
   .navbar{
@@ -2028,10 +2027,11 @@ li::marker{
     display: flex;
     z-index: 10;
     justify-content: center;
-    align-self: start;
+    align-self: flex-start;
     border: solid 1px var(--border);
     width: 100%;
     height: auto;
+    left: 0;
     top: 77px;
     opacity: 1;
     visibility: visible;
@@ -2263,6 +2263,7 @@ li::marker{
     font-size: 40px;
   }
   .gallery-container{
+    font-family: 'Kosugi Maru';
     display: flex;
     flex-direction: column;
   }
