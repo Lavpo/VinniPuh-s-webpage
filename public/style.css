@@ -591,17 +591,6 @@ li::marker{
   font-size: 0.813rem;
 }
 
-.updatelog .log-message h3::before{
-  content: "";
-  display: inline-block;
-  width: 0.938rem;
-  height: 0.938rem;
-  margin-right: 0.3rem;
-  vertical-align: middle;
-  background: url("images/icons/chevrons/chevron-down-svgrepo-com.svg") center / contain no-repeat;
-}
-
-
 .updatelog .updtop p{
   align-self: end;
   color: var(--win-text-color3);
@@ -616,6 +605,7 @@ li::marker{
   font-size: 1rem;
   margin: 0 0 0.313rem 0;
   margin-bottom: 0;
+  padding: 0.313rem; 
 }
 .updatelog .log-message .upd p{
   font-size: 0.813rem;
