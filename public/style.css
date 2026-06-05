@@ -1,8 +1,9 @@
 
-/*all the code that is listed here can be used for making your own websites, projects, etc no matter if it's for 
-  personal nor commercial purposes
-  
-  all fonts that have been used here for making this website are free and open source 
+/*This website uses traditional licence, tho reproduction of artworks without permission is 
+  strongly prohibited. All images that does not belong to me are used only for personal use, 
+  with respect to the original authors. Also, some stock images are AI generated.
+  This site is still a work in progress. Some links, pages, images, comments, and other elements 
+  may not display properly or may not work as intended.
 */
 .lightmode{
   /* --------- */
@@ -1958,9 +1959,8 @@ li::marker{
     font-size: 1.25rem;
   }
   .mainb{
-    overflow-y: scroll;
+    overflow: auto;
     scrollbar-color: var(--emphasize) var(--calendar-base);
-    height: 100vh;
     display: flex;
     flex-direction: column;
   }
@@ -1977,9 +1977,9 @@ li::marker{
     border: solid 1px var(--border);
     transition: var(--general-transition);
   }
-  /* .main-wrapper {
+  .main-wrapper {
     overflow-y: auto;
-  } */
+  }
   #hambtn{
     display: block;
     position: relative;
