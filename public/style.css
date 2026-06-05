@@ -1954,7 +1954,7 @@ li::marker{
   h1{
     font-size: 1.25rem;
   }
-  html, .mainb{
+  .mainb{
     overflow-y: scroll;
     scrollbar-color: var(--emphasize) var(--calendar-base);
     height: 100dvh;
@@ -1974,9 +1974,9 @@ li::marker{
     border: solid 1px var(--border);
     transition: var(--general-transition);
   }
-  .main-wrapper {
+  /* .main-wrapper {
     overflow-y: auto;
-  }
+  } */
   #hambtn{
     display: block;
     position: relative;
