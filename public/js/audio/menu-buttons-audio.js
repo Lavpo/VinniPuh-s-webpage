@@ -8,7 +8,7 @@
                 return;
             }
             audio.currentTime = 0;
-            audio.volume = 2;
+            audio.volume = 1;
             audio.play();
 
             setTimeout(() => {
