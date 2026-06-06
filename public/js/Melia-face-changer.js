@@ -140,7 +140,7 @@
     }
     let audio = document.getElementById("retro-hurt");
 
-    audio.volume = 0.8;
+    audio.volume = 0.3;
     audio.play();
     
     img.src = squint;
