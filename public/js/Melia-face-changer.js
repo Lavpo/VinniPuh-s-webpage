@@ -102,7 +102,7 @@
     RevertFunc();
     let audio = document.getElementById("bubble-pop");
 
-    audio.volume = 0.1;
+    audio.volume = 0.05;
     audio.play();
 
     ismousedown = true;
