@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="UTF-8">
+    <meta name="description" content="VinniPuh's personal page that covers information about an artist, his likings, art that he makes and such.">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#000000">
     <meta content="https://vinnipuh.neocities.org" property="og:url">
@@ -28,13 +29,6 @@
       }
     </script>
     <script src="js/darkmode.js" defer></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <!--Fonts-->
-    <link href="https://fonts.googleapis.com/css2?family=Hachi+Maru+Pop&amp;family=Kosugi+Maru&amp;family=Oooh+Baby&amp;family=Kirang+Haerang&amp;family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&amp;family=Teko:wght@300..700&amp;family=SN+Pro:ital,wght@0,200..900;1,200..900&amp;display=swap" rel="stylesheet">
-    
-    <!--Google Icons-->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
     <!--Favicon-->
     <link rel="icon" type="image/x-icon" href="/images/favicons/main-chibi.ico">
     
@@ -43,25 +37,25 @@
   <body class="preload mainb">
      <!-- preloading some audios too prevent sounds not responding properly -->
     <audio id="pop">
-      <source src="https://lavpo.github.io/audio-host/pop.mp3" type="audio/mp3">
+      <source src="https://raw.githubusercontent.com/Lavpo/audio-host/main/pop.mp3" type="audio/mp3">
     </audio>
     <audio id="button-click">
-      <source src="https://lavpo.github.io/audio-host/button-click.mp3" type="audio/mp3">
+      <source src="https://raw.githubusercontent.com/Lavpo/audio-host/main/button-click.mp3" type="audio/mp3">
     </audio>
     <audio id="guestbook-sound">
-      <source src="https://lavpo.github.io/audio-host/plump.mp3" type="audio/mp3">
+      <source src="https://raw.githubusercontent.com/Lavpo/audio-host/main/plump.mp3" type="audio/mp3">
     </audio>
     <audio id="bubble-pop">
-      <source src="https://lavpo.github.io/audio-host/bubble-pop.mp3" type="audio/mp3">
+      <source src="https://raw.githubusercontent.com/Lavpo/audio-host/main/bubble-pop.mp3" type="audio/mp3">
     </audio>
     <audio id="retro-hurt">
-      <source src="https://lavpo.github.io/audio-host/retro-hurt.mp3" type="audio/mp3">
+      <source src="https://raw.githubusercontent.com/Lavpo/audio-host/main/retro-hurt.mp3" type="audio/mp3">
     </audio>
     <audio id="jingle-bells">
-      <source src="https://lavpo.github.io/audio-host/jingle-bells.mp3" type="audio/mp3">
+      <source src="https://raw.githubusercontent.com/Lavpo/audio-host/main/jingle-bells.mp3" type="audio/mp3">
     </audio>
     <audio id="light-switch">
-      <source src="https://lavpo.github.io/audio-host/light-switch2.mp3" type="audio/mp3">
+      <source src="https://raw.githubusercontent.com/Lavpo/audio-host/main/light-switch2.mp3" type="audio/mp3">
     </audio>
     <div class="navbar">
       <button id="hambtn">
@@ -70,7 +64,7 @@
         <span></span>
       </button>
       <script src="js/audio/navbar-sound.js"></script>
-      <img class="mobfl" src="images/flowers/pinkflower.webp">
+      <img class="mobfl" src="images/flowers/pinkflower.webp" alt="pink flower">
 
       <nav class="item menuButtonsMobile">
         <a data-target="/pages/about.html" href="pages/about.html" class="btn btn1">
@@ -91,7 +85,7 @@
         </a>
         <script src="js/audio/menu-buttons-audio.js"></script>
       </nav>
-      <img class="mobfl" src="images/flowers/pinkflower.webp">
+      <img class="mobfl" src="images/flowers/pinkflower.webp" alt="pinkflower">
 
     </div>
     <div class="main-wrapper" id="main">
@@ -100,7 +94,7 @@
 
           <!-- menu buttons -->
           <nav class="item menuButtons">
-            <h2 class="menuTitle">MENU</h2>
+            <b class="menuTitle">MENU</b>
             <a data-target="pages/about.html" href="pages/about.html" class="btn btn1">
               <span class="edge"></span>
               <span class="front">about</span>
@@ -127,7 +121,10 @@
               <span class="front">Guestbook</span>
             </a>
 
-            <img src="gifs/lie.gif">
+            <!-- mp4 files are used here instead of gifs, just this saves tons of space -->
+            <video autoplay loop muted playsinline>
+              <source src="mp4s/lie.mp4" type="video/mp4">
+            </video>
 
             <iframe class="guestbook-frame iframe" src="https://vinnipuh.atabook.org">Guestbook link</iframe>
             <script src="js/audio/guestbook-sound.js"></script>
@@ -140,37 +137,44 @@
             <div class="log-top opened">
               <div class="log">
                 <p>Update Log</p>
-                <button class="log-btn opened" id="sound-capturer">
+                <button class="log-btn opened" aria-label="Updatelog button" aria-expanded="true" aria-controls="log-message" id="sound-capturer">
                   <svg id="chevron-up-down" width="20px" height="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M5 8L11.6237 15.57C11.8229 15.7976 12.1771 15.7976 12.3763 15.57L19 8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                   </svg>
                 </button>
+                <script>
+                  const logop = document.getElementById("sound-capturer");
+                  logop.addEventListener("click", () =>{
+                    if (logop.getAttribute("aria-expanded") === true) logop.setAttribute("aria-expanded", false);
+                    else if(logop.getAttribute("aria-expanded") === false) logop.setAttribute("aria-expanded", true);
+                  });
+                </script>
               </div>
               <div class="log-message opened" id="log-message">
                 <div class="updtop">
-                  <h3>v2.0.9</h3>
+                  <b>v2.0.9</b>
                   <p>* 5 june 2026</p>
                 </div> 
                 <ul class="upd">
-                  <li><p>Fixed bulb images and gifs to have a transparent background</p></li>
-                  <li><p>Reformatted text on updatedlog</p></li>
+                  <li>Fixed bulb images and gifs to have a transparent background</li>
+                  <li>Reformatted text on updatedlog</li>
                 </ul>
                 <hr>
                 <br>
                 <div class="updtop">
-                  <h3>v2.0.7</h3>
+                  <b>v2.0.7</b>
                   <p>* 5 june 2026</p>
                 </div> 
                 <ul class="upd">
-                  <li><p>Placed audio files on githubpages</p></li>
-                  <li><p>Fixed Darkmode property in all pages</p></li>
-                  <li><p>Fixed the scrolling of a wheel on main page on mobiles</p></li>
+                  <li>Placed audio files on githubpages</li>
+                  <li>Fixed Darkmode property in all pages</li>
+                  <li>Fixed the scrolling of a wheel on main page on mobiles</li>
                   </ul>
                 <hr>
                 <br>
                 
                 <div class="updtop">
-                  <h3>v2.0.2 - 2.0.4</h3>
+                  <b>v2.0.2 - 2.0.4</b>
                   <p>* 4 june 2026</p>
                 </div> 
                 <ul class="upd">
@@ -180,62 +184,62 @@
                 <br>
 
                 <div class="updtop">
-                  <h3>v2.0.0</h3>
+                  <b>v2.0.0</b>
                   <p>* 3 june 2026</p>
                 </div> 
                 <ul class="upd">
-                  <h3><strong>Optimisation:</strong></h3>
-                  <li><p>Changed all necessary px units to rem/em.</p></li>
-                  <li><p>Optimized and converted images (mostly from PNG to WebP/JPG).</p></li>
+                  <li class="marked">Optimisation:</li>
+                  <li>Changed all necessary px units to rem/em.</li>
+                  <li>Optimized and converted images (mostly from PNG to WebP/JPG).</li>
 
-                  <h3><strong>Added:</strong></h3>
-                  <li><p>Sounds on the About page.</p></li>
-                  <li><p>Sounds on the Gallery page.</p></li>
-                  <li><p>Sounds on the Links page.</p></li>
-                  <li><p>Added a favicon to the Links page.</p></li>
-                  <li><p>Added a squishy effect when clicking the character on the About page.</p></li>
+                  <li class="marked">Added:</li>
+                  <li>Sounds on the About page.</li>
+                  <li>Sounds on the Gallery page.</li>
+                  <li>Sounds on the Links page.</li>
+                  <li>Added a favicon to the Links page.</li>
+                  <li>Added a squishy effect when clicking the character on the About page.</li>
 
-                  <h3><strong>Fixed:</strong></h3>
-                  <li><p>Fixed Art of the Day sizing on mobile devices.</p></li>
-                  <li><p>Increased sound volume.</p></li>
+                  <li class="marked">Fixed:</li>
+                  <li>Fixed Art of the Day sizing on mobile devices.</li>
+                  <li>Increased sound volume.</li>
                   </ul>
 
                 <hr>
                 <br>
 
                 <div class="updtop">
-                  <h3>v1.24.3</h3>
+                  <b>v1.24.3</b>
                   <p>* 3 june 2026</p>
                 </div>
 
                 <ul class="upd">
-                  <h3><strong>Added:</strong></h3>
-                  <li><p>Dark mode for the about page</p></li>
-                  <li><p>Dark mode for the gallery page</p></li>
-                  <li><p>Dark mode for the popup page</p></li>
-                  <li><p>More images to the art of the day block</p></li>
-                  <li><p>Gallery mobile support</p></li>
-                  <li><p>Newer images to the gallery</p></li>
-                  <li><p>Different scrollbar UI for gallery page</p></li>
+                  <li class="marked">Added:</li>
+                  <li>Dark mode for the about page</li>
+                  <li>Dark mode for the gallery page</li>
+                  <li>Dark mode for the popup page</li>
+                  <li>More images to the art of the day block</li>
+                  <li>Gallery mobile support</li>
+                  <li>Newer images to the gallery</li>
+                  <li>Different scrollbar UI for gallery page</li>
 
-                  <h3><strong>Fixed:</strong></h3>
-                  <li><p>Transition animations for navbar on mobiles</p></li>
-                  <li><p>Gallery's pages</p></li>
-                  <li><p>Got rid of Gallery.html and kept only 2025.html and 2026.html to</p></li>
-                  <li><p>Handle gallery's functioning</p></li>
+                  <li class="marked">Fixed:</li>
+                  <li>Transition animations for navbar on mobiles</li>
+                  <li>Gallery's pages</li>
+                  <li>Got rid of Gallery.html and kept only 2025.html and 2026.html to</li>
+                  <li>Handle gallery's functioning</li>
                 </ul>
  
                 <hr>
                 <br>
 
                 <div class="updtop">
-                  <h3>v1.0.3</h3>
+                  <b>v1.0.3</b>
                   <p>* here it ends for now cuz I'm so tired</p>
                 </div> 
                 <ul class="upd">
-                  <li><p>some text</p></li>
-                  <li><p>some longer text</p></li>
-                  <li><p>some much longer text</p></li>
+                  <li>some text</li>
+                  <li>some longer text</li>
+                  <li>some much longer text</li>
                 </ul>
                 <hr>
                 <br>
@@ -245,7 +249,7 @@
                 </span>
               </div>
             </div>
-            <img class="Chloe" src="images/Chloe/Chloe-chibi.webp">
+            <img class="Chloe" src="images/Chloe/Chloe-chibi.webp" alt="Chloe">
             <script src="js/update-log-opener.js"></script>
           </div>
           <footer class="f1"> © 2026 </footer>
@@ -256,32 +260,32 @@
             <div class="pageTitle">
               <h1>VinniPuh's page</h1>
             </div>
-            <div class="Melia_container">
-              <img class="Melia ov" src="images/Melia/Melia-smile.webp" id="idMelia" usemap="#circleArea">
+            <div class="Melia_container" >
+              <img class="Melia ov" src="images/Melia/Melia-smile.webp" alt="Melia smile" id="idMelia" usemap="#circleArea" fetchpriority="high">
               
               <div class="Melia-ov1 ov" id="overlay1"></div>
               <div class="Melia-ov2 ov" id="overlay2"></div>
 
               <script src="/js/Melia-face-changer.js"></script>
               
-              <img class="attach fl1" src="images/flowers/yellow_and_pink_flowers.webp">
-              <img class="attach fl2" src="images/flowers/white_and_red_flowers.webp">
-              <img class="attach fl3" src="images/flowers/pink-flower-long.webp">
-              <img class="attach fl4" src="images/flowers/pink-flower-long.webp">
+              <img class="attach fl1" src="images/flowers/yellow_and_pink_flowers.webp" alt="yellow and pink flowers">
+              <img class="attach fl2" src="images/flowers/white_and_red_flowers.webp" alt="white and red flowers">
+              <img class="attach fl3" src="images/flowers/pink-flower-long.webp" alt="long pink flower">
+              <img class="attach fl4" src="images/flowers/pink-flower-long.webp" alt="long pink flower">
 
             </div>
-            <img class="phrase" src="images/other/paper2.webp"> 
+            <img class="phrase" src="images/other/paper2.webp" alt="paper with text"> 
         </main>
         
         
         <div class="item rightside" style="grid-area: box-3">
             <div class="col artoftheday">
                 <div class="label">
-                  <h3>Art of the day</h3>
+                  <p>Art of the day</p>
                 </div>        
                 <div class="daytoday">
                   <a id="doodle-link">
-                    <img class="doodle"></img>
+                    <img class="doodle" alt="art of the day doodle">
                   </a>
                   <script src="js/image-changer.js"></script>
                   <script src="js/audio/artoftheday-pc.js"></script>
@@ -290,14 +294,22 @@
             <div class="col bulbAndGifs">
               <div class="bulb-container">
                 <div class="bulb-top">
-                  <h3>Theme</h3>
+                  <p>Theme</p>
                 </div>
-                <button id="darkmode-switcher"><img class="bulb" src="images/other/bulb.webp"></button>
+                <button id="darkmode-switcher" aria-label="darkmode switcher"><img class="bulb" src="images/other/bulb.webp" alt="bulb"></button>
+                <script>
+
+                </script>
+              
               </div>
 
               <div class = "item gifs-group">
-                <img class="gif1" src="gifs/standie.gif">
-                <img class="gif2" src="gifs/boxie2.gif">
+                <video class="gif1" autoplay loop muted playsinline>
+                  <source src="mp4s/standie.mp4" type="video/mp4">
+                </video>
+                <video class="gif2" autoplay loop muted playsinline>
+                  <source src="mp4s/boxie2.mp4" type="video/mp4">
+                </video>
               </div>
             </div>
             

@@ -17,8 +17,11 @@
   --win-text-color1: #37000C;
   --win-text-color2: #741A2E;
   --win-text-color3: #00000099;
+  
+  /* Guestbook */
   --guestbook-text: #790C25;
   --guestbook-text2: #DE6D85;
+
   --calendar-base: #FFE3E9;
   --calendar-hover1: #F0ADBE;
   --calendar-hover2: #fecfd9;
@@ -27,8 +30,8 @@
   --box-shadow:#de6d8580;
 
   --menu-img: url("images/flowers/pinkflower2.webp");
-  --guestbook-img: url("images/bg/guestbook-pink.jpg");
-  --guestbook-img-light: url("images/bg/guestbook-lightpink.jpg");
+  --guestbook-img: url("images/bg/guestbook-pink.webp");
+  --guestbook-img-light: url("images/bg/guestbook-lightpink.webp");
   /* --phrase-img: url(images/other/paper2.webp); */
   --phrase-img: invert(0%);
   --background-pattern: url("images/bg/pinkbear41.jpg");
@@ -105,8 +108,11 @@
   --win-text-color1: white;
   --win-text-color2: #c3e8ff;
   --win-text-color3: #e9e9fdce;
-  --guestbook-text: white;
-  --guestbook-text2: #1f1940;
+
+  /* Guestbook */
+  --guestbook-text: #5bc7ee;
+  --guestbook-text2: #fefefe;
+
   --calendar-base: #4e6e9e;
   --calendar-hover1: #1a3c6b;
   --calendar-hover2: #6aa0ec;
@@ -115,8 +121,8 @@
   --box-shadow:#5b4bb980;
 
   --menu-img: url("images/flowers/moonflower.webp");
-  --guestbook-img: url("images/bg/guestbook-pattern-dark.jpg");
-  --guestbook-img-light: url("images/bg/guestbook-pattern2-dark.jpg");
+  --guestbook-img: url("images/bg/guestbook-pattern-dark.webp");
+  --guestbook-img-light: url("images/bg/guestbook-pattern2-dark.webp");
   /* --phrase-img: url(images/other/paper-dark.png); */
   --phrase-img: invert(100%);
   --background-pattern: url("images/bg/moonsm.jpg");
@@ -170,9 +176,7 @@
 .preload * {
   transition: none !important;
 }
-
 /* 1) Main page ----------------------------------*/
-
 html, body {
   margin: 0;
   padding: 0;
@@ -194,17 +198,13 @@ a {
 }
 .main-wrapper{
   font-family: "Kosugi Maru";
-  
   background-image: var(--background-pattern);
-
   background-size: 40px 40px;
   background-repeat: repeat; 
   animation: move1 7s linear infinite;
-  
   height: 100vh;
   width: 100%;
   overflow: hidden;
-  /* overflow-y: hidden; */
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -226,13 +226,11 @@ a {
 /* Font Styles */
 /* -----------------------------------------*/
 
-
 /* OwlsNInk */
 @font-face{
   font-family: 'OwlsNInk';
   src: url(fonts/OwlsNInk-subset.woff2) format('woff2');
 }
-
 /* ZenMaru */
 @font-face{
   font-family: 'ZenMaruGothic-Regular';
@@ -242,19 +240,16 @@ a {
   font-family: 'ZenMaruGothic-Medium';
   src: url(fonts/ZenMaruGothic-Medium-subset.woff2) format('woff2');
 }
-
 /* Comfortaa */
 @font-face{
   font-family: 'Comfortaa';
   src: url(fonts/Comfortaa-VariableFont_wght-subset.woff2) format('woff2');
 }
-
 /* KosugiMaru */
 @font-face{
   font-family: 'KosugiMaru';
   src: url(fonts/KosugiMaru-Regular-subset.woff2) format('woff2');
 }
-
 /* mononoki */
 @font-face{
   font-family: 'mononoki-regular';
@@ -262,26 +257,12 @@ a {
 }
 @font-face{
   font-family: 'mononoki-bold';
-  src: url(fonts/mononoki-Bold.woff2) format('woff2');
+  src: url(fonts/mononoki-Bold-subset.woff2) format('woff2');
 }
-
 /* Lobster */
 @font-face{
   font-family: 'Lobster';
   src: url(fonts/Lobster-Regular-subset.woff2) format('woff2');
-}
-
-
-/* will later convert all those fonts*/
-.kosugi-maru-regular {
-  font-family: "Kosugi Maru", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-}
-.hachi-maru-pop-regular {
-  font-family: "Hachi Maru Pop", cursive;
-  font-weight: 400;
-  font-style: normal;
 }
 
 /* Container */
@@ -291,16 +272,12 @@ a {
   height: 100vh;
   grid-template-rows: 4fr 10rem 5fr;
   column-gap: 1.25rem;
-
   justify-content: center;
   justify-items: center;
-
-  /*Pc gridding*/
   grid-template-areas:
   "box-1 box-2 box-3"
   "box-4 box-2 box-3"
   "box-5 box-2 box-3";
-  
   margin: 0 auto;
   width: 100%;
   max-width: 77.5rem;
@@ -318,10 +295,8 @@ a {
   width: 10rem;
   height: 13.7rem;
   justify-items: center;
-
   border-radius: 10px;
   border: 1px solid var(--border);
-  
   background-image: var(--menu-img);
   background-position: 85% 0%;
   background-size: 18.75rem;
@@ -331,14 +306,12 @@ a {
 .navbar{
   display: none;
 }
-
 .menuButtons {
   height: auto;
   display: flex;
   flex-direction: column;
   font-size: 1rem;
 }
-
 .menuTitle {
   font-family: 'ZenMaruGothic-Regular';
   margin: 0.313rem 0.313rem 0.626rem 0.313rem;
@@ -347,11 +320,12 @@ a {
   border-bottom: 5px dotted var(--emphasize);
   color: var(--win-secondary-text3);
 }
-
+.menuTitle b{
+  font-size: 1.125rem;
+}
 .menuTitle::before, .menuTitle::after {
   content: "⭐";
 }
-
 .mainb .btn{
   display: flex;
   justify-content: center;
@@ -364,7 +338,6 @@ a {
   border: none;
   line-height: 1;
 }
-
 .mainb .btn .edge{
   position: absolute;
   border-radius: 6px;
@@ -375,8 +348,6 @@ a {
 
   background-color: var(--edge-bg);
 }
-
-
 .mainb .btn .front{
   position: relative;
   display: flex;
@@ -391,7 +362,6 @@ a {
 
   background-color: var(--front-bg);
 }
-
 .mainb .btn:visited{
   color: black;
 }
@@ -404,7 +374,6 @@ a {
   display: none;
   transition: var(--general-transition);
 }
-
 /* general button settings */
 .mainb .btn:hover .front{
   background-color: var(--front-hover-bg);
@@ -413,18 +382,14 @@ a {
   width: 7rem;
   cursor: pointer;
 }
-
 .mainb .btn:hover .edge{
   width: 100%;
   width: 7rem;
   background-color: var(--edge-hover-bg);
 }
-
 .mainb .btn:link .front{
   color: #1A0409;
 }
-
-
 .mainb .btn1{
   --front-bg: #FF8F8F;
   --edge-bg: #C85F5F;
@@ -606,16 +571,19 @@ li::marker{
 .updatelog .log-message .updtop p{
   font-family: 'mononoki-regular';
 }
-.updatelog .log-message h3{
+.updatelog .log-message b{
   font-size: 1rem;
   margin: 0 0 0.313rem 0;
   margin-bottom: 0;
   padding: 0.313rem; 
 }
-.updatelog .log-message .upd p{
+.updatelog .log-message .upd li{
   font-size: 0.813rem;
   margin: 0 0 0.313rem 0;
   font-family: 'mononoki-bold';
+}
+.updatelog .log-message .marked{
+  list-style: none;
 }
 .updatelog .log-message hr{
   border-top: 1px solid var(--box-shadow);
@@ -678,17 +646,26 @@ li::marker{
   width: 10rem;
   height: 2.5rem;
   color: var(--emphasize);
-  background-image: url("images/bg/guestbook-lightpink.jpg");
+  background-image: url("images/bg/guestbook-pattern2-dark.webp");
   transition: var(--general-transition);
 }
 
 /* will return here later */
-.container-guestbook img{
+.container-guestbook video{
   height: 4.8rem;
   width: 6.25rem;
   border-radius: 10px;
   border: solid 0.2px var(--border);
+  background-color: white;
 }
+
+
+/* .container-guestbook img{
+  height: 4.8rem;
+  width: 6.25rem;
+  border-radius: 10px;
+  border: solid 0.2px var(--border);
+} */
 
 .guestbook-frame.iframe{
   display: none;
@@ -847,8 +824,9 @@ li::marker{
   transition: var(--general-transition);
 }
 
-.artoftheday .label h3{
+.artoftheday .label p{
   margin: 0;
+  font-size: 1.25rem;
 }
 
 .artoftheday .doodle{
@@ -906,7 +884,7 @@ li::marker{
   border-bottom: solid 1px var(--border);
   transition: var(--general-transition);
 }
-.bulb-top h3{
+.bulb-top p{
   margin: 0.188rem 0 0.188rem 0;
   font-family: 'Comfortaa';
   font-size: 0.875rem;
@@ -930,7 +908,7 @@ li::marker{
   justify-content: space-between;
 }
 
-.gifs-group img{
+.gifs-group video{
   border-radius: 10px;
   border: solid 0.2px var(--border);
   background-color: white;

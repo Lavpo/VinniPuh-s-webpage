@@ -33,6 +33,7 @@
   if (localStorage.getItem(key) === "1") {
     RevertFunc();
     img.src = veryverysad;
+    img.alt = "Melia veryverysad";
   
     setOverlayMode(false);
   }
@@ -77,16 +78,19 @@
     } 
 
     img.src = veryhappy;
+    img.alt = "Melia veryhappy";
     
     revertTimer = setTimeout(() => {
       if (count >= 0 && count < 10){
         img.src = sur;
+        img.alt = "Melia smile";
         srcsaver = smile;
         // restoreHoverExpression();
       }
       else if (count >= 10){
         isexpressing = true;
         srcsaver = happy;
+        img.alt = "Melia happy";
         img.src = happy;
       }
       isclicked = false;
@@ -151,16 +155,19 @@
       if (count >= 0 && count < 10){
         img.src = sur;
         srcsaver = smile;
+        img.alt = "Melia smile";
         // restoreHoverExpression();
       }
       else if (count >= 10 && count < 20){
         img.src = sad;
         srcsaver = sad;
+        img.alt = "Melia sad";
         isexpressing = true;
       }
       else if (count >= 20 && count < 30){
         srcsaver = verysad;
         img.src = verysad;
+        img.alt = "Melia verysad";
       }
       isclicked = false;
     }, 500);
@@ -173,6 +180,7 @@
       count = 0;
       RevertFunc();
       img.src = veryverysad;
+      img.alt = "Melia veryveryhappy";
       srcsaver = veryverysad;
       
       setOverlayMode(false);
