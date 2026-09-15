@@ -908,7 +908,7 @@ li::marker{
   justify-content: space-between;
 }
 
-.gifs-group img{
+.gifs-group img {
   border-radius: 10px;
   border: solid 0.2px var(--border);
   background-color: white;
