@@ -651,7 +651,7 @@ li::marker{
 }
 
 /* will return here later */
-.container-guestbook video{
+.container-guestbook img{
   height: 4.8rem;
   width: 6.25rem;
   border-radius: 10px;
@@ -908,7 +908,7 @@ li::marker{
   justify-content: space-between;
 }
 
-.gifs-group video{
+.gifs-group img{
   border-radius: 10px;
   border: solid 0.2px var(--border);
   background-color: white;
