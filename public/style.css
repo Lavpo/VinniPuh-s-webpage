@@ -81,21 +81,6 @@
   --gallery-lace: invert(0%);
 }
 
-.blue{
-  --wincolor1: #D3F6FF;
-  --wincolor2: #F9FDFF;
-  --border: #0C4E79;
-  --emphasize: #6DBFDE;
-  --win-text-color1: #002437;
-  --win-text-color2: #1A5274;
-  --win-text-color3: #00000099;
-  --calendar-base: #ace3f1;
-  --calendar-hover1: #5f92da;
-  --calendar-hover2: #97c2ff;
-
-  --background-pattern: url("/images/bg/moonsm.jpg");
-}
-
 .darkmode{
   /* --------- */
   /* Main page */
@@ -1318,7 +1303,7 @@ li::marker{
   color: var(--about-textcolor1);
   font-weight: 400;
 }
-.center p, .center li, .center h3, .center h2, .center h1{
+.center p, .center li, .center h3, .center h1{
   margin: 0;
 }
 .center p {
@@ -1927,11 +1912,6 @@ li::marker{
   }
   .guestbook-frame.link{
     display: none;
-  }
-
-  .guestbook a{
-    background-color: orange;
-    padding: 1rem;
   }
 
   .calendar{
