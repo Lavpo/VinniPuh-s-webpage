@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>profile</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Sawarabi+Gothic&display=swap" rel="stylesheet">
+    <style type="text/css">
+    body {
+        background-image: url('https://yotsu.neocities.org/images/bg-wallpaper/dye_hu_0027.gif');
+        background-repeat: repeat;
+        background-color: #ededfc;
+        font-family: 'Sawarabi Gothic', garamond, sans-serif;
+        margin: 0;
+        padding: 0;
+    } 
+
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        padding: 10px;
+    }
+
+    #sidebar {
+        width: 150px;
+        margin-right: 20px;
+    }
+
+    #sidebar table {
+        margin-bottom: -20px;
+    } 
+        
+    table {
+        font-size: 8pt;
+        letter-spacing: 0.7pt;
+        line-height: 113%;
+        color: #6a4928;
+        border-spacing: 1.5px;
+        background-color: #ebebeb;
+        border-width: 1px; /* change border width */
+        border-style: outset; /* change border style */
+        border-color: #ebebeb;
+        margin: 0px;
+        padding: 0.5px;
+        
+    }
+
+    td {
+        border:0.5px  #b7b7b7;
+        text-align: left;
+        padding: 5px;
+        border-style: inset;
+        
+    }
+
+    #profile-top {
+        width: 300px;
+    }
+
+    iframe {
+        width: 200px;
+        height: 200px;
+            border: none;
+            padding: 0px;
+        }
+
+        #navigation ul {
+        list-style-type: none;
+        padding: 0;
+        letter-spacing: 0pt;
+    }
+    
+   .diary-widget {
+        margin-left: 20px;
+    }
+
+    a {
+      position: relative;
+      display: inline-block;
+    }
+    a:hover {
+      transform: translate(1px, 1px);
+    }
+    
+     
+ 
+
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.9.1/showdown.min.js"></script>
+    <script src="https://yotsu.neocities.org/elements/diary/diary.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("#music-widget-container").load("https://yotsu.neocities.org/music-widget.html");
+        });
+    </script>
+
+</head>
+<body> 
+
+   
+    <center>
+        <img src="https://yotsu.neocities.org/images/cg/yotsuprofilev5.gif" alt="yotsu profile" style="padding-top: 45px; padding-bottom: 10px;">
+    </center>
+   
+    
+     
+    
+  
+ 
+<div class="container"> 
+    <div id="sidebar">
+        <!-- sidebar + avatar --> 
+      <table align="center" border="0" cellpadding="0" cellspacing="0">
+    <tr>
+        <td style="background: url('https://yotsu.neocities.org/images/bg-wallpaper/simple04.gif') repeat;" ><img src="https://yotsu.neocities.org/images/cg/qooico.png" alt="manaka2" style="width: 95%; border: 3px outset #ebebeb;">
+        </td>
+    </tr>
+</table>
+
+        <!-- sidebar + avatar end --> 
+        
+        <br>
+        <!-- sidebar + intro --> 
+        <table align="center" border="0" cellpadding="3" cellspacing="0" bordercolordark="#ffffff" bordercolorlight="#663300" style="border-style: outset;">
+            <tr> 
+                <td bgcolor="fffff"  width="200">
+                    Nice to meet you, I go by YOTSU on the net. I like to draw and make video edits. Thanks for visiting!<br><br> <a href="https://www.youtube.com/channel/UC0FplT88irKbHeZucDiFplw"><img src="https://yotsu.neocities.org/images/cg/yt.gif"></a> 
+                    <a href="https://x.com/yot_su"><img src="https://yotsu.neocities.org/images/cg/twit.gif"></a> 
+                    <a href="https://purichou.tumblr.com/"><img src="https://yotsu.neocities.org/images/cg/tumblr.gif"></a>
+                </td>
+            </tr>
+        </table>
+        <!-- sidebar + intro end --> 
+        <br>
+        <!-- sidebar + external links --> 
+        
+            
+          <!-- listening to widget -->
+          <iframe src="https://yotsu.neocities.org/music-widget.html"></iframe>
+         <!-- widget end -->
+              
+         
+        <!-- sidebar + external links end -->
+        
+          <br>
+        
+        <!-- sidebar + home link --> 
+        <center>
+            <a href="https://yotsu.neocities.org/main" style="display: inline-block; cursor: pointer;">
+                <img src="https://yotsu.neocities.org/images/cg/home2.png" alt="home" >
+            </a>
+        </center> 
+        <!-- sidebar + home link end -->
+    </div>
+
+    <!-- profile top -->
+    <div id="profile-top">
+        <table align="center" valign="top" cellpadding="3" cellspacing="0" bordercolordark="#ffffff" bordercolorlight="#663300" bgcolor="fffff">
+            <tr>
+                <td style="background: url('https://yotsu.neocities.org/images/bg-wallpaper/simple04.gif') repeat; width: 300px; height: 15px;"  bgcolor="fffff" width="20">
+                    <center>Profile</center>
+                </td>
+            </tr>
+        </table>
+          
+        <table align="center" valign="top" cellpadding="6" cellspacing="1" bordercolordark="#ffffff" bordercolorlight="#663300" >
+            <tr>
+                <td style="background: url('https://yotsu.neocities.org/images/bg-wallpaper/simple04.gif') repeat;" bgcolor="ffc0cb" width="90">Name</td>
+                <td bgcolor="fffff" width="300">Caroline</td>
+            </tr>
+            <tr>
+                <td style="background: url('https://yotsu.neocities.org/images/bg-wallpaper/simple04.gif') repeat;" bgcolor="ffc0cb" width="90">Alias</td>
+                <td bgcolor="fffff" width="300">yotsu</td>
+            </tr>
+            <tr>
+                <td style="background: url('https://yotsu.neocities.org/images/bg-wallpaper/simple04.gif') repeat;" bgcolor="ffc0cb" width="90">Birthday</td>
+                <td bgcolor="fffff" width="300">January 16</td>
+            </tr>
+            <tr>
+                <td style="background: url('https://yotsu.neocities.org/images/bg-wallpaper/simple04.gif') repeat;" bgcolor="ffc0cb" width="90">Location</td>
+                <td bgcolor="fffff" width="300">Los Angeles</td>
+            </tr>
+            <tr>
+                <td style="background: url('https://yotsu.neocities.org/images/bg-wallpaper/simple04.gif') repeat;" bgcolor="ffc0cb" width="90">Occupation</td>
+                <td bgcolor="fffff" width="300">research assistant</td>
+            </tr>
+            <tr>
+                <td style="background: url('https://yotsu.neocities.org/images/bg-wallpaper/simple04.gif') repeat;" bgcolor="ffc0cb" width="90">Hobbies</td>
+                <td bgcolor="fffff" width="300">tennis, rollerblading, drawing, video editing, archiving, internet sleuthing</td>
+            </tr>
+        </table>
+        <table align="center" valign="top" cellpadding="3" cellspacing="1" bordercolordark="#ffffff" bordercolorlight="#663300" style="margin-right: 0px;">
+            <tr>
+                <td style="background: url('https://yotsu.neocities.org/images/bg-wallpaper/simple04.gif') repeat;" bgcolor="fffff" width="122"><center>Likes</center></td>
+                <td style="background: url('https://yotsu.neocities.org/images/bg-wallpaper/simple04.gif') repeat;" bgcolor="fffff" width="122"><center>Dislikes</center></td>
+            </tr>
+            <tr>
+                <td bgcolor="fffff" width="300">art museums, baseball, antiquity, crunchy grapes, graphic design, french history, swimming in the ocean</td>
+                <td bgcolor="fffff" width="300">mushy grapes, long lines, airports, humidity</td>
+            </tr>
+        </table>
+        <!-- profile top end -->
+
+       
+
+            <!-- current favorites -->
+
+        <table align="center" valign="top" cellpadding="3" cellspacing="0" bordercolordark="#ffffff" bordercolorlight="#663300" bgcolor="fffff">
+            <tr>
+                <td style="background: url('https://yotsu.neocities.org/images/bg-wallpaper/simple04.gif') repeat; width: 300px; height: 15px;" bgcolor="ffc0cb" bgcolor="fffff" width="20">
+                    <center>Current Favorite</center>
+                </td>
+            </tr>
+        </table>
+     
+        <table align="center" valign="top" cellpadding="3" cellspacing="1" bordercolordark="#ffffff" bordercolorlight="#663300" style="border-style: outset;">
+           
+            <tr>
+                <td style="background: url('https://yotsu.neocities.org/images/bg-wallpaper/simple04.gif') repeat;" bgcolor="ffc0cb" width="90">Genre♪♫</td>
+                <td bgcolor="fffff" width="300">loungecore, j-rock, baroque pop</td>
+            </tr>
+            <tr>
+                <td style="background: url('https://yotsu.neocities.org/images/bg-wallpaper/simple04.gif') repeat;" bgcolor="ffc0cb" width="90">Musician</td>
+                <td bgcolor="fffff" width="300">CECIL</td>
+            </tr>
+            <tr>
+                <td style="background: url('https://yotsu.neocities.org/images/bg-wallpaper/simple04.gif') repeat;" bgcolor="ffc0cb" width="90">Album</td>
+                <td bgcolor="fffff" width="300">Kirinji - RMX I & II</td>
+            </tr>
+            <tr>
+                <td style="background: url('https://yotsu.neocities.org/images/bg-wallpaper/simple04.gif') repeat;" bgcolor="ffc0cb" width="90">Movie</td>
+                <td bgcolor="fffff" width="300">Paper moon</td>
+            </tr>
+            <tr>
+                <td style="background: url('https://yotsu.neocities.org/images/bg-wallpaper/simple04.gif') repeat;" bgcolor="ffc0cb" width="90">Artist</td>
+                <td bgcolor="fffff" width="300">Kumichi Yoshizuki (kojita)</td>
+            </tr>
+            <tr>
+                <td style="background: url('https://yotsu.neocities.org/images/bg-wallpaper/simple04.gif') repeat;" bgcolor="ffc0cb" width="90">Book</td>
+                <td bgcolor="fffff" width="300"><i> Journal of my life during the French revolution</i> by Grace Dalrymple Elliott</td>
+            </tr>
+            <tr>
+                <td style="background: url('https://yotsu.neocities.org/images/bg-wallpaper/simple04.gif') repeat;" bgcolor="ffc0cb" width="90">Food</td>
+                <td bgcolor="fffff" width="300">Ceviche</td>
+            </tr>
+            <tr>
+                <td style="background: url('https://yotsu.neocities.org/images/bg-wallpaper/simple04.gif') repeat;" bgcolor="ffc0cb" width="90">Drink</td>
+                <td bgcolor="fffff" width="300">Hawaiian beer</td>
+            </tr>
+        </table>
+         <!-- current favorites end -->
+    
+
+    </div>
+
+
+   <!-- diary start -->
+ 
+<div class="diary-widget">
+    <div style="display: inline-block; vertical-align: top;">
+        <div class="diary-content">  
+            <table valign="top" cellpadding="3" cellspacing="0" bordercolordark="#ffffff" bordercolorlight="#663300" style="border-style: outset;">
+                <tr>
+                    <td style="background: url('https://yotsu.neocities.org/images/bg-wallpaper/simple04.gif') repeat; width: 400px; height: 15px;" bgcolor="ffc0cb">
+                        <center>Memo</center>
+                    </td>
+                </tr>
+            </table>
+
+            <table align="center" border="1" cellpadding="6" cellspacing="0" bordercolordark="#ffffff" bordercolorlight="#663300">
+                <tr>
+                    <td bgcolor="fffff" style="vertical-align: top; width: 400px; height: 15px;"  >
+                        <div id="diary" class="diary-container"  style="padding: 10px;">...</div> 
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    
+    <div style="display: inline-block; vertical-align: top;">
+        <div class="diary-sidebar"> 
+            <table align="center" border="1" cellpadding="6" cellspacing="0" bordercolordark="#ffffff" bordercolorlight="#663300">
+                <tr>
+                    <td style="background: url('https://yotsu.neocities.org/images/bg-wallpaper/simple04.gif') repeat;" bgcolor="fffff" style="vertical-align: top;">
+                        <div id="navigation" class="navigation-container">
+                            <!-- List of years and entries will be populated dynamically -->
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+<!-- diary end --> 
+
+
+</div>
+ 
+<br>
+
+
+
+</body>
+</html>

@@ -230,39 +230,47 @@ a {
 @font-face{
   font-family: 'OwlsNInk';
   src: url(fonts/OwlsNInk-subset.woff2) format('woff2');
+  font-display: swap;
 }
 /* ZenMaru */
 @font-face{
   font-family: 'ZenMaruGothic-Regular';
   src: url(fonts/ZenMaruGothic-Regular-subset.woff2) format('woff2');
+  font-display: swap;
 }
 @font-face{
   font-family: 'ZenMaruGothic-Medium';
   src: url(fonts/ZenMaruGothic-Medium-subset.woff2) format('woff2');
+  font-display: swap;
 }
 /* Comfortaa */
 @font-face{
   font-family: 'Comfortaa';
   src: url(fonts/Comfortaa-VariableFont_wght-subset.woff2) format('woff2');
+  font-display: swap;
 }
 /* KosugiMaru */
 @font-face{
   font-family: 'KosugiMaru';
   src: url(fonts/KosugiMaru-Regular-subset.woff2) format('woff2');
+  font-display: swap;
 }
 /* mononoki */
 @font-face{
   font-family: 'mononoki-regular';
   src: url(fonts/mononoki-Regular-subset.woff2) format('woff2');
+  font-display: swap;
 }
 @font-face{
   font-family: 'mononoki-bold';
   src: url(fonts/mononoki-Bold-subset.woff2) format('woff2');
+  font-display: swap;
 }
 /* Lobster */
 @font-face{
   font-family: 'Lobster';
   src: url(fonts/Lobster-Regular-subset.woff2) format('woff2');
+  font-display: swap;
 }
 
 /* Container */
