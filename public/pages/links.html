@@ -45,11 +45,17 @@
             <span class="front">FANBOX</span>
           </a></li>
         </ul>
-        <a class="btn link-back" href="/index.html">
+        <a class="btn link-back" href="#" id="back">
           <span class="edge"></span>
           <span class="front">Back</span>
         </a>
         <script src="/js/audio/menu-buttons-audio.js"></script>
+        <script>
+          document.getElementById("back").addEventListener("click", () => {
+            event.preventDefault();
+            window.history.back();
+          })
+        </script>
       </div>
     </main>
   </body>
